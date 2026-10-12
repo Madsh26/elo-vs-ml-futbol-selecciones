@@ -1,0 +1,120 @@
+{
+  "prediction_cutoff_exclusive": "2026-06-10",
+  "raw_rows": 49390,
+  "raw_last_date": "2026-06-27",
+  "latest_scored_date": "2026-06-04",
+  "worldcup_2026_scheduled_rows": 72,
+  "worldcup_2026_scored_rows": 0,
+  "verified_90_history_rows": 19163,
+  "excluded_unverified_scored_rows": 30153,
+  "worldcup_extra_time_matches_recovered": 73,
+  "worldcup_source_score_mismatches": [],
+  "excluded_ambiguous_same_day_rows": [
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "2.0",
+      "away_score": "1.0"
+    },
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "1.0",
+      "away_score": "2.0"
+    }
+  ],
+  "resolved_placeholders": {
+    "UEFA Playoff D": "Czech Republic",
+    "UEFA Playoff A": "Bosnia-Herzegovina",
+    "UEFA Playoff C": "Turkey",
+    "UEFA Playoff B": "Sweden",
+    "FIFA Playoff 2": "Iraq",
+    "FIFA Playoff 1": "DR Congo"
+  },
+  "duration_policy": "Friendlies assumed 90 minutes; men World Cup regulation scores reconstructed from local goal events; other competitions excluded.",
+  "fixture_resolution_policy": "2026 scheduled opponents from local archive; as-of availability not independently timestamped.",
+  "sources": [
+    {
+      "file": "international_results-master.zip",
+      "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c"
+    },
+    {
+      "file": "worldcup-master.zip",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15"
+    },
+    {
+      "file": "data.zip",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda"
+    }
+  ],
+  "splits": {
+    "train": {
+      "rows": 2932,
+      "from": "2010-01-02",
+      "through": "2017-12-25"
+    },
+    "early_stop": {
+      "rows": 744,
+      "from": "2018-01-07",
+      "through": "2019-12-29"
+    },
+    "dependence": {
+      "rows": 319,
+      "from": "2020-01-07",
+      "through": "2021-12-31"
+    },
+    "selection_calibration": {
+      "rows": 412,
+      "from": "2022-01-02",
+      "through": "2022-12-30"
+    },
+    "test": {
+      "rows": 846,
+      "from": "2023-01-08",
+      "through": "2026-06-04"
+    }
+  },
+  "selected_score_model": "xgboost_poisson",
+  "benchmark_rho": -0.026825812462858756,
+  "deployment_hybrid_rho": -0.08802018567375033,
+  "deployment_dc_rho": -0.07379256755150826,
+  "deployment_temperature": 0.8173675441311992,
+  "threads": 2,
+  "boosting_rounds_max": 180,
+  "chosen_classifier_rounds": 66,
+  "chosen_goal_rounds": [
+    131,
+    169
+  ],
+  "simulations": 0,
+  "elapsed_seconds": 33.61639360000845,
+  "test_protocol": "Frozen parameters; features updated from earlier verified results. Deployment refit and OOF calibration occur after benchmark archival; deployment predictions are not held-out benchmark predictions.",
+  "calibration_selection_note": "Temperature fitted in 2022; its 2022 loss is not an independent validation score. Final test remains separate.",
+  "deployment_oof_boundaries": [
+    "2022-01-01",
+    "2025-01-01"
+  ],
+  "runtime_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "xgboost": "3.4.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.5.3"
+  },
+  "optimizer_diagnostics": {
+    "poisson": {
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 96
+    },
+    "dixon_coles": {
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "iterations": 98
+    }
+  }
+}

@@ -1,0 +1,6 @@
+scenario,mean_absolute_elo_difference,max_absolute_elo_difference,spearman_rank_correlation_48,reference_top20_teams_changing_rank,top20_membership_changes,mean_absolute_centered_difference,max_absolute_centered_difference,interpretation
+historial_completo_90_verificado_o_final_registrado,0.0,0.0,1.0,0,0,0.0,0.0,Descriptive sensitivity of historical state; not a predictive-performance metric.
+historial_completo_final_registrado,2.2517180024741443,10.699109906952344,0.999348675640469,3,0,2.3243468219299026,9.850860163728385,Descriptive sensitivity of historical state; not a predictive-performance metric.
+solo_marcadores_90_verificables,72.92931986352238,188.14734739603477,0.8671298306556665,19,6,38.804529591066,127.70079024303755,Descriptive sensitivity of historical state; not a predictive-performance metric.
+incluyendo_duracion_supuesta_amistosos,32.400234691494205,85.24002279831166,0.9831741207121147,9,2,12.068742946361917,53.35261779639063,Descriptive sensitivity of historical state; not a predictive-performance metric.
+baseline_elo_amistosos,114.49010976108714,190.88305422027838,0.9341076856274425,17,2,34.649820068214474,99.31091172389574,Descriptive sensitivity of historical state; not a predictive-performance metric.

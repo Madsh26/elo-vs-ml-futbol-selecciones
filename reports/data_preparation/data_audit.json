@@ -1,0 +1,1376 @@
+{
+  "prediction_cutoff_exclusive": "2026-06-10",
+  "sources": [
+    {
+      "file": "data\\raw\\international_results_current.zip",
+      "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\fjelstul_worldcup.zip",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "reports\\probabilistic\\resolved_fixtures.csv",
+      "sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+      "role": "Fixture metadata only."
+    },
+    {
+      "file": "data\\raw\\datacamp_worldcup_notebook.pdf",
+      "sha256": "1409bca81056893d22c302a64b01fef657a3ff0294bdc4ad958d40bd164f8dec",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\fifa_2018_statistics.csv",
+      "sha256": "c1f6229b642389b796b4c79e72c80802924f962fc7463a9eba83d49c5b842176",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\fifa_2022_match_data.csv",
+      "sha256": "2757d74f93b8916277e75e2e874f46985212a6a6c3c498306cf536669584bf6c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\fifa_rank_repeated_snapshot_excluded.csv",
+      "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\fifa_rank_semesters.zip",
+      "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\footystats_2014_teams.csv",
+      "sha256": "9c497ec461ba98ea5e84f0e3010bf61c5a6af16538fc815f96fc78e130376ba5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\footystats_2018_matches.csv",
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\footystats_2022_teams.csv",
+      "sha256": "837d2f96a1b1b31d2ec618c4511240c92c1dd96aa102c76c77d376dec9ef6cda",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\geonames_cities15000.zip",
+      "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\international_results_baseline.zip",
+      "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\openfootball_worldcup.zip",
+      "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\statsbomb_open_data.zip",
+      "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\transfermarkt.duckdb",
+      "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\transfermarkt_repository.zip",
+      "sha256": "d684fe944e12d80e99740b69653aede13a4f309911c9d2d4dd955e5c23376ba5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data\\raw\\worldcup_fixtures.zip",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
+      "role": "Not used as model input in this preparation."
+    }
+  ],
+  "history_rows": 49469,
+  "goal_training_rows": 19342,
+  "latest_training_result": "2026-06-09",
+  "goal_exclusions": {
+    "friendly_duration_unverified": 16592,
+    "no_goal_event_coverage": 13462,
+    "goal_event_missing_minute": 72,
+    "goal_event_invalid_minute": 1
+  },
+  "duration_methods": {
+    "friendly_duration_unverified": 16592,
+    "martj42_complete_goal_events": 14498,
+    "no_goal_event_coverage": 13462,
+    "zero_score_invariant": 3893,
+    "fjelstul_verified_periods": 951,
+    "goal_event_missing_minute": 72,
+    "goal_event_invalid_minute": 1
+  },
+  "ambiguous_result_rows_excluded": [
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "2",
+      "away_score": "1"
+    },
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "1",
+      "away_score": "2"
+    }
+  ],
+  "invalid_result_rows_excluded": [],
+  "duplicate_looking_goal_events_kept": 79,
+  "normalization": {
+    "expected_worldcup_teams": 48,
+    "matched_in_pre_cutoff_history": 48,
+    "unmatched": [],
+    "czechoslovakia_is_separate": true,
+    "former_name_intervals_respected": true
+  },
+  "goal_events_missing_minute": 254,
+  "elo_policy": "Use verified regulation score when available; otherwise recorded final score, possibly including extra time. Never use shootout winner or force a draw from shootout membership.",
+  "time_filter": "Apply exclusive date filter before numeric interpretation or retention of any target fields.",
+  "market_value": "DuckDB supplied; audited and attached separately by the dated-enrichment step. Current snapshot fields are prohibited predictors.",
+  "ranking_repeated_snapshot": "Excluded by approved decision; not a historical source.",
+  "ranking_original": "Original archive inspected through 2024, semester 2. Future enrichment may use end-of-semester lag and age <=90 days; no 2026 extrapolation.",
+  "statsbomb_role": "Validation only; not an input in this ingestion step.",
+  "geonames_role": "Static altitude only; not a model input in this step.",
+  "official_2026_results_loaded": false,
+  "model_frozen_at_utc": null,
+  "official_results_loaded_at_utc": null,
+  "construction_context": "Retrospective study constructed after the tournament, not a pre-tournament published forecast.",
+  "competition_policy": "All valid source competitions retained for historical state; non-FIFA and other tournaments remain explicitly tagged, never silently labeled FIFA-official.",
+  "fixture_provenance": "Previously resolved local fixture metadata. Historical publication availability is not independently timestamped.",
+  "preparation_completed_at_utc": "2026-10-12T05:24:18.368281+00:00",
+  "model_training_executed_in_this_step": false,
+  "field_definitions": {
+    "recorded_home_score": "Local recorded final goals, including extra time if played; excludes shootout conversions.",
+    "home_score_90": "Regulation score reconstructed from evidence; missing when unverified.",
+    "goal_training_eligible": "Verified regulation target, including the invariant zero-score case. Assumed friendly duration is excluded.",
+    "duration_assumed": "Standard friendly duration is available only as a sensitivity alternative; not admitted to primary goals training.",
+    "competitive": "Non-Friendly label in the source; not a certification of FIFA-official status.",
+    "country": "Venue territory normalized without historical federation-succession mapping."
+  },
+  "sensitivity": [
+    {
+      "scenario": "historial_completo_90_verificado_o_final_registrado",
+      "mean_absolute_elo_difference": 0.0,
+      "max_absolute_elo_difference": 0.0,
+      "spearman_rank_correlation_48": 1.0,
+      "reference_top20_teams_changing_rank": 0,
+      "top20_membership_changes": 0,
+      "mean_absolute_centered_difference": 0.0,
+      "max_absolute_centered_difference": 0.0,
+      "interpretation": "Descriptive sensitivity of historical state; not a predictive-performance metric."
+    },
+    {
+      "scenario": "historial_completo_final_registrado",
+      "mean_absolute_elo_difference": 2.2517180024741443,
+      "max_absolute_elo_difference": 10.699109906952344,
+      "spearman_rank_correlation_48": 0.999348675640469,
+      "reference_top20_teams_changing_rank": 3,
+      "top20_membership_changes": 0,
+      "mean_absolute_centered_difference": 2.3243468219299026,
+      "max_absolute_centered_difference": 9.850860163728385,
+      "interpretation": "Descriptive sensitivity of historical state; not a predictive-performance metric."
+    },
+    {
+      "scenario": "solo_marcadores_90_verificables",
+      "mean_absolute_elo_difference": 72.92931986352238,
+      "max_absolute_elo_difference": 188.14734739603477,
+      "spearman_rank_correlation_48": 0.8671298306556665,
+      "reference_top20_teams_changing_rank": 19,
+      "top20_membership_changes": 6,
+      "mean_absolute_centered_difference": 38.804529591066,
+      "max_absolute_centered_difference": 127.70079024303755,
+      "interpretation": "Descriptive sensitivity of historical state; not a predictive-performance metric."
+    },
+    {
+      "scenario": "incluyendo_duracion_supuesta_amistosos",
+      "mean_absolute_elo_difference": 32.400234691494205,
+      "max_absolute_elo_difference": 85.24002279831166,
+      "spearman_rank_correlation_48": 0.9831741207121147,
+      "reference_top20_teams_changing_rank": 9,
+      "top20_membership_changes": 2,
+      "mean_absolute_centered_difference": 12.068742946361917,
+      "max_absolute_centered_difference": 53.35261779639063,
+      "interpretation": "Descriptive sensitivity of historical state; not a predictive-performance metric."
+    },
+    {
+      "scenario": "baseline_elo_amistosos",
+      "mean_absolute_elo_difference": 114.49010976108714,
+      "max_absolute_elo_difference": 190.88305422027838,
+      "spearman_rank_correlation_48": 0.9341076856274425,
+      "reference_top20_teams_changing_rank": 17,
+      "top20_membership_changes": 2,
+      "mean_absolute_centered_difference": 34.649820068214474,
+      "max_absolute_centered_difference": 99.31091172389574,
+      "interpretation": "Descriptive sensitivity of historical state; not a predictive-performance metric."
+    }
+  ],
+  "elo_settings_for_data_sensitivity": {
+    "initial": 1500,
+    "friendly_and_other_k": 16,
+    "worldcup_k": 24,
+    "home_advantage": 60,
+    "calibrated": false,
+    "purpose": "Hold settings fixed to isolate historical-data and duration policy."
+  },
+  "cutoff_assertions": {
+    "history_dates_strictly_before_cutoff": true,
+    "same_day_features_precede_all_updates": true,
+    "unverified_goals_excluded_from_goal_windows": true
+  },
+  "source_entity_scope": "Ranks include all international entities in the source, not an asserted official FIFA world ranking.",
+  "baseline_elo_amistosos_artifact": {
+    "model_sha256": "107e90d8e00745d2ee24ae9b0f5606627e5860e9721ac5b2b9fb326f4f8f1c0f",
+    "preserved": true,
+    "definition": "Existing saved model remains a baseline; no retraining or score overwrite in preparation."
+  },
+  "outputs": [
+    {
+      "file": "competition_coverage.csv",
+      "sha256": "3ecb542a9898193581da6b5d860473cd532301b64901b4b4163f88093bf47e6a"
+    },
+    {
+      "file": "confederations.csv",
+      "sha256": "9e3e89806382436de0436726d3f8d570d653e3a741f053862f8e1808f3ae141a"
+    },
+    {
+      "file": "coverage_bias.csv",
+      "sha256": "1e3a70f0b5840d8675c57566a3701dbdbe17f2ed06e4b25e92e767d0adab8f43"
+    },
+    {
+      "file": "elo_policy_sensitivity.csv",
+      "sha256": "7c6080dfaf6489f27b2d17b6d279960c616a3568c728640ddd0f55182f085b55"
+    },
+    {
+      "file": "fixture_features.csv",
+      "sha256": "c86797915d9dbb11fe44a96180ac9d85fda5e7034941480786df8706e93dec3f"
+    },
+    {
+      "file": "goal_exclusions.csv",
+      "sha256": "a90f93d3b9930d36df3a5225fbe1e712724117d5e9dcedab949908c509766674"
+    },
+    {
+      "file": "goal_training_90.csv",
+      "sha256": "402862127c9b2a5e986c84492b0cac66f708ef12da9d9ee9ae594ed69222fe22"
+    },
+    {
+      "file": "goal_training_features.csv",
+      "sha256": "951e952c943fa204335326d2af2fe3fa59c84aee0bddb1b7eb14853e88db2dc6"
+    },
+    {
+      "file": "historical_features.csv",
+      "sha256": "e5baf1219e3afa3b91bf1106441c219bb7ecc13934a8075cb81c8a1c849b1ba6"
+    },
+    {
+      "file": "historical_results.csv",
+      "sha256": "2d5b832f763ccdfbbcec672d8d4ef93bb5e0caef6a70cb1645e33d909f06954e"
+    },
+    {
+      "file": "name_registry.csv",
+      "sha256": "6adcb2b31ab3de6950599dbe564e16442c0bd0993e0641b380fe483f5fa1817f"
+    },
+    {
+      "file": "sensitivity_summary.csv",
+      "sha256": "43945e7ffa16d7b6f7692b444b66a36b6aad3c35b9dad42dd2461abc187bae8e"
+    },
+    {
+      "file": "team_coverage.csv",
+      "sha256": "74d6e2dae5942b5b6ec0111eec4c9bd0ef5c015b1091959476e024dd4f9c39e4"
+    },
+    {
+      "file": "transfermarkt_coverage.csv",
+      "sha256": "8136adab081063a4e71561de713f2efbd3b6afd55f45c864cecd36c8b82399db"
+    }
+  ],
+  "transfermarkt": {
+    "file": "data/raw/transfermarkt.duckdb",
+    "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+    "tables": {
+      "appearances": {
+        "rows": 1894350,
+        "schema": [
+          {
+            "column": "appearance_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "game_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_current_club_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "date",
+            "type": "DATE"
+          },
+          {
+            "column": "player_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "competition_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "yellow_cards",
+            "type": "INTEGER"
+          },
+          {
+            "column": "red_cards",
+            "type": "INTEGER"
+          },
+          {
+            "column": "goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "assists",
+            "type": "INTEGER"
+          },
+          {
+            "column": "minutes_played",
+            "type": "INTEGER"
+          }
+        ],
+        "nulls": {
+          "appearance_id": 0,
+          "game_id": 0,
+          "player_id": 0,
+          "player_club_id": 0,
+          "player_current_club_id": 0,
+          "date": 0,
+          "player_name": 2,
+          "competition_id": 0,
+          "yellow_cards": 0,
+          "red_cards": 0,
+          "goals": 0,
+          "assists": 0,
+          "minutes_played": 0
+        },
+        "date_ranges": {
+          "date": [
+            "2012-07-03",
+            "2026-06-28"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "club_games": {
+        "rows": 177916,
+        "schema": [
+          {
+            "column": "game_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "own_goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "own_position",
+            "type": "INTEGER"
+          },
+          {
+            "column": "own_manager_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "opponent_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "opponent_goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "opponent_position",
+            "type": "INTEGER"
+          },
+          {
+            "column": "opponent_manager_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "hosting",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "is_win",
+            "type": "INTEGER"
+          }
+        ],
+        "nulls": {
+          "game_id": 0,
+          "club_id": 0,
+          "own_goals": 0,
+          "own_position": 50754,
+          "own_manager_name": 1688,
+          "opponent_id": 0,
+          "opponent_goals": 0,
+          "opponent_position": 50754,
+          "opponent_manager_name": 1688,
+          "hosting": 0,
+          "is_win": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": null,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "clubs": {
+        "rows": 796,
+        "schema": [
+          {
+            "column": "club_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "club_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "domestic_competition_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "total_market_value",
+            "type": "FLOAT"
+          },
+          {
+            "column": "squad_size",
+            "type": "INTEGER"
+          },
+          {
+            "column": "average_age",
+            "type": "FLOAT"
+          },
+          {
+            "column": "foreigners_number",
+            "type": "INTEGER"
+          },
+          {
+            "column": "foreigners_percentage",
+            "type": "FLOAT"
+          },
+          {
+            "column": "national_team_players",
+            "type": "INTEGER"
+          },
+          {
+            "column": "stadium_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "stadium_seats",
+            "type": "INTEGER"
+          },
+          {
+            "column": "net_transfer_record",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "coach_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "last_season",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "filename",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "club_id": 0,
+          "club_code": 0,
+          "name": 0,
+          "domestic_competition_id": 0,
+          "total_market_value": 796,
+          "squad_size": 0,
+          "average_age": 38,
+          "foreigners_number": 0,
+          "foreigners_percentage": 60,
+          "national_team_players": 0,
+          "stadium_name": 0,
+          "stadium_seats": 0,
+          "net_transfer_record": 0,
+          "coach_name": 393,
+          "last_season": 0,
+          "filename": 0,
+          "url": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "competitions": {
+        "rows": 65,
+        "schema": [
+          {
+            "column": "competition_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "competition_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "sub_type",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "type",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "country_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "domestic_league_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "confederation",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "total_clubs",
+            "type": "INTEGER"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "competition_id": 0,
+          "competition_code": 0,
+          "name": 0,
+          "sub_type": 0,
+          "type": 0,
+          "country_id": 0,
+          "country_name": 12,
+          "domestic_league_code": 12,
+          "confederation": 0,
+          "total_clubs": 15,
+          "url": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "countries": {
+        "rows": 124,
+        "schema": [
+          {
+            "column": "country_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "confederation",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "total_clubs",
+            "type": "INTEGER"
+          },
+          {
+            "column": "total_players",
+            "type": "INTEGER"
+          },
+          {
+            "column": "average_age",
+            "type": "FLOAT"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "country_id": 0,
+          "country_name": 0,
+          "country_code": 0,
+          "confederation": 0,
+          "total_clubs": 0,
+          "total_players": 0,
+          "average_age": 0,
+          "url": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "game_events": {
+        "rows": 1274469,
+        "schema": [
+          {
+            "column": "game_event_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "date",
+            "type": "DATE"
+          },
+          {
+            "column": "game_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "minute",
+            "type": "INTEGER"
+          },
+          {
+            "column": "type",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "description",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "player_in_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_assist_id",
+            "type": "INTEGER"
+          }
+        ],
+        "nulls": {
+          "game_event_id": 0,
+          "date": 0,
+          "game_id": 0,
+          "minute": 0,
+          "type": 0,
+          "club_id": 0,
+          "club_name": 0,
+          "player_id": 0,
+          "description": 0,
+          "player_in_id": 643922,
+          "player_assist_id": 1086191
+        },
+        "date_ranges": {
+          "date": [
+            "2006-06-09",
+            "2026-07-06"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "game_lineups": {
+        "rows": 3179016,
+        "schema": [
+          {
+            "column": "game_lineups_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "date",
+            "type": "DATE"
+          },
+          {
+            "column": "game_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "type",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "position",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "number",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "team_captain",
+            "type": "INTEGER"
+          }
+        ],
+        "nulls": {
+          "game_lineups_id": 0,
+          "date": 0,
+          "game_id": 0,
+          "player_id": 0,
+          "club_id": 0,
+          "player_name": 0,
+          "type": 0,
+          "position": 0,
+          "number": 0,
+          "team_captain": 0
+        },
+        "date_ranges": {
+          "date": [
+            "2013-07-02",
+            "2026-07-06"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "games": {
+        "rows": 88958,
+        "schema": [
+          {
+            "column": "game_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "competition_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "season",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "round",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "date",
+            "type": "DATE"
+          },
+          {
+            "column": "home_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "away_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "home_club_goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "away_club_goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "home_club_position",
+            "type": "INTEGER"
+          },
+          {
+            "column": "away_club_position",
+            "type": "INTEGER"
+          },
+          {
+            "column": "home_club_manager_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "away_club_manager_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "stadium",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "attendance",
+            "type": "INTEGER"
+          },
+          {
+            "column": "referee",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "home_club_formation",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "away_club_formation",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "home_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "away_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "aggregate",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "competition_type",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "game_id": 0,
+          "competition_id": 0,
+          "season": 0,
+          "round": 0,
+          "date": 0,
+          "home_club_id": 0,
+          "away_club_id": 0,
+          "home_club_goals": 0,
+          "away_club_goals": 0,
+          "home_club_position": 25377,
+          "away_club_position": 25377,
+          "home_club_manager_name": 844,
+          "away_club_manager_name": 844,
+          "stadium": 242,
+          "attendance": 10803,
+          "referee": 678,
+          "url": 0,
+          "home_club_formation": 8200,
+          "away_club_formation": 8073,
+          "home_club_name": 86,
+          "away_club_name": 36,
+          "aggregate": 0,
+          "competition_type": 1214
+        },
+        "date_ranges": {
+          "date": [
+            "2006-06-09",
+            "2026-07-06"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "national_teams": {
+        "rows": 124,
+        "schema": [
+          {
+            "column": "national_team_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "team_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "confederation",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "team_image_url",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "squad_size",
+            "type": "INTEGER"
+          },
+          {
+            "column": "average_age",
+            "type": "FLOAT"
+          },
+          {
+            "column": "foreigners_number",
+            "type": "INTEGER"
+          },
+          {
+            "column": "foreigners_percentage",
+            "type": "FLOAT"
+          },
+          {
+            "column": "total_market_value",
+            "type": "INTEGER"
+          },
+          {
+            "column": "coach_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "fifa_ranking",
+            "type": "INTEGER"
+          },
+          {
+            "column": "last_season",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "national_team_id": 0,
+          "name": 0,
+          "team_code": 0,
+          "country_id": 0,
+          "country_name": 0,
+          "country_code": 0,
+          "confederation": 1,
+          "team_image_url": 0,
+          "squad_size": 0,
+          "average_age": 0,
+          "foreigners_number": 0,
+          "foreigners_percentage": 8,
+          "total_market_value": 4,
+          "coach_name": 124,
+          "fifa_ranking": 0,
+          "last_season": 0,
+          "url": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "player_valuations": {
+        "rows": 656301,
+        "schema": [
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "date",
+            "type": "DATE"
+          },
+          {
+            "column": "market_value_in_eur",
+            "type": "INTEGER"
+          },
+          {
+            "column": "current_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "current_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "player_club_domestic_competition_id",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "player_id": 0,
+          "date": 0,
+          "market_value_in_eur": 0,
+          "current_club_name": 0,
+          "current_club_id": 0,
+          "player_club_domestic_competition_id": 92973
+        },
+        "date_ranges": {
+          "date": [
+            "2000-01-20",
+            "2026-06-12"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "players": {
+        "rows": 50149,
+        "schema": [
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "first_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "last_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "last_season",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "current_club_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "player_code",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_of_birth",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "city_of_birth",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "country_of_citizenship",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "date_of_birth",
+            "type": "TIMESTAMP"
+          },
+          {
+            "column": "sub_position",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "position",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "foot",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "height_in_cm",
+            "type": "INTEGER"
+          },
+          {
+            "column": "contract_expiration_date",
+            "type": "TIMESTAMP"
+          },
+          {
+            "column": "agent_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "image_url",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "international_caps",
+            "type": "INTEGER"
+          },
+          {
+            "column": "international_goals",
+            "type": "INTEGER"
+          },
+          {
+            "column": "current_national_team_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "url",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "current_club_domestic_competition_id",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "current_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "market_value_in_eur",
+            "type": "INTEGER"
+          },
+          {
+            "column": "highest_market_value_in_eur",
+            "type": "INTEGER"
+          }
+        ],
+        "nulls": {
+          "player_id": 0,
+          "first_name": 3164,
+          "last_name": 0,
+          "name": 0,
+          "last_season": 0,
+          "current_club_id": 0,
+          "player_code": 0,
+          "country_of_birth": 5885,
+          "city_of_birth": 5608,
+          "country_of_citizenship": 269,
+          "date_of_birth": 49,
+          "sub_position": 586,
+          "position": 0,
+          "foot": 5893,
+          "height_in_cm": 4365,
+          "contract_expiration_date": 18569,
+          "agent_name": 23296,
+          "image_url": 0,
+          "international_caps": 30793,
+          "international_goals": 30793,
+          "current_national_team_id": 46889,
+          "url": 0,
+          "current_club_domestic_competition_id": 2986,
+          "current_club_name": 2986,
+          "market_value_in_eur": 8621,
+          "highest_market_value_in_eur": 8621
+        },
+        "date_ranges": {
+          "date_of_birth": [
+            "1968-07-31 00:00:00",
+            "2011-02-23 00:00:00"
+          ],
+          "contract_expiration_date": [
+            "2000-05-31 00:00:00",
+            "2035-06-30 00:00:00"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "transfers": {
+        "rows": 175165,
+        "schema": [
+          {
+            "column": "player_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "transfer_date",
+            "type": "DATE"
+          },
+          {
+            "column": "transfer_season",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "from_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "to_club_id",
+            "type": "INTEGER"
+          },
+          {
+            "column": "from_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "to_club_name",
+            "type": "VARCHAR"
+          },
+          {
+            "column": "transfer_fee",
+            "type": "DECIMAL(18,3)"
+          },
+          {
+            "column": "market_value_in_eur",
+            "type": "DECIMAL(18,3)"
+          },
+          {
+            "column": "player_name",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "player_id": 0,
+          "transfer_date": 0,
+          "transfer_season": 0,
+          "from_club_id": 0,
+          "to_club_id": 0,
+          "from_club_name": 0,
+          "to_club_name": 0,
+          "transfer_fee": 61526,
+          "market_value_in_eur": 68160,
+          "player_name": 0
+        },
+        "date_ranges": {
+          "transfer_date": [
+            "1993-07-01",
+            "2030-06-30"
+          ]
+        },
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      },
+      "version": {
+        "rows": 1,
+        "schema": [
+          {
+            "column": "commit_hash",
+            "type": "VARCHAR"
+          }
+        ],
+        "nulls": {
+          "commit_hash": 0
+        },
+        "date_ranges": {},
+        "identical_duplicate_rows": 0,
+        "duplicate_scope": "Pre-cutoff when dated; unavailable for undated event tables; otherwise metadata snapshot."
+      }
+    },
+    "post_cutoff_valuations_excluded": 94,
+    "pre_cutoff_valuations_loaded": 656207,
+    "conflicting_player_date_keys_excluded": 0,
+    "national_teams_role": "Current undated snapshot; no historical predictor or ranking.",
+    "market_feature_decision": "Dated valuations can be joined as-of. Undated citizenship does not establish historical national-team membership; nationality aggregates are diagnostic only, excluded from primary models.",
+    "coverage_denominator": "Database players by current citizenship, not a verified national squad. True squad coverage is unavailable.",
+    "unmapped_worldcup_confederations": []
+  },
+  "friendly_duration_evidence": {
+    "complete_event_friendlies": 0,
+    "friendlies_with_goal_after_minute90": 0,
+    "proportion_with_goal_after_minute90": null,
+    "complete_event_friendlies_in_shootouts": 0,
+    "all_recorded_friendlies_in_shootouts": 63,
+    "interpretation": "Event-complete nonzero friendlies only. No claim about the duration of matches without complete events; stoppage is encoded as 90."
+  },
+  "coverage_bias": [
+    {
+      "size": 15023,
+      "sum": 4577,
+      "historical_share": 0.15184256807293456,
+      "goal_training_share": 0.11831765070830318,
+      "representation_ratio": 0.7792126556465486,
+      "dimension": "confederation",
+      "stratum": "AFC"
+    },
+    {
+      "size": 8145,
+      "sum": 3022,
+      "historical_share": 0.08232428389496452,
+      "goal_training_share": 0.07812015303484644,
+      "representation_ratio": 0.9489320688719015,
+      "dimension": "confederation",
+      "stratum": "CAF"
+    },
+    {
+      "size": 7530,
+      "sum": 3074,
+      "historical_share": 0.07610826982554732,
+      "goal_training_share": 0.07946437803743149,
+      "representation_ratio": 1.0440964985746874,
+      "dimension": "confederation",
+      "stratum": "CONCACAF"
+    },
+    {
+      "size": 7655,
+      "sum": 4241,
+      "historical_share": 0.07737168731933129,
+      "goal_training_share": 0.10963188915313825,
+      "representation_ratio": 1.416950992688856,
+      "dimension": "confederation",
+      "stratum": "CONMEBOL"
+    },
+    {
+      "size": 684,
+      "sum": 236,
+      "historical_share": 0.006913420525985971,
+      "goal_training_share": 0.006100713473270603,
+      "representation_ratio": 0.8824450140620569,
+      "dimension": "confederation",
+      "stratum": "OFC"
+    },
+    {
+      "size": 30795,
+      "sum": 15958,
+      "historical_share": 0.31125553376862275,
+      "goal_training_share": 0.4125219729086961,
+      "representation_ratio": 1.3253482369099066,
+      "dimension": "confederation",
+      "stratum": "UEFA"
+    },
+    {
+      "size": 29106,
+      "sum": 7576,
+      "historical_share": 0.29418423659261356,
+      "goal_training_share": 0.19584324268431394,
+      "representation_ratio": 0.6657163040163764,
+      "dimension": "confederation",
+      "stratum": "Unmapped historical entity"
+    }
+  ],
+  "confederation_scope": "Current administrative confederations for coverage diagnostics only; historical changes not silently asserted. Unmapped entities retained as an explicit stratum.",
+  "checks": {
+    "preparation_unit_tests_passed": 15,
+    "official_2026_results_loaded": false
+  }
+}

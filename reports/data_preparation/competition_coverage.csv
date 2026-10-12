@@ -1,0 +1,372 @@
+tournament,competition_family,duration_reason,goal_training_eligible,matches
+ABCS Tournament,other_tournament,no_goal_event_coverage,False,18
+ABCS Tournament,other_tournament,zero_score_invariant,True,2
+AFC Asian Cup,continental,goal_event_missing_minute,False,4
+AFC Asian Cup,continental,martj42_complete_goal_events,True,383
+AFC Asian Cup,continental,zero_score_invariant,True,34
+AFC Asian Cup qualification,qualification,no_goal_event_coverage,False,770
+AFC Asian Cup qualification,qualification,zero_score_invariant,True,59
+AFC Challenge Cup,other_tournament,no_goal_event_coverage,False,81
+AFC Challenge Cup,other_tournament,zero_score_invariant,True,6
+AFC Challenge Cup qualification,qualification,no_goal_event_coverage,False,85
+AFC Challenge Cup qualification,qualification,zero_score_invariant,True,7
+AFC Solidarity Cup,other_tournament,no_goal_event_coverage,False,12
+AFC Solidarity Cup,other_tournament,zero_score_invariant,True,1
+AFF Championship,other_tournament,no_goal_event_coverage,False,267
+AFF Championship,other_tournament,zero_score_invariant,True,24
+AFF Championship qualification,qualification,no_goal_event_coverage,False,58
+AFF Championship qualification,qualification,zero_score_invariant,True,4
+ASEAN Championship,other_tournament,no_goal_event_coverage,False,25
+ASEAN Championship,other_tournament,zero_score_invariant,True,1
+ASEAN Championship qualification,qualification,no_goal_event_coverage,False,1
+ASEAN Championship qualification,qualification,zero_score_invariant,True,1
+Afghanistan Republic Day Festival Cup,other_tournament,no_goal_event_coverage,False,4
+African Cup of Nations,continental,goal_event_missing_minute,False,8
+African Cup of Nations,continental,martj42_complete_goal_events,True,747
+African Cup of Nations,continental,no_goal_event_coverage,False,1
+African Cup of Nations,continental,zero_score_invariant,True,89
+African Cup of Nations qualification,qualification,no_goal_event_coverage,False,2088
+African Cup of Nations qualification,qualification,zero_score_invariant,True,251
+African Friendship Games,other_tournament,no_goal_event_coverage,False,55
+Afro-Asian Games,other_tournament,no_goal_event_coverage,False,4
+Al Ain International Cup,other_tournament,no_goal_event_coverage,False,2
+Al Ain International Cup,other_tournament,zero_score_invariant,True,2
+All-African Games,other_tournament,no_goal_event_coverage,False,67
+All-African Games,other_tournament,zero_score_invariant,True,3
+Amílcar Cabral Cup,other_tournament,no_goal_event_coverage,False,209
+Amílcar Cabral Cup,other_tournament,zero_score_invariant,True,26
+Arab Cup,other_tournament,no_goal_event_coverage,False,158
+Arab Cup,other_tournament,zero_score_invariant,True,17
+Arab Cup qualification,qualification,no_goal_event_coverage,False,26
+Arab Cup qualification,qualification,zero_score_invariant,True,5
+Asian Games,other_tournament,no_goal_event_coverage,False,352
+Asian Games,other_tournament,zero_score_invariant,True,16
+Atlantic Cup,other_tournament,no_goal_event_coverage,False,10
+Atlantic Cup,other_tournament,zero_score_invariant,True,1
+Atlantic Heritage Cup,other_tournament,no_goal_event_coverage,False,2
+Australia Bicentenary Gold Cup,other_tournament,no_goal_event_coverage,False,7
+Australia Bicentenary Gold Cup,other_tournament,zero_score_invariant,True,1
+Balkan Cup,other_tournament,no_goal_event_coverage,False,83
+Balkan Cup,other_tournament,zero_score_invariant,True,4
+Baltic Cup,other_tournament,martj42_complete_goal_events,True,89
+Baltic Cup,other_tournament,no_goal_event_coverage,False,9
+Baltic Cup,other_tournament,zero_score_invariant,True,8
+Bangabandhu Cup,other_tournament,no_goal_event_coverage,False,19
+Bangabandhu Cup,other_tournament,zero_score_invariant,True,2
+Bangladesh President's Gold Cup,other_tournament,no_goal_event_coverage,False,1
+Beijing International Friendship Tournament,other_tournament,no_goal_event_coverage,False,9
+Beijing International Friendship Tournament,other_tournament,zero_score_invariant,True,1
+Benedikt Fontana Cup,other_tournament,no_goal_event_coverage,False,1
+Bolivarian Games,other_tournament,no_goal_event_coverage,False,12
+Brazil Independence Cup,other_tournament,no_goal_event_coverage,False,34
+Brazil Independence Cup,other_tournament,zero_score_invariant,True,3
+British Home Championship,other_tournament,martj42_complete_goal_events,True,17
+British Home Championship,other_tournament,no_goal_event_coverage,False,481
+British Home Championship,other_tournament,zero_score_invariant,True,25
+CAFA Nations Cup,other_tournament,no_goal_event_coverage,False,10
+CCCF Championship,other_tournament,no_goal_event_coverage,False,122
+CCCF Championship,other_tournament,zero_score_invariant,True,1
+CECAFA Cup,other_tournament,no_goal_event_coverage,False,553
+CECAFA Cup,other_tournament,zero_score_invariant,True,67
+CFU Caribbean Cup,other_tournament,no_goal_event_coverage,False,235
+CFU Caribbean Cup,other_tournament,zero_score_invariant,True,16
+CFU Caribbean Cup qualification,qualification,no_goal_event_coverage,False,569
+CFU Caribbean Cup qualification,qualification,zero_score_invariant,True,37
+CONCACAF Championship,continental,goal_event_missing_minute,False,1
+CONCACAF Championship,continental,martj42_complete_goal_events,True,151
+CONCACAF Championship,continental,zero_score_invariant,True,17
+CONCACAF Championship qualification,qualification,martj42_complete_goal_events,True,3
+CONCACAF Championship qualification,qualification,no_goal_event_coverage,False,133
+CONCACAF Championship qualification,qualification,zero_score_invariant,True,15
+CONCACAF Nations League,nations_league,no_goal_event_coverage,False,399
+CONCACAF Nations League,nations_league,zero_score_invariant,True,23
+CONCACAF Nations League qualification,qualification,no_goal_event_coverage,False,65
+CONCACAF Nations League qualification,qualification,zero_score_invariant,True,3
+CONCACAF Series,other_tournament,no_goal_event_coverage,False,31
+CONCACAF Series,other_tournament,zero_score_invariant,True,4
+CONIFA Africa Football Cup,non_fifa,no_goal_event_coverage,False,4
+CONIFA Asia Cup,non_fifa,no_goal_event_coverage,False,8
+CONIFA European Football Cup,non_fifa,no_goal_event_coverage,False,54
+CONIFA European Football Cup,non_fifa,zero_score_invariant,True,4
+CONIFA South America Football Cup,non_fifa,no_goal_event_coverage,False,3
+CONIFA World Cup qualification,qualification,no_goal_event_coverage,False,1
+CONIFA World Football Cup,non_fifa,no_goal_event_coverage,False,92
+CONIFA World Football Cup,non_fifa,zero_score_invariant,True,9
+CONIFA World Football Cup qualification,qualification,no_goal_event_coverage,False,5
+CONMEBOL–UEFA Cup of Champions,other_tournament,martj42_complete_goal_events,True,3
+COSAFA Cup,other_tournament,no_goal_event_coverage,False,304
+COSAFA Cup,other_tournament,zero_score_invariant,True,50
+COSAFA Cup qualification,qualification,no_goal_event_coverage,False,27
+CTFA International Tournament,other_tournament,no_goal_event_coverage,False,6
+Canadian Shield,other_tournament,no_goal_event_coverage,False,3
+Canadian Shield,other_tournament,zero_score_invariant,True,1
+Central American and Caribbean Games,other_tournament,no_goal_event_coverage,False,62
+Central American and Caribbean Games,other_tournament,zero_score_invariant,True,1
+Central European International Cup,other_tournament,no_goal_event_coverage,False,123
+Central European International Cup,other_tournament,zero_score_invariant,True,3
+China Cup,other_tournament,no_goal_event_coverage,False,12
+Columbus Cup,other_tournament,no_goal_event_coverage,False,4
+ConIFA Challenger Cup,non_fifa,no_goal_event_coverage,False,1
+Confederations Cup,other_tournament,martj42_complete_goal_events,True,129
+Confederations Cup,other_tournament,zero_score_invariant,True,11
+Copa América,continental,goal_event_invalid_minute,False,1
+Copa América,continental,martj42_complete_goal_events,True,802
+Copa América,continental,zero_score_invariant,True,66
+Copa América qualification,qualification,martj42_complete_goal_events,True,7
+Copa América qualification,qualification,zero_score_invariant,True,1
+Copa Artigas,other_tournament,no_goal_event_coverage,False,11
+Copa Artigas,other_tournament,zero_score_invariant,True,2
+Copa Bernardo O'Higgins,other_tournament,no_goal_event_coverage,False,10
+Copa Carlos Dittborn,other_tournament,no_goal_event_coverage,False,16
+Copa Chevallier Boutell,other_tournament,no_goal_event_coverage,False,29
+Copa Confraternidad,other_tournament,no_goal_event_coverage,False,1
+Copa Félix Bogado,other_tournament,no_goal_event_coverage,False,5
+Copa Félix Bogado,other_tournament,zero_score_invariant,True,1
+Copa Juan Pinto Durán,other_tournament,no_goal_event_coverage,False,12
+Copa Juan Pinto Durán,other_tournament,zero_score_invariant,True,4
+Copa Lipton,other_tournament,no_goal_event_coverage,False,24
+Copa Lipton,other_tournament,zero_score_invariant,True,4
+Copa Newton,other_tournament,no_goal_event_coverage,False,25
+Copa Newton,other_tournament,zero_score_invariant,True,1
+Copa Oswaldo Cruz,other_tournament,no_goal_event_coverage,False,15
+Copa Oswaldo Cruz,other_tournament,zero_score_invariant,True,1
+Copa Paz del Chaco,other_tournament,no_goal_event_coverage,False,19
+Copa Paz del Chaco,other_tournament,zero_score_invariant,True,4
+Copa Premio Honor Argentino,other_tournament,no_goal_event_coverage,False,11
+Copa Premio Honor Argentino,other_tournament,zero_score_invariant,True,1
+Copa Premio Honor Uruguayo,other_tournament,no_goal_event_coverage,False,15
+Copa Ramón Castilla,other_tournament,no_goal_event_coverage,False,6
+Copa Rio Branco,other_tournament,no_goal_event_coverage,False,16
+Copa Rio Branco,other_tournament,zero_score_invariant,True,2
+Copa Roca,other_tournament,no_goal_event_coverage,False,23
+Copa del Pacífico,other_tournament,no_goal_event_coverage,False,18
+Copa del Pacífico,other_tournament,zero_score_invariant,True,1
+Corsica Cup,other_tournament,no_goal_event_coverage,False,4
+Coupe de l'Outre-Mer,other_tournament,no_goal_event_coverage,False,41
+Coupe de l'Outre-Mer,other_tournament,zero_score_invariant,True,1
+Cup of Ancient Civilizations,other_tournament,no_goal_event_coverage,False,1
+Cup of Ancient Civilizations,other_tournament,zero_score_invariant,True,1
+Cyprus International Tournament,other_tournament,no_goal_event_coverage,False,71
+Cyprus International Tournament,other_tournament,zero_score_invariant,True,1
+Dakar Tournament,other_tournament,no_goal_event_coverage,False,2
+Dakar Tournament,other_tournament,zero_score_invariant,True,2
+Diamond Jubilee International Football Tournament,other_tournament,no_goal_event_coverage,False,3
+Dragon Cup,other_tournament,no_goal_event_coverage,False,8
+Dragon Cup,other_tournament,zero_score_invariant,True,1
+Dunhill Cup,other_tournament,no_goal_event_coverage,False,13
+Dunhill Cup,other_tournament,zero_score_invariant,True,2
+Dynasty Cup,other_tournament,no_goal_event_coverage,False,25
+Dynasty Cup,other_tournament,zero_score_invariant,True,4
+EAFF Championship,other_tournament,no_goal_event_coverage,False,118
+EAFF Championship,other_tournament,zero_score_invariant,True,12
+EAFF Championship qualification,qualification,no_goal_event_coverage,False,5
+ELF Cup,other_tournament,no_goal_event_coverage,False,16
+East Asian Games,other_tournament,no_goal_event_coverage,False,16
+East Asian Games,other_tournament,zero_score_invariant,True,1
+FAS Tri-Nations Series,other_tournament,no_goal_event_coverage,False,3
+FIFA 75th Anniversary Cup,other_tournament,zero_score_invariant,True,1
+FIFA Series,other_tournament,no_goal_event_coverage,False,52
+FIFA Series,other_tournament,zero_score_invariant,True,5
+FIFA World Cup,worldcup,fjelstul_verified_periods,True,951
+FIFA World Cup,worldcup,martj42_complete_goal_events,True,13
+FIFA World Cup qualification,qualification,goal_event_missing_minute,False,38
+FIFA World Cup qualification,qualification,martj42_complete_goal_events,True,8018
+FIFA World Cup qualification,qualification,no_goal_event_coverage,False,34
+FIFA World Cup qualification,qualification,zero_score_invariant,True,681
+FIFI Wild Cup,non_fifa,no_goal_event_coverage,False,9
+FIFI Wild Cup,non_fifa,zero_score_invariant,True,1
+Far Eastern Championship Games,other_tournament,no_goal_event_coverage,False,29
+Far Eastern Championship Games,other_tournament,zero_score_invariant,True,1
+Four Nations Tournament,other_tournament,no_goal_event_coverage,False,23
+Four Nations Tournament,other_tournament,zero_score_invariant,True,1
+Four Nations' Cup,other_tournament,no_goal_event_coverage,False,1
+Four Nations' Cup,other_tournament,zero_score_invariant,True,1
+Friendly,friendly,friendly_duration_unverified,False,16592
+Friendly,friendly,no_goal_event_coverage,False,44
+Friendly,friendly,zero_score_invariant,True,1558
+Fuchs International Tournament,other_tournament,no_goal_event_coverage,False,4
+GaNEFo,other_tournament,no_goal_event_coverage,False,14
+Gold Cup,continental,martj42_complete_goal_events,True,395
+Gold Cup,continental,zero_score_invariant,True,25
+Gold Cup qualification,qualification,no_goal_event_coverage,False,85
+Gold Cup qualification,qualification,zero_score_invariant,True,3
+Great Wall Cup,other_tournament,no_goal_event_coverage,False,4
+Guangzhou International Friendship Tournament,other_tournament,no_goal_event_coverage,False,4
+Gulf Cup,other_tournament,no_goal_event_coverage,False,364
+Gulf Cup,other_tournament,zero_score_invariant,True,46
+Hungary Heritage Cup,other_tournament,no_goal_event_coverage,False,3
+Indian Ocean Island Games,other_tournament,no_goal_event_coverage,False,101
+Indian Ocean Island Games,other_tournament,zero_score_invariant,True,9
+Indonesian Independence Cup,other_tournament,no_goal_event_coverage,False,18
+Indonesian Independence Cup,other_tournament,zero_score_invariant,True,1
+Inter Games,other_tournament,no_goal_event_coverage,False,19
+Inter-Allied Games,other_tournament,no_goal_event_coverage,False,13
+Intercontinental Cup,other_tournament,no_goal_event_coverage,False,21
+Intercontinental Cup,other_tournament,zero_score_invariant,True,3
+International Friendship Championship,other_tournament,no_goal_event_coverage,False,6
+"International Tournament of Peoples, Cultures and Tribes",other_tournament,no_goal_event_coverage,False,7
+Iran International Tournament,other_tournament,no_goal_event_coverage,False,1
+Island Games,other_tournament,no_goal_event_coverage,False,378
+Island Games,other_tournament,zero_score_invariant,True,16
+Jakarta Anniversary Tournament,other_tournament,no_goal_event_coverage,False,68
+Jakarta Anniversary Tournament,other_tournament,zero_score_invariant,True,3
+Joe Robbie Cup,other_tournament,no_goal_event_coverage,False,3
+Joe Robbie Cup,other_tournament,zero_score_invariant,True,1
+Jordan International Tournament,other_tournament,no_goal_event_coverage,False,25
+Jordan International Tournament,other_tournament,zero_score_invariant,True,1
+KTFF 50th Anniversary Cup,other_tournament,no_goal_event_coverage,False,3
+King Hassan II Tournament,other_tournament,no_goal_event_coverage,False,11
+King Hassan II Tournament,other_tournament,zero_score_invariant,True,1
+King's Cup,other_tournament,no_goal_event_coverage,False,233
+King's Cup,other_tournament,zero_score_invariant,True,20
+Kirin Challenge Cup,other_tournament,no_goal_event_coverage,False,20
+Kirin Challenge Cup,other_tournament,zero_score_invariant,True,2
+Kirin Cup,other_tournament,no_goal_event_coverage,False,63
+Kirin Cup,other_tournament,zero_score_invariant,True,16
+Korea Cup,other_tournament,no_goal_event_coverage,False,142
+Korea Cup,other_tournament,zero_score_invariant,True,13
+Kuneitra Cup,other_tournament,no_goal_event_coverage,False,14
+Kuneitra Cup,other_tournament,zero_score_invariant,True,1
+LG Cup,other_tournament,no_goal_event_coverage,False,47
+LG Cup,other_tournament,zero_score_invariant,True,3
+Los Angeles Nations Cup,other_tournament,no_goal_event_coverage,False,2
+Los Angeles Nations Cup,other_tournament,zero_score_invariant,True,1
+Lunar New Year Cup,other_tournament,no_goal_event_coverage,False,23
+Lunar New Year Cup,other_tournament,zero_score_invariant,True,2
+MSG Prime Minister's Cup,other_tournament,no_goal_event_coverage,False,23
+Mahinda Rajapaksa Cup,other_tournament,no_goal_event_coverage,False,6
+Mahinda Rajapaksa Cup,other_tournament,zero_score_invariant,True,1
+Malta International Tournament,other_tournament,no_goal_event_coverage,False,47
+Malta International Tournament,other_tournament,zero_score_invariant,True,6
+Mapinduzi Cup,other_tournament,no_goal_event_coverage,False,7
+Maple Cup,other_tournament,no_goal_event_coverage,False,9
+Marianas Cup,other_tournament,no_goal_event_coverage,False,2
+Marlboro Cup,other_tournament,no_goal_event_coverage,False,7
+Marlboro Cup,other_tournament,zero_score_invariant,True,1
+Matthews Cup,other_tournament,no_goal_event_coverage,False,3
+Matthews Cup,other_tournament,zero_score_invariant,True,1
+Mauritius Four Nations Cup,other_tournament,no_goal_event_coverage,False,5
+Mediterranean Cup,other_tournament,no_goal_event_coverage,False,12
+Melanesia Cup,other_tournament,no_goal_event_coverage,False,60
+Melanesia Cup,other_tournament,zero_score_invariant,True,4
+Merdeka Tournament,other_tournament,no_goal_event_coverage,False,554
+Merdeka Tournament,other_tournament,zero_score_invariant,True,45
+Merlion Cup,other_tournament,no_goal_event_coverage,False,22
+Merlion Cup,other_tournament,zero_score_invariant,True,3
+Miami Cup,other_tournament,no_goal_event_coverage,False,12
+Millennium Cup,other_tournament,no_goal_event_coverage,False,15
+"Morocco, Capital of African Football",other_tournament,no_goal_event_coverage,False,5
+"Morocco, Capital of African Football",other_tournament,zero_score_invariant,True,1
+Mukuru 4 Nations,other_tournament,no_goal_event_coverage,False,2
+Mundialito,other_tournament,no_goal_event_coverage,False,7
+Muratti Vase,other_tournament,no_goal_event_coverage,False,215
+Muratti Vase,other_tournament,zero_score_invariant,True,5
+NAFC Championship,other_tournament,martj42_complete_goal_events,True,6
+NAFU Championship,other_tournament,no_goal_event_coverage,False,4
+Nations Cup,other_tournament,no_goal_event_coverage,False,6
+Navruz Cup,other_tournament,no_goal_event_coverage,False,4
+Nehru Cup,other_tournament,no_goal_event_coverage,False,82
+Nehru Cup,other_tournament,zero_score_invariant,True,7
+Niamh Challenge Cup,other_tournament,no_goal_event_coverage,False,3
+Nile Basin Tournament,other_tournament,no_goal_event_coverage,False,14
+Nordic Championship,other_tournament,no_goal_event_coverage,False,271
+Nordic Championship,other_tournament,zero_score_invariant,True,12
+OSN Cup,other_tournament,no_goal_event_coverage,False,4
+Oceania Nations Cup,continental,goal_event_missing_minute,False,21
+Oceania Nations Cup,continental,martj42_complete_goal_events,True,114
+Oceania Nations Cup,continental,zero_score_invariant,True,4
+Oceania Nations Cup qualification,qualification,no_goal_event_coverage,False,31
+Olympic Games,other_tournament,martj42_complete_goal_events,True,46
+Olympic Games,other_tournament,no_goal_event_coverage,False,32
+Open International Championship,other_tournament,no_goal_event_coverage,False,1
+Outrigger Challenge Cup,other_tournament,no_goal_event_coverage,False,3
+Pacific Games,other_tournament,no_goal_event_coverage,False,74
+Pacific Games,other_tournament,zero_score_invariant,True,1
+Pacific Mini Games,other_tournament,no_goal_event_coverage,False,13
+Pacific Mini Games,other_tournament,zero_score_invariant,True,2
+Palestine Cup,other_tournament,no_goal_event_coverage,False,52
+Palestine Cup,other_tournament,zero_score_invariant,True,6
+Palestine International Championship,other_tournament,no_goal_event_coverage,False,11
+Pan American Championship,other_tournament,no_goal_event_coverage,False,35
+Pan American Championship,other_tournament,zero_score_invariant,True,4
+Peace Cup,other_tournament,no_goal_event_coverage,False,6
+Philippine Peace Cup,other_tournament,no_goal_event_coverage,False,12
+Phillip Seaga Cup,other_tournament,no_goal_event_coverage,False,3
+President's Gold Cup International Tournament,other_tournament,no_goal_event_coverage,False,1
+Prime Minister's Cup,other_tournament,no_goal_event_coverage,False,19
+Prime Minister's Cup,other_tournament,zero_score_invariant,True,3
+Quaid-e-Azam International Tournament,other_tournament,no_goal_event_coverage,False,18
+Quaid-e-Azam International Tournament,other_tournament,zero_score_invariant,True,1
+Real Madrid 75th Anniversary Cup,other_tournament,no_goal_event_coverage,False,1
+Rous Cup,other_tournament,no_goal_event_coverage,False,8
+Rous Cup,other_tournament,zero_score_invariant,True,3
+SAFF Cup,other_tournament,no_goal_event_coverage,False,151
+SAFF Cup,other_tournament,zero_score_invariant,True,11
+SKN Football Festival,other_tournament,no_goal_event_coverage,False,8
+SKN Football Festival,other_tournament,zero_score_invariant,True,3
+Scania 100 Tournament,other_tournament,no_goal_event_coverage,False,4
+Simba Tournament,other_tournament,no_goal_event_coverage,False,15
+Simba Tournament,other_tournament,zero_score_invariant,True,2
+Soccer Ashes,other_tournament,no_goal_event_coverage,False,21
+South Asian Games,other_tournament,no_goal_event_coverage,False,59
+South Asian Games,other_tournament,zero_score_invariant,True,9
+South Asian Super Cup,other_tournament,no_goal_event_coverage,False,1
+South Pacific Games,other_tournament,no_goal_event_coverage,False,200
+South Pacific Games,other_tournament,zero_score_invariant,True,5
+South Pacific Mini Games,other_tournament,no_goal_event_coverage,False,39
+Southeast Asian Games,other_tournament,no_goal_event_coverage,False,167
+Southeast Asian Games,other_tournament,zero_score_invariant,True,15
+Southeast Asian Peninsular Games,other_tournament,no_goal_event_coverage,False,63
+Southeast Asian Peninsular Games,other_tournament,zero_score_invariant,True,5
+Superclásico de las Américas,other_tournament,no_goal_event_coverage,False,7
+Superclásico de las Américas,other_tournament,zero_score_invariant,True,1
+TIFOCO Tournament,other_tournament,no_goal_event_coverage,False,1
+Taça das Nações,other_tournament,no_goal_event_coverage,False,5
+The Other Final,other_tournament,no_goal_event_coverage,False,1
+Three Nations Cup,other_tournament,no_goal_event_coverage,False,3
+Tournament Burkina Faso,other_tournament,no_goal_event_coverage,False,11
+Tournoi de France,other_tournament,no_goal_event_coverage,False,10
+Trans-Tasman Cup,other_tournament,martj42_complete_goal_events,True,1
+Trans-Tasman Cup,other_tournament,no_goal_event_coverage,False,10
+Trans-Tasman Cup,other_tournament,zero_score_invariant,True,1
+Tri Nation Tournament,other_tournament,no_goal_event_coverage,False,4
+Tri-Nation Series,other_tournament,no_goal_event_coverage,False,6
+Tri-Nations Cup,other_tournament,no_goal_event_coverage,False,2
+Tri-Nations Series,other_tournament,no_goal_event_coverage,False,3
+Tynwald Hill Tournament,other_tournament,no_goal_event_coverage,False,6
+U.S.A. Bicentennial Cup Tournament,other_tournament,no_goal_event_coverage,False,3
+UDEAC Cup,other_tournament,no_goal_event_coverage,False,63
+UDEAC Cup,other_tournament,zero_score_invariant,True,7
+UEFA Euro,continental,martj42_complete_goal_events,True,352
+UEFA Euro,continental,zero_score_invariant,True,36
+UEFA Euro qualification,qualification,martj42_complete_goal_events,True,2628
+UEFA Euro qualification,qualification,no_goal_event_coverage,False,3
+UEFA Euro qualification,qualification,zero_score_invariant,True,193
+UEFA Nations League,nations_league,martj42_complete_goal_events,True,594
+UEFA Nations League,nations_league,no_goal_event_coverage,False,2
+UEFA Nations League,nations_league,zero_score_invariant,True,62
+UNCAF Cup,other_tournament,no_goal_event_coverage,False,155
+UNCAF Cup,other_tournament,zero_score_invariant,True,9
+UNIFFAC Cup,other_tournament,no_goal_event_coverage,False,14
+UNIFFAC Cup,other_tournament,zero_score_invariant,True,1
+USA Cup,other_tournament,no_goal_event_coverage,False,33
+USA Cup,other_tournament,zero_score_invariant,True,4
+Umbro Cup,other_tournament,no_goal_event_coverage,False,6
+United Arab Emirates Friendship Tournament,other_tournament,no_goal_event_coverage,False,30
+United Arab Emirates Friendship Tournament,other_tournament,zero_score_invariant,True,1
+Unity Cup,other_tournament,no_goal_event_coverage,False,12
+VFF Cup,other_tournament,no_goal_event_coverage,False,13
+VFF Cup,other_tournament,zero_score_invariant,True,1
+Vietnam Independence Cup,other_tournament,no_goal_event_coverage,False,57
+Vietnam Independence Cup,other_tournament,zero_score_invariant,True,3
+Viva World Cup,non_fifa,no_goal_event_coverage,False,59
+Viva World Cup,non_fifa,zero_score_invariant,True,1
+WAFF Championship,other_tournament,no_goal_event_coverage,False,97
+WAFF Championship,other_tournament,zero_score_invariant,True,17
+West African Cup,other_tournament,no_goal_event_coverage,False,51
+West African Cup,other_tournament,zero_score_invariant,True,3
+Windward Islands Tournament,other_tournament,no_goal_event_coverage,False,92
+Windward Islands Tournament,other_tournament,zero_score_invariant,True,9
+World Unity Cup,other_tournament,no_goal_event_coverage,False,3
+Zambian Independence Tournament,other_tournament,no_goal_event_coverage,False,3
+Évence Coppée Trophy,other_tournament,no_goal_event_coverage,False,1

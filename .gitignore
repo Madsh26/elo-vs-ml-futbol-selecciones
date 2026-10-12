@@ -1,0 +1,22 @@
+.venv/
+.deps/
+__pycache__/
+*.pyc
+tmp/
+*.zip
+*.pdf
+models/*.joblib
+models/*.ubj
+data/processed/
+.pytest_cache/
+.ipynb_checkpoints/
+portfolio_github.zip
+datos nuevos/
+data/raw/
+reports/feature_design/historical_features.csv
+reports/data_preparation/historical_results.csv
+reports/data_preparation/goal_training_90.csv
+reports/data_preparation/goal_exclusions.csv
+.Rhistory
+reports/data_preparation/historical_features.csv
+reports/data_preparation/goal_training_features.csv
