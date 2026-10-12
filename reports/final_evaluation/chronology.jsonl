@@ -2,3 +2,4 @@
 {"at_utc": "2026-10-12T19:41:30.942238+00:00", "event": "human_protocol_sealed", "sha256": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a"}
 {"at_utc": "2026-10-12T19:42:10.237227+00:00", "event": "human_protocol_sealed", "sha256": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a"}
 {"at_utc": "2026-10-12T20:04:26.050774+00:00", "event": "approved_conditions_and_protocol_sealed", "file": "reports/final_evaluation/protocol_approved.json", "sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583"}
+{"at_utc": "2026-10-12T20:10:42.587208+00:00", "event": "group_predictions_sealed", "seal_sha256": "5a52467facd2ffcc7f9a3c7682860fb46b66855d41a615fdb723db963500c6b3", "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583", "matches": 72}

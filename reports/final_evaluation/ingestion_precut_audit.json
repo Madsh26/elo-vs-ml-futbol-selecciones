@@ -1,0 +1,151 @@
+{
+  "prediction_cutoff_exclusive": "2026-06-10",
+  "sources": [
+    {
+      "file": "data/raw/international_results_current.zip",
+      "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
+      "role": "Historical results, goal events and shootouts filtered by cutoff; post-cutoff target values are not admitted."
+    },
+    {
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
+      "role": "Fjelstul historical period verification."
+    },
+    {
+      "file": "reports/probabilistic/resolved_fixtures.csv",
+      "sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+      "role": "Fixture metadata only."
+    },
+    {
+      "file": "data/raw/datacamp_worldcup_notebook.pdf",
+      "sha256": "1409bca81056893d22c302a64b01fef657a3ff0294bdc4ad958d40bd164f8dec",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2018_statistics.csv",
+      "sha256": "c1f6229b642389b796b4c79e72c80802924f962fc7463a9eba83d49c5b842176",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2022_match_data.csv",
+      "sha256": "2757d74f93b8916277e75e2e874f46985212a6a6c3c498306cf536669584bf6c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_rank_repeated_snapshot_excluded.csv",
+      "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
+      "role": "Excluded repeated snapshot; fingerprint only."
+    },
+    {
+      "file": "data/raw/fifa_rank_semesters.zip",
+      "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
+      "role": "Secondary enrichment candidate; not used in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2014_teams.csv",
+      "sha256": "9c497ec461ba98ea5e84f0e3010bf61c5a6af16538fc815f96fc78e130376ba5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2018_matches.csv",
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2022_teams.csv",
+      "sha256": "837d2f96a1b1b31d2ec618c4511240c92c1dd96aa102c76c77d376dec9ef6cda",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/geonames_cities15000.zip",
+      "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
+      "role": "Static altitude reserved for context; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/international_results_baseline.zip",
+      "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/openfootball_worldcup.zip",
+      "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
+      "role": "Openfootball reserved for sealed evaluation; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/statsbomb_open_data.zip",
+      "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
+      "role": "Validation only; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/transfermarkt.duckdb",
+      "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+      "role": "Dated valuations and snapshot metadata; separate audit before enrichment."
+    },
+    {
+      "file": "data/raw/transfermarkt_repository.zip",
+      "sha256": "d684fe944e12d80e99740b69653aede13a4f309911c9d2d4dd955e5c23376ba5",
+      "role": "Repository code without valuation/player data; unavailable enrichment."
+    },
+    {
+      "file": "data/raw/worldcup_fixtures.zip",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
+      "role": "Not used as model input in this preparation."
+    }
+  ],
+  "history_rows": 49469,
+  "goal_training_rows": 951,
+  "latest_training_result": "2026-06-09",
+  "goal_exclusions": {
+    "no_goal_event_coverage": 33947,
+    "martj42_complete_goal_events": 14498,
+    "goal_event_missing_minute": 72,
+    "goal_event_invalid_minute": 1
+  },
+  "duration_methods": {
+    "no_goal_event_coverage": 33947,
+    "martj42_complete_goal_events": 14498,
+    "fjelstul_verified_periods": 951,
+    "goal_event_missing_minute": 72,
+    "goal_event_invalid_minute": 1
+  },
+  "ambiguous_result_rows_excluded": [
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "2",
+      "away_score": "1"
+    },
+    {
+      "date": "1974-02-17",
+      "home_team": "Tahiti",
+      "away_team": "New Caledonia",
+      "home_score": "1",
+      "away_score": "2"
+    }
+  ],
+  "invalid_result_rows_excluded": [],
+  "duplicate_looking_goal_events_kept": 79,
+  "normalization": {
+    "expected_worldcup_teams": 48,
+    "matched_in_pre_cutoff_history": 48,
+    "unmatched": [],
+    "czechoslovakia_is_separate": true,
+    "former_name_intervals_respected": true
+  },
+  "goal_events_missing_minute": 254,
+  "elo_policy": "Use verified regulation score when available; otherwise recorded final score, possibly including extra time. Never use shootout winner or force a draw from shootout membership.",
+  "time_filter": "Apply exclusive date filter before numeric interpretation or retention of any target fields.",
+  "set_membership_rule": "Independent of score: all valid results for 1X2; independent Fjelstul match catalogue for strict regulation goals; no zero-score exception.",
+  "market_value": "DuckDB supplied; audited and attached separately by the dated-enrichment step. Current snapshot fields are prohibited predictors.",
+  "ranking_repeated_snapshot": "Excluded by approved decision; not a historical source.",
+  "ranking_original": "Original archive inspected through 2024, semester 2. Future enrichment may use end-of-semester lag and age <=90 days; no 2026 extrapolation.",
+  "statsbomb_role": "Validation only; not an input in this ingestion step.",
+  "geonames_role": "Static altitude only; not a model input in this step.",
+  "official_2026_results_loaded": false,
+  "model_frozen_at_utc": null,
+  "official_results_loaded_at_utc": null,
+  "construction_context": "Retrospective study constructed after the tournament, not a pre-tournament published forecast.",
+  "competition_policy": "All valid source competitions retained for historical state; non-FIFA and other tournaments remain explicitly tagged, never silently labeled FIFA-official.",
+  "fixture_provenance": "Previously resolved local fixture metadata. Historical publication availability is not independently timestamped."
+}

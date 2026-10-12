@@ -1,0 +1,35 @@
+{
+  "sealed_at_utc": "2026-10-12T20:10:42.383251+00:00",
+  "protocol_file": "reports/final_evaluation/protocol_approved.json",
+  "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+  "protocol_commit": "401c555bd7073ce0b4c7318fe06c71aef6456731",
+  "models_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+  "model_weights_refitted": false,
+  "group_matches": 72,
+  "teams": 48,
+  "max_symmetry_error": {
+    "frequency": 0.0,
+    "elo": 2.220446049250313e-16,
+    "logistic": 1.1102230246251565e-16,
+    "ordinal": 1.1102230246251565e-16,
+    "xgboost": 0.0,
+    "poisson": 3.3306690738754696e-16,
+    "dixon_coles": 3.3306690738754696e-16,
+    "xgboost_poisson": 3.3306690738754696e-16
+  },
+  "files": {
+    "reports/final_evaluation/group_forecasts_frequency.csv": "0d22dd812a1dd31a1687cd62538d1597d87427c8b723d09937ba894c884e22f2",
+    "reports/final_evaluation/group_forecasts_elo.csv": "fac81e71091bdaf037587fde1c28f3b2019c7b4eb42b0305cae4a6f6fd45b8a8",
+    "reports/final_evaluation/group_forecasts_logistic.csv": "7db3b3b859b3e9f3d9d2e8c60576665188a47d480e0ac42e649134a086250eb8",
+    "reports/final_evaluation/group_forecasts_ordinal.csv": "67b695aca0a1d54fa11a3ec434fdc44c4bbfd013aba462ae0fbc01ec1286cfc3",
+    "reports/final_evaluation/group_forecasts_xgboost.csv": "4afed38b6c81b904175372421bd24bd219a452ae990ce1823aba90cda62fe166",
+    "reports/final_evaluation/group_forecasts_poisson.csv": "0f335f66348e932a0e914b5e1d768739aa89663f72617c1988f377c05b2c39e8",
+    "reports/final_evaluation/group_forecasts_dixon_coles.csv": "0404101b0bf755c6638e11a8aad7a1c9783c5740a610fafc7e1581769715ac6a",
+    "reports/final_evaluation/group_forecasts_xgboost_poisson.csv": "604ca4443d263e727e319397dd9ab4758206215cee41bac74b261da71ce14898",
+    "reports/final_evaluation/group_score_matrix_poisson.csv": "4662848def6c1962462c02f1f3dbd93d0d7622dcef7de12e0b68440f314bbdba",
+    "reports/final_evaluation/features_72_frozen.csv": "fc2a100dc1d51818b6f700a99396812fc85deac166cff5760d0ef2ce5cea5ba9",
+    "reports/final_evaluation/state_at_cutoff.json": "4f61253e56f1ffbd915d7147d56a9e9aa61c223a3ba3e266a865fa41cc70d6be"
+  },
+  "official_worldcup_results_loaded_at_utc": null,
+  "post2022_metrics_computed": false
+}

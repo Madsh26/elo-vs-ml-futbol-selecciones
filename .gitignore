@@ -39,3 +39,5 @@ reports/data_preparation/goal_training_features.csv
 /group_tables.csv
 /knockout_predictions_filled.csv
 /tools/complete_audit.py
+reports/final_evaluation/history_precut.csv
+reports/final_evaluation/features_precut.csv
