@@ -30,3 +30,12 @@ Congelo los modelos con entrenamiento anterior a 2023 en 2026-10-12T17:07:05.615
 El protocolo nuevo vive en reports/final_evaluation/protocol.json, con sello y commit phase4-protocol. No abro métricas desde 2023 antes de aprobación explícita. Después actualizaré solo el estado causal para congelar 72 predicciones; los modelos no se reajustan. Los commits de protocolo, predicciones y evaluación son separados. Logística y Poisson son productos distintos, sin reconciliación; reporto su discrepancia media.
 
 Los documentos de models_selected se conservan literalmente como registros congelados. Su lenguaje de periodo reservado se interpreta con la salvedad semiconfirmatoria de este registro vigente. README y RESULTADOS son entradas, y data_audit es un índice; no duplico el informe o auditoría congelados.
+
+
+## Resultado de evaluación semiconfirmatoria
+
+La selección se confirma bajo el protocolo aprobado: logística mejora log loss y Brier frente a Solo Elo en no amistosos, con cuatro subperiodos favorables. No cambio modelos ni criterios. XGBoost sigue siendo comparador porque su intervalo incluye cero. El estrato de equipos fuertes mantiene >1700 y el mínimo inferencial es 200 partidos/30 eventos por clase. Reporto clústeres reales, remuestreo mensual como sensibilidad y exposición previa de DataCamp.
+
+Las 72 predicciones se sellaron y se comprometieron antes de la carga oficial. En grupos, el intervalo frente a Elo incluye cero; no declaro superioridad. Las eliminatorias se condicionan a participantes conocidos retrospectivamente y al estado anterior al corte. La logística y Poisson mantienen productos separados.
+
+Registro el solapamiento de 10.312 segundos entre inicio de carga oficial y cierre del bootstrap semiconfirmatorio, sin cambios de modelos o entradas del cálculo. Conservo los tiempos reales y no afirmo una ejecución estrictamente secuencial de ese cierre. Los resultados y la incidencia están en reports/final_evaluation/RESULTADOS.md.

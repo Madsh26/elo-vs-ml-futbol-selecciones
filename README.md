@@ -1,39 +1,47 @@
 # Probabilidades de fútbol internacional
 
-Evaluación retrospectiva de Elo, aprendizaje automático y modelos de goles.
+**Pregunta:** ¿mejoran el aprendizaje automático y los modelos de goles a un Elo simple al predecir partidos de selecciones?
 
-Construyo un estudio de victoria, empate, derrota y marcadores a 90 minutos. El Mundial 2026 ya estaba jugado al construirlo; no lo presento como un pronóstico publicado previamente. El corte deportivo es exclusivo, **2026-06-10**.
+**Resultado:** la logística con Elo y forma mejora frente a Solo Elo en la muestra amplia y los cuatro subperiodos; XGBoost no demuestra una mejora robusta. La ventaja no queda demostrada entre selecciones fuertes ni en los 72 partidos del Mundial.
 
-## Estado de la evidencia
+![Comparación probabilística](assets/model_comparison.png)
 
-Seleccioné los modelos con resultados anteriores a 2023: **logística con Elo y forma** para 1X2 y **Poisson** para marcadores. Son modelos distintos: el 1X2 de Poisson procede de su propia matriz de marcadores y no coincide con el 1X2 de la logística. No mezclo sus probabilidades ni las reconcilio artificialmente.
+Estudio retrospectivo. La evidencia 2023–corte es semiconfirmatoria por exposición previa al periodo. [Explorar los 72 partidos](reports/final_evaluation/football_report.html) · [Resultados](reports/final_evaluation/RESULTADOS.md) · [Explicación sencilla](docs/COMO_ENTENDER_EL_MODELO.md).
 
-El periodo 2023–corte es **semiconfirmatorio, no virgen**: la entrega histórica para DataCamp ya puntuó 846 partidos de 2023-01-08 a 2026-06-04. Sus modelos y métricas están excluidos de todas las líneas base y comparaciones del estudio actual. Que esos resultados no hayan intervenido en esta selección no elimina la exposición previa.
+## Datos en una mirada
 
-La Fase 4 está en la puerta de aprobación. Ya escribí y sellé su protocolo; todavía no calculo métricas desde 2023 ni genero las predicciones finales de los 72 encuentros. Los resultados oficiales del Mundial se cargarán después de congelar las predicciones y su commit.
+- **49,469 partidos** de 1872-11-30 a 2026-06-09 para actualizar Elo y forma; 337 entidades de selecciones, incluidas históricas.
+- **21,781 partidos de 2000–2022** para ajustar los coeficientes congelados; **6.376** para selección con validación temporal.
+- **3.624 partidos de 2023–corte** para evaluación, con **2.711 no amistosos** en la comparación principal.
+- **72 pronósticos de grupos**, con probabilidades y resultados registrados al lado; **48 selecciones**.
 
-## Diseño
+Uso results, goalscorers, shootouts y former_names de martj42; Fjelstul para duración histórica; Openfootball y juegos de Transfermarkt para corroborar 2026 después del sellado. Ranking semestral y GeoNames quedan en ablaciones. No uso mercado actual ni extrapolo ranking FIFA a 2026. StatsBomb queda como validación opcional. Todas las fuentes son archivos locales suministrados, sin scraping.
 
-Los conjuntos se definen sin depender del marcador. Admito todos los registros válidos, reconstruyendo 90 minutos cuando hay evidencia y usando el marcador final como aproximación declarada cuando falta. Una tanda no demuestra empate a 90 minutos. Las marcas de tanda y prórroga permiten análisis de sensibilidad; el catálogo independiente de Mundiales permite comprobar la duración.
+El [diccionario de datos](docs/DATOS_Y_DICCIONARIO.md) explica el contenido, las cantidades, los marcadores a 90 minutos y cada variable. La logística recibe seis variables: diferencia efectiva de Elo, diferencias de goles a favor y recibidos, forma reciente, fuerza de rivales recientes y cobertura de las ventanas. Las variables se calculan únicamente con el pasado.
 
-Elo utiliza todas las competiciones, pesos por competición, margen de goles y sede real. Los parámetros congelados son sede 100, gamma 1, K de referencia y tasa de regresión 0; con tasa cero, el plazo de inactividad de 730 días no tiene efecto. Las variables de una fecha se calculan antes de actualizar sus resultados. La forma reciente usa únicamente el pasado.
+## Método y lectura de resultados
 
-Entrené y comparé frecuencias, Solo Elo, logística con forma, ordinal, XGBoost 1X2, Poisson, Dixon-Coles y XGBoost Poisson. XGBoost permanece como comparador: no demostró una mejora robusta en los bloques de selección. Descanso, competición, altitud y ranking FIFA no cumplieron el criterio de admisión; mercado no tiene pertenencia histórica fechada suficiente. No extrapolo ranking a 2026 ni uso valores actuales de jugadores.
+La referencia Solo Elo incluye sede fija. Comparo frecuencias, logística con forma, ordinal, XGBoost 1X2, Poisson, Dixon-Coles y XGBoost Poisson. No reajusto modelos desde 2022: actualizo solo el estado Elo y forma. **Logística estima 1X2; Poisson estima marcadores y su propio 1X2. No son el mismo producto.**
 
-## Documentación y reproducción
+En no amistosos, log loss es **0.8478** para logística y **0.8567** para Elo. La diferencia tiene IC trimestral **[-0.0147; -0.0034]**. Remuestreo 2.000 veces bloques trimestrales completos; el bootstrap mensual es sensibilidad. Reporto Brier, RPS, acierto, fiabilidad por clase, NLL de marcador y resultados por población.
 
-- [Resultados y estado actual](RESULTADOS.md): entrada al informe, sin duplicar el congelado.
-- [Protocolo de evaluación](reports/final_evaluation/PROTOCOLO.md): población, métricas, incertidumbre y puerta de aprobación.
-- [Decisiones de diseño](docs/DECISIONES_DE_DISEÑO.md).
-- [Cómo entiendo los modelos](docs/COMO_ENTENDER_EL_MODELO.md): explicación sin conocimientos previos.
-- [Índice de auditorías](data_audit.json): enlaces y hashes de los documentos de autoridad.
+Entre equipos con ambos Elo >1700 (674 partidos) y entre las 48 selecciones del Mundial (406), los intervalos incluyen cero. La mejora de la muestra amplia no garantiza una ventaja en el tipo de encuentro más exigente.
+
+Para inferencia exijo ≥200 partidos y ≥30 eventos por clase. Los 72 grupos y las eliminatorias son descriptivos. Las eliminatorias usan participantes conocidos retrospectivamente y no representan simulación ni pronósticos sellados antes del torneo.
+
+## Reproducibilidad y documentación técnica
 
 ```powershell
 python tools/verify_final_evaluation.py
 ```
 
-Este comando verifica el congelado y ejecuta pruebas que no evalúan resultados desde 2023. Solo escribe la verificación en reports/final_evaluation/. El CI informa pruebas ejecutadas y omitidas por falta de datos o por exclusión del histórico. Para verificar los commits y etiquetas necesito el historial de Git y la etiqueta models-selected, no solo una copia de los archivos.
+La verificación comprueba modelos, protocolo y predicciones frente a sus hashes y commits; el CI informa pruebas y omisiones por datos locales. Los archivos grandes están fuera de Git y necesito las mismas fuentes para repetir el procesamiento. Uso dos hilos por defecto y no simulo cuadros de torneo.
 
-Mantengo intactos reports/models_selected/ y sus cinco archivos de código protegidos. No ejecuto los antiguos scripts que regeneran esos informes. La reproducción de selección desde cero corresponde a una copia de trabajo independiente, con las fuentes locales y sus hashes.
+- [Protocolo aprobado y umbral](reports/final_evaluation/PROTOCOLO_APROBADO.md).
+- [Decisiones y límites](docs/DECISIONES_DE_DISEÑO.md), incluido el periodo semiconfirmatorio y la incidencia de secuencia registrada.
+- [Datos, diccionario y cobertura](docs/DATOS_Y_DICCIONARIO.md).
+- [Índice de auditorías](data_audit.json); cada protocolo y sello identifica el archivo exacto cubierto por SHA256.
 
-Uso archivos locales, sin descargas ni scraping. Los datos grandes permanecen fuera de Git. Conservo metadatos de fixture del archivo histórico como fuente suministrada; no utilizo sus modelos ni sus resultados de evaluación. Cada fuente conserva sus condiciones y el código nuevo tiene licencia MIT.
+models-selected conserva la selección anterior a 2023; phase4-protocol y phase4-protocol-approved son protocolos distintos; phase4-predictions-frozen identifica las predicciones anteriores a cargar resultados oficiales. Los modelos y métricas históricos de DataCamp están excluidos de comparaciones. El trabajo se construyó con el Mundial ya jugado y no se presenta como pronóstico publicado antes del torneo.
+
+Cada fuente conserva sus condiciones originales. El código nuevo tiene licencia MIT.

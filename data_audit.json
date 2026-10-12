@@ -1,9 +1,9 @@
 {
-  "role": "audit index, not a duplicate of frozen audits",
-  "updated_at_utc": "2026-10-12T19:42:10.273250+00:00",
+  "role": "audit index, not a duplicate of frozen or final audit",
+  "updated_at_utc": "2026-10-12T20:58:44.538406+00:00",
   "retrospective": true,
-  "post2022_evidence": "semiconfirmatory due to prior DataCamp exposure; evaluation awaiting explicit approval",
-  "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+  "post2022_evidence": "semiconfirmatory due to prior DataCamp exposure",
+  "final_evaluation_completed": true,
   "authoritative_documents": {
     "reports/models_selected/data_audit.json": {
       "sha256": "d16dd97374da7ce21f59159cd1778b2cf1e6bba6fe39866895332831eab92761"
@@ -11,19 +11,31 @@
     "reports/models_selected/freeze_manifest.json": {
       "sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed"
     },
-    "reports/final_evaluation/protocol.json": {
-      "sha256": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf"
+    "reports/final_evaluation/data_audit.json": {
+      "sha256": "0fa0bdfd169df75d0986f1d89fd4cbf0b82468fa729a13eabe01e980080f21f2"
     },
-    "reports/final_evaluation/protocol_seal.json": {
-      "sha256": "8e89224d676136e20e042f4e27760e65fc58ead4df063c98026f87d917f04987"
+    "reports/final_evaluation/protocol_approved.json": {
+      "sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583"
     },
-    "reports/final_evaluation/pre2023_product_discrepancy.json": {
-      "sha256": "57a562d6658ef0d28299617aad1c57aa6337279c027d85bbb9ad42a53bff260e"
+    "reports/final_evaluation/active_protocol.json": {
+      "sha256": "5b7896fecdd2b3c6dcf055fe158a29cf631021d7be86a19fd3e9bc32d402b29f"
+    },
+    "reports/final_evaluation/predictions_seal.json": {
+      "sha256": "5a52467facd2ffcc7f9a3c7682860fb46b66855d41a615fdb723db963500c6b3"
     }
   },
-  "final_evaluation_audit": {
-    "path": "reports/final_evaluation/data_audit.json",
-    "status": "not yet generated; awaiting evaluation"
+  "commit_authority": {
+    "models": "models-selected",
+    "original_protocol": "phase4-protocol",
+    "approved_protocol": "phase4-protocol-approved",
+    "predictions": "phase4-predictions-frozen",
+    "results": "phase4-evaluated; resolve tag timestamp in Git"
   },
-  "official_worldcup_results_loaded_at_utc": null
+  "first_official_results_load_started_at_utc": "2026-10-12T20:13:34.153917+00:00",
+  "chronology_deviation": {
+    "worldcup_load_overlapped_semiconfirmatory_completion_seconds": 10.312211,
+    "forecast_commit_preceded_load": true,
+    "models_changed": false,
+    "semiconfirmatory_inputs_changed": false
+  }
 }

@@ -88,6 +88,17 @@ def main():
     args=parser.parse_args()
     checks=frozen_checks()
     checks.update(protocol_checks(args.require_tag))
+    if (OUTPUT/'predictions_seal.json').exists():
+        sys.path[:0]=[str(ROOT),str(ROOT/'src'),str(ROOT/'.deps')]
+        from run_final_evaluation import check_prediction_commit
+        checks.update(check_prediction_commit())
+    if (OUTPUT/'data_audit.json').exists():
+        final_audit=json.loads((OUTPUT/'data_audit.json').read_text(encoding='utf-8'))
+        for relative,expected in final_audit['output_sha256'].items():
+            if digest(ROOT/relative)!=expected:raise ValueError(f'Final evidence changed: {relative}')
+        for relative,expected in final_audit['documentation_sha256'].items():
+            if digest(ROOT/relative)!=expected:raise ValueError(f'Documentation changed: {relative}')
+        checks['final_evidence_hashes_checked']=len(final_audit['output_sha256'])
     if args.check_only:
         print(json.dumps(checks,ensure_ascii=False,indent=2));return
     for name in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']:os.environ.setdefault(name,'2')
@@ -99,10 +110,14 @@ def main():
     verification={**checks,'executed_at_utc':utc_now(),'tests_run':result.testsRun,
         'failures':len(result.failures),'errors':len(result.errors),'skipped':len(result.skipped),
         'skip_reasons':[reason for _,reason in result.skipped],'successful':result.wasSuccessful(),
-        'command':'python tools/verify_final_evaluation.py','stage':'protocol, awaiting explicit approval'}
+        'command':'python tools/verify_final_evaluation.py',
+        'stage':'evaluation completed' if (OUTPUT/'worldcup_conclusion.json').exists() else 'protocol or prediction stage'}
     verification['skipped_missing_local_data']=sum(any(token in reason.lower() for token in
         ['local inputs','local archives','local executed feature','raw data']) for _,reason in result.skipped)
     verification['skipped_historical_exclusion']=sum('DataCamp' in reason for _,reason in result.skipped)
+    verification.pop('reserved_metrics_computed',None)
+    verification['integrity_check_computed_metrics']=False
+    verification['post2022_evaluation_executed']=(OUTPUT/'worldcup_conclusion.json').exists()
     print(f"Pruebas: {result.testsRun}; omitidas por datos locales: {verification['skipped_missing_local_data']}; exclusión histórica: {verification['skipped_historical_exclusion']}")
     (OUTPUT/'verification.json').write_text(json.dumps(verification,indent=2,ensure_ascii=False),encoding='utf-8')
     # Check again: neither tests nor verification may mutate frozen artifacts.

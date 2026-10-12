@@ -1,0 +1,17 @@
+{
+  "evaluation_completed_at_utc": "2026-10-12T20:24:41.239874+00:00",
+  "evidence": "descriptive only; 72 below inferential minimum",
+  "groups_evaluated": 72,
+  "knockouts_evaluated": 32,
+  "knockouts_excluded_source_disagreement": 0,
+  "group_openfootball_discrepancies": 0,
+  "group_transfermarkt_discrepancies": 0,
+  "group_transfermarkt_matches": 72,
+  "utc_local_date_differences": 24,
+  "product_discrepancy_mean_percentage_points": 2.190332964005954,
+  "knockout_interpretation": "conditional on hindsight-known participants, same pre-cutoff Elo/form state; no tournament forecasting claim",
+  "first_official_results_load_started_at_utc": "2026-10-12T20:13:34.153917+00:00",
+  "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+  "models_refitted": false,
+  "source_crosswalk_completed_after_initial_comparison": true
+}

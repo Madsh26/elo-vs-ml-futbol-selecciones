@@ -1,0 +1,470 @@
+{
+  "completed_at_utc": "2026-10-12T20:58:44.248003+00:00",
+  "retrospective": true,
+  "sports_cutoff_exclusive": "2026-06-10",
+  "model_training_cutoff_exclusive": "2023-01-01",
+  "evidence_status": "selection / semiconfirmatory / descriptive World Cup",
+  "original_datacamp_comparator_excluded": true,
+  "prior_exposure_matches": 846,
+  "immutable_checks": {
+    "verified_at_utc": "2026-10-12T20:58:34.842631+00:00",
+    "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+    "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "frozen_artifacts_checked": 43,
+    "protected_code_files_checked": 5,
+    "reserved_metrics_computed": false,
+    "protocol_file": "reports/final_evaluation/protocol_approved.json",
+    "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "sealed_at_utc": "2026-10-12T20:04:26.050774+00:00",
+    "protocol_commit": "401c555bd7073ce0b4c7318fe06c71aef6456731",
+    "protocol_commit_time": "2026-10-12T15:04:53-05:00",
+    "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+    "prediction_commit_time": "2026-10-12T15:12:09-05:00"
+  },
+  "protocol": {
+    "protocol_file": "reports/final_evaluation/protocol_approved.json",
+    "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "sealed_at_utc": "2026-10-12T20:04:26.050774+00:00",
+    "human_protocol_file": "reports/final_evaluation/PROTOCOLO_APROBADO.md",
+    "human_protocol_sha256": "b610144ffb5cf353d6e09648cbf2874f1a24d10d29301b37f3a8f40f6c9556e6",
+    "git_tag": "phase4-protocol-approved",
+    "explicit_approval_received": true,
+    "conditions_verified_before_post2022_metrics": true
+  },
+  "predictions": {
+    "sealed_at_utc": "2026-10-12T20:10:42.383251+00:00",
+    "protocol_file": "reports/final_evaluation/protocol_approved.json",
+    "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "protocol_commit": "401c555bd7073ce0b4c7318fe06c71aef6456731",
+    "models_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "model_weights_refitted": false,
+    "group_matches": 72,
+    "teams": 48,
+    "max_symmetry_error": {
+      "frequency": 0.0,
+      "elo": 2.220446049250313e-16,
+      "logistic": 1.1102230246251565e-16,
+      "ordinal": 1.1102230246251565e-16,
+      "xgboost": 0.0,
+      "poisson": 3.3306690738754696e-16,
+      "dixon_coles": 3.3306690738754696e-16,
+      "xgboost_poisson": 3.3306690738754696e-16
+    },
+    "files": {
+      "reports/final_evaluation/group_forecasts_frequency.csv": "0d22dd812a1dd31a1687cd62538d1597d87427c8b723d09937ba894c884e22f2",
+      "reports/final_evaluation/group_forecasts_elo.csv": "fac81e71091bdaf037587fde1c28f3b2019c7b4eb42b0305cae4a6f6fd45b8a8",
+      "reports/final_evaluation/group_forecasts_logistic.csv": "7db3b3b859b3e9f3d9d2e8c60576665188a47d480e0ac42e649134a086250eb8",
+      "reports/final_evaluation/group_forecasts_ordinal.csv": "67b695aca0a1d54fa11a3ec434fdc44c4bbfd013aba462ae0fbc01ec1286cfc3",
+      "reports/final_evaluation/group_forecasts_xgboost.csv": "4afed38b6c81b904175372421bd24bd219a452ae990ce1823aba90cda62fe166",
+      "reports/final_evaluation/group_forecasts_poisson.csv": "0f335f66348e932a0e914b5e1d768739aa89663f72617c1988f377c05b2c39e8",
+      "reports/final_evaluation/group_forecasts_dixon_coles.csv": "0404101b0bf755c6638e11a8aad7a1c9783c5740a610fafc7e1581769715ac6a",
+      "reports/final_evaluation/group_forecasts_xgboost_poisson.csv": "604ca4443d263e727e319397dd9ab4758206215cee41bac74b261da71ce14898",
+      "reports/final_evaluation/group_score_matrix_poisson.csv": "4662848def6c1962462c02f1f3dbd93d0d7622dcef7de12e0b68440f314bbdba",
+      "reports/final_evaluation/features_72_frozen.csv": "fc2a100dc1d51818b6f700a99396812fc85deac166cff5760d0ef2ce5cea5ba9",
+      "reports/final_evaluation/state_at_cutoff.json": "4f61253e56f1ffbd915d7147d56a9e9aa61c223a3ba3e266a865fa41cc70d6be"
+    },
+    "official_worldcup_results_loaded_at_utc": null,
+    "post2022_metrics_computed": false
+  },
+  "first_official_results_load_started_at_utc": "2026-10-12T20:13:34.153917+00:00",
+  "chronology_deviation": {
+    "worldcup_load_overlapped_semiconfirmatory_completion_seconds": 10.312211,
+    "forecast_commit_preceded_load": true,
+    "models_changed": false,
+    "semiconfirmatory_inputs_changed": false
+  },
+  "sequence_strictly_serial": false,
+  "model_weights_refitted": false,
+  "selection_or_threshold_changed_using_post2022_results": false,
+  "dataset": {
+    "executed_at_utc": "2026-10-12T20:37:17.871216+00:00",
+    "history_matches": 49469,
+    "history_first_date": "1872-11-30",
+    "history_latest_date": "2026-06-09",
+    "historical_team_entities": 337,
+    "model_training_matches": 21781,
+    "model_training_first_date": "2000-01-04",
+    "model_training_latest_date": "2022-12-30",
+    "pre2023_history_matches": 45845,
+    "pre2023_walk_forward_matches": 6376,
+    "semiconfirmatory_matches": 3624,
+    "group_forecasts": 72,
+    "worldcup_teams": 48,
+    "independent_verified_duration_matches": 951,
+    "shootouts": 690,
+    "proven_extra_time_goal_matches": 176,
+    "goals_duration_assumed_matches": 34020,
+    "fifa_semester_rows_used_for_diagnostic": 13128,
+    "fifa_last_conservative_availability": "2025-01-01",
+    "history_sha256": "0d0e7c8abda04d8d7723d5bd1d11e70af8f9415727a7c0353be03227e475f8d6",
+    "features_sha256": "d5dc90fe41b0933aeb23c8bb9a3a845cbd6d1e07dd8586a7631b3abb29809ca2",
+    "model_features": [
+      "elo_effective",
+      "gf_diff",
+      "ga_diff",
+      "form_diff",
+      "opponent_diff",
+      "goal_coverage_sum"
+    ],
+    "feature_ranges": {
+      "elo_effective": {
+        "minimum": -2.8285455672137823,
+        "maximum": 3.329794612833049,
+        "missing": 0,
+        "distinct_values": 49434
+      },
+      "gf_diff": {
+        "minimum": -7.375000000000001,
+        "maximum": 6.500000000000001,
+        "missing": 0,
+        "distinct_values": 798
+      },
+      "ga_diff": {
+        "minimum": -8.5,
+        "maximum": 9.079166666666667,
+        "missing": 0,
+        "distinct_values": 919
+      },
+      "form_diff": {
+        "minimum": -0.625,
+        "maximum": 0.625,
+        "missing": 0,
+        "distinct_values": 211
+      },
+      "opponent_diff": {
+        "minimum": -1.7217308910068914,
+        "maximum": 1.992782718077039,
+        "missing": 0,
+        "distinct_values": 49403
+      },
+      "goal_coverage_sum": {
+        "minimum": 0.0,
+        "maximum": 2.0,
+        "missing": 0,
+        "distinct_values": 3
+      }
+    }
+  },
+  "semiconfirmatory": {
+    "evaluation_completed_at_utc": "2026-10-12T20:13:44.466128+00:00",
+    "evidence": "semiconfirmatory, not untouched",
+    "selection_confirmed": true,
+    "blocks_improving": 4,
+    "primary_log_loss_difference": -0.008868507034180831,
+    "primary_log_loss_difference_ci": [
+      -0.014749163857872945,
+      -0.0033667985566373636
+    ],
+    "primary_brier_difference": -0.006301907929577991,
+    "model_weights_refitted": false,
+    "product_discrepancy_mean_percentage_points": 2.474811432385552,
+    "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+    "matches": 3624,
+    "actual_quarter_clusters": 14,
+    "actual_month_clusters": 39
+  },
+  "worldcup": {
+    "evaluation_completed_at_utc": "2026-10-12T20:24:41.239874+00:00",
+    "evidence": "descriptive only; 72 below inferential minimum",
+    "groups_evaluated": 72,
+    "knockouts_evaluated": 32,
+    "knockouts_excluded_source_disagreement": 0,
+    "group_openfootball_discrepancies": 0,
+    "group_transfermarkt_discrepancies": 0,
+    "group_transfermarkt_matches": 72,
+    "utc_local_date_differences": 24,
+    "product_discrepancy_mean_percentage_points": 2.190332964005954,
+    "knockout_interpretation": "conditional on hindsight-known participants, same pre-cutoff Elo/form state; no tournament forecasting claim",
+    "first_official_results_load_started_at_utc": "2026-10-12T20:13:34.153917+00:00",
+    "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+    "models_refitted": false,
+    "source_crosswalk_completed_after_initial_comparison": true
+  },
+  "sources": [
+    {
+      "file": "data/raw/international_results_current.zip",
+      "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
+      "role": "Historical results, goal events and shootouts filtered by cutoff; post-cutoff target values are not admitted."
+    },
+    {
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
+      "role": "Fjelstul historical period verification."
+    },
+    {
+      "file": "reports/probabilistic/resolved_fixtures.csv",
+      "sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+      "role": "Fixture metadata only."
+    },
+    {
+      "file": "data/raw/datacamp_worldcup_notebook.pdf",
+      "sha256": "1409bca81056893d22c302a64b01fef657a3ff0294bdc4ad958d40bd164f8dec",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2018_statistics.csv",
+      "sha256": "c1f6229b642389b796b4c79e72c80802924f962fc7463a9eba83d49c5b842176",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2022_match_data.csv",
+      "sha256": "2757d74f93b8916277e75e2e874f46985212a6a6c3c498306cf536669584bf6c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_rank_repeated_snapshot_excluded.csv",
+      "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
+      "role": "Excluded repeated snapshot; fingerprint only."
+    },
+    {
+      "file": "data/raw/fifa_rank_semesters.zip",
+      "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
+      "role": "Secondary enrichment candidate; not used in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2014_teams.csv",
+      "sha256": "9c497ec461ba98ea5e84f0e3010bf61c5a6af16538fc815f96fc78e130376ba5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2018_matches.csv",
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2022_teams.csv",
+      "sha256": "837d2f96a1b1b31d2ec618c4511240c92c1dd96aa102c76c77d376dec9ef6cda",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/geonames_cities15000.zip",
+      "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
+      "role": "Static altitude reserved for context; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/international_results_baseline.zip",
+      "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/openfootball_worldcup.zip",
+      "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
+      "role": "Openfootball reserved for sealed evaluation; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/statsbomb_open_data.zip",
+      "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
+      "role": "Validation only; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/transfermarkt.duckdb",
+      "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+      "role": "Dated valuations and snapshot metadata; separate audit before enrichment."
+    },
+    {
+      "file": "data/raw/transfermarkt_repository.zip",
+      "sha256": "d684fe944e12d80e99740b69653aede13a4f309911c9d2d4dd955e5c23376ba5",
+      "role": "Repository code without valuation/player data; unavailable enrichment."
+    },
+    {
+      "file": "data/raw/worldcup_fixtures.zip",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
+      "role": "Not used as model input in this preparation."
+    }
+  ],
+  "verification_at_publication": {
+    "verified_at_utc": "2026-10-12T20:42:31.114712+00:00",
+    "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+    "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "frozen_artifacts_checked": 43,
+    "protected_code_files_checked": 5,
+    "protocol_file": "reports/final_evaluation/protocol_approved.json",
+    "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "sealed_at_utc": "2026-10-12T20:04:26.050774+00:00",
+    "protocol_commit": "401c555bd7073ce0b4c7318fe06c71aef6456731",
+    "protocol_commit_time": "2026-10-12T15:04:53-05:00",
+    "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+    "prediction_commit_time": "2026-10-12T15:12:09-05:00",
+    "executed_at_utc": "2026-10-12T20:43:28.882188+00:00",
+    "tests_run": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "skip_reasons": [
+      "Reproducción del pipeline histórico DataCamp excluida de los comparadores del estudio"
+    ],
+    "successful": true,
+    "command": "python tools/verify_final_evaluation.py",
+    "stage": "evaluation completed",
+    "skipped_missing_local_data": 0,
+    "skipped_historical_exclusion": 1,
+    "integrity_check_computed_metrics": false,
+    "post2022_evaluation_executed": true
+  },
+  "runtime": {
+    "python": "3.14.3",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.0",
+    "xgboost": "3.4.1",
+    "joblib": "1.5.3"
+  },
+  "data_assumptions": [
+    "final score used where 90 minutes unverified, same admission for every score",
+    "no shootout-to-draw conversion",
+    "identical goal rows retained",
+    "all same-date pre-match states evaluated before outcome updates",
+    "current player value/club/nationality and undated national_teams not used",
+    "no current FIFA ranking extrapolation"
+  ],
+  "source_crosswalk_2026": {
+    "Turkiye": "Turkey",
+    "Democratic Republic of the Congo": "DR Congo"
+  },
+  "cluster_units": {
+    "quarter_primary": 2000,
+    "month_sensitivity": 2000,
+    "seed": 20261012,
+    "observed_all_quarters": 14,
+    "observed_all_months": 39,
+    "nonfriendly_observed_months": 33
+  },
+  "estimability": {
+    "minimum_matches": 200,
+    "minimum_each_class": 30
+  },
+  "html_review": {
+    "recorded_at_utc": "2026-10-12T20:49:00.396398+00:00",
+    "method": "Codex browser, local 127.0.0.1 page; screenshot and live controls",
+    "html_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
+    "javascript_syntax_check": "node tools/check_report_js.js, passed",
+    "observed_matches": 72,
+    "observed_model_options": 8,
+    "search_Colombia_matches": 3,
+    "verified_controls": [
+      "selection search",
+      "model selector: logistic and Poisson",
+      "match detail selection"
+    ],
+    "verified_match": "Colombia vs Portugal, 2026-06-27; recorded score 0-0",
+    "distinct_products_visible": true,
+    "screenshot_file": "assets/report_preview.png",
+    "screenshot_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
+    "browser_initial_javascript_escape_error_fixed_before_delivery": true
+  },
+  "output_sha256": {
+    "reports/final_evaluation/active_protocol.json": "5b7896fecdd2b3c6dcf055fe158a29cf631021d7be86a19fd3e9bc32d402b29f",
+    "reports/final_evaluation/chronology.jsonl": "58f682e9886e3106b42248fd961dfe121e5cb02259e38c0241c2c0cd4ee0a4c6",
+    "reports/final_evaluation/data_competition_coverage.csv": "67f723a7e8589b16fc8e622fed20622058f93374705086d8dcc1e88251a01b9e",
+    "reports/final_evaluation/data_inventory.json": "c0a82389b3a9eb6134ac052de2c76036947e50a5eca879a508866dedeca369d2",
+    "reports/final_evaluation/data_year_coverage.csv": "2ab9e1641bd608e2327f644143bf2f925f02eb08b8f6fcfaf605fc0da2a3a1f8",
+    "reports/final_evaluation/features_72_frozen.csv": "fc2a100dc1d51818b6f700a99396812fc85deac166cff5760d0ef2ce5cea5ba9",
+    "reports/final_evaluation/football_report.html": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
+    "reports/final_evaluation/group_forecasts_dixon_coles.csv": "0404101b0bf755c6638e11a8aad7a1c9783c5740a610fafc7e1581769715ac6a",
+    "reports/final_evaluation/group_forecasts_elo.csv": "fac81e71091bdaf037587fde1c28f3b2019c7b4eb42b0305cae4a6f6fd45b8a8",
+    "reports/final_evaluation/group_forecasts_frequency.csv": "0d22dd812a1dd31a1687cd62538d1597d87427c8b723d09937ba894c884e22f2",
+    "reports/final_evaluation/group_forecasts_logistic.csv": "7db3b3b859b3e9f3d9d2e8c60576665188a47d480e0ac42e649134a086250eb8",
+    "reports/final_evaluation/group_forecasts_ordinal.csv": "67b695aca0a1d54fa11a3ec434fdc44c4bbfd013aba462ae0fbc01ec1286cfc3",
+    "reports/final_evaluation/group_forecasts_poisson.csv": "0f335f66348e932a0e914b5e1d768739aa89663f72617c1988f377c05b2c39e8",
+    "reports/final_evaluation/group_forecasts_xgboost.csv": "4afed38b6c81b904175372421bd24bd219a452ae990ce1823aba90cda62fe166",
+    "reports/final_evaluation/group_forecasts_xgboost_poisson.csv": "604ca4443d263e727e319397dd9ab4758206215cee41bac74b261da71ce14898",
+    "reports/final_evaluation/group_results_90.csv": "68ccc5587e58abba3843e01c760c9bbe558b6c5e9f18d386170139f0759fcd34",
+    "reports/final_evaluation/group_score_matrix_poisson.csv": "4662848def6c1962462c02f1f3dbd93d0d7622dcef7de12e0b68440f314bbdba",
+    "reports/final_evaluation/html_review.json": "9b601496ced363c6000ae26ac56f6e5f75966fecf5fb4095ffa523d241587dcd",
+    "reports/final_evaluation/hygiene_inventory.json": "3eca4ee21df47cbae23d38f10d5f0ae433829c7a0789c45c2494f2abd68d09a4",
+    "reports/final_evaluation/ingestion_precut_audit.json": "920ea82047be8624600a6beccc565c19933be96293f0307c30c456c6ffd95bf1",
+    "reports/final_evaluation/knockout_source_comparison.csv": "436e36a34b4a8838714bc36ad0753c323af021e57b7ce816969f680709915f8b",
+    "reports/final_evaluation/official_results_load_record.json": "505f53143894198dbe837472e72eb958659f2b4449649dabbb1b49e096cb6cc7",
+    "reports/final_evaluation/official_worldcup_results_source.csv": "0b5bc7b1be969e3d6ca8b5ee8188d2e8e660725fb46b29ef50277dcaa8b51959",
+    "reports/final_evaluation/openfootball_worldcup_90.csv": "10caa5cfc6187b18dd0d20e4f25520b973dfe34121dd47e1bc0922383016f1a5",
+    "reports/final_evaluation/pre2023_product_discrepancy.json": "57a562d6658ef0d28299617aad1c57aa6337279c027d85bbb9ad42a53bff260e",
+    "reports/final_evaluation/predictions_seal.json": "5a52467facd2ffcc7f9a3c7682860fb46b66855d41a615fdb723db963500c6b3",
+    "reports/final_evaluation/protocol.json": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf",
+    "reports/final_evaluation/PROTOCOLO.md": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a",
+    "reports/final_evaluation/PROTOCOLO_APROBADO.md": "b610144ffb5cf353d6e09648cbf2874f1a24d10d29301b37f3a8f40f6c9556e6",
+    "reports/final_evaluation/protocol_approved.json": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+    "reports/final_evaluation/protocol_seal.json": "8e89224d676136e20e042f4e27760e65fc58ead4df063c98026f87d917f04987",
+    "reports/final_evaluation/report_manifest.json": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
+    "reports/final_evaluation/RESULTADOS.md": "cc0191b9b078d77e4bd884cca85b57c8628c9d64aea20dab79993c1f10a91379",
+    "reports/final_evaluation/semiconfirmatory_calibration.csv": "d50536784c5837136437d7188300b84d4c34835fdb0693036fdfe9ba4e6a1981",
+    "reports/final_evaluation/semiconfirmatory_conclusion.json": "5b57ff22607302772b5f237dde4324cacadd963883df006ee1436285bb9849fa",
+    "reports/final_evaluation/semiconfirmatory_metrics.csv": "3359434d68178aa9576c0b91ec3177b0154cd4021aca1b0cb2274514b0a83f59",
+    "reports/final_evaluation/semiconfirmatory_monthly_sensitivity.csv": "338fefbcf7547f7d6d20b1c12874861dd19a366b69e93d650f79976ce940fc7e",
+    "reports/final_evaluation/semiconfirmatory_probabilities_dixon_coles.csv": "d5f9e1f9461b5dad2356353a25b063b68a79602966b9bbc7cd3c3a4ab807bd00",
+    "reports/final_evaluation/semiconfirmatory_probabilities_elo.csv": "49567e1d2d7938ebbe9b67f1a38fd02f89aa4f6a819a7cf7255b808d5ddf49d5",
+    "reports/final_evaluation/semiconfirmatory_probabilities_frequency.csv": "35b9d7a8554f0752ca503bade4c937df952924486b29e4a31c275fedbe1d0b61",
+    "reports/final_evaluation/semiconfirmatory_probabilities_logistic.csv": "45585b377e65200f25d3f84bc23d5e86a6d0cbea288e0d335db01715458293b1",
+    "reports/final_evaluation/semiconfirmatory_probabilities_ordinal.csv": "921899a8e93a6e449b5b2ed63df90ef80bd48b055f15109bf35676d12f7f56b9",
+    "reports/final_evaluation/semiconfirmatory_probabilities_poisson.csv": "6013303b147b74cd21bf1da2b3e600de4508db2fbaf6918347dc2641ce194e23",
+    "reports/final_evaluation/semiconfirmatory_probabilities_xgboost.csv": "7ba2d1d158e37017da39b360d5bfc3984ae978c3bb2a77ca0d5511ca6949a489",
+    "reports/final_evaluation/semiconfirmatory_probabilities_xgboost_poisson.csv": "bdc48662f997cab755cea1260857acfdfc00a119d977bb948d32b84ba7681035",
+    "reports/final_evaluation/semiconfirmatory_reliability.csv": "df9fa752ab6ab45702cfae484b4844aa19de6fa169fd4d5f7c5b5df3c17a6225",
+    "reports/final_evaluation/semiconfirmatory_scored_dixon_coles.csv": "f6398513c66bf3aa65a4be48c40dbeb945da386c4594160a3115be6bbf1803cd",
+    "reports/final_evaluation/semiconfirmatory_scored_elo.csv": "314311f5b492b407353ff2bf565f414311ed10872df8bbac51e3f30abedfae69",
+    "reports/final_evaluation/semiconfirmatory_scored_frequency.csv": "959f940c411ef052752b84dc215d5f97b0ac9c22a66189d7725a64082d592116",
+    "reports/final_evaluation/semiconfirmatory_scored_logistic.csv": "5505f96ddfc87b23d1c51ed8ae90bacc157a64a6f606624fb4e5ee96e9016a61",
+    "reports/final_evaluation/semiconfirmatory_scored_ordinal.csv": "6e8d3a06b989673376d09f8ebfa9ab9feff8e9ca9deb1572024d55362eaee494",
+    "reports/final_evaluation/semiconfirmatory_scored_poisson.csv": "4dd41baaafc51cf564860ccf96120a0ce81339586d9537ac5f5397f4850c8687",
+    "reports/final_evaluation/semiconfirmatory_scored_xgboost.csv": "46e85dd040d56a610c47442c4b62e6b3e4d07017ae39bcb39491ebc2468682cd",
+    "reports/final_evaluation/semiconfirmatory_scored_xgboost_poisson.csv": "727ce481c206e6cd262532b9f7c52665b52dbaf9e7d7977169917f102d7343b8",
+    "reports/final_evaluation/semiconfirmatory_subperiods.csv": "67412f6708eb88d2ae12eb97b314f968ed62443c6af567c07edcb57fba07afa5",
+    "reports/final_evaluation/source_verification_aliases.csv": "54d4ca5501d3e03b5ee56db1165f2dca33d3752b6f289253fba457e50fc71e18",
+    "reports/final_evaluation/state_at_cutoff.json": "4f61253e56f1ffbd915d7147d56a9e9aa61c223a3ba3e266a865fa41cc70d6be",
+    "reports/final_evaluation/threshold_pre2023_counts.csv": "feee57f8e3a45ae15f31a0f76007f3eb209d9f5a751b43b7c637e26ba9a54f5a",
+    "reports/final_evaluation/threshold_preflight.json": "e044cd17852a19746c12a2424eea0712f9d9c66640e63eaf108ce26db6d5a84a",
+    "reports/final_evaluation/transfermarkt_worldcup_results_source.csv": "d08b1606a9b2b9358ea7781a6ea7cdda8d322809435b31c6c813a6662612d20b",
+    "reports/final_evaluation/worldcup_48_elo_2022_12_31.csv": "cd5454d85f8d492b6841200a9a70097ac2009bee8b70ef60ceed1bf643ed69b6",
+    "reports/final_evaluation/worldcup_conclusion.json": "8b00528a4fc2f65a732305fd3335f09d6bff0f212b0787c1e53c0b7f6fa812b6",
+    "reports/final_evaluation/worldcup_group_calibration.csv": "b5b619f2e7212f2207c16c56653f36cf6b446297953df7784e6b381cd76eb43e",
+    "reports/final_evaluation/worldcup_group_metrics.csv": "924fa91421cac659e8ca1eae4d545ab7ed20553083ffc72343322b89cc6bb0c5",
+    "reports/final_evaluation/worldcup_group_reliability.csv": "1880d91e0a321fc54cf1f3e6e2e712a801592b23edc08fb74db2e4fe7dee5bae",
+    "reports/final_evaluation/worldcup_group_scored_dixon_coles.csv": "3c71400ce151fd0f29ed299e16063f569fe72efab953cb1c52e3f7d4af91b018",
+    "reports/final_evaluation/worldcup_group_scored_elo.csv": "9998bb944bb79c6760f64eafd9edcd6ae2b07a0c1198414143feedb2e796ec31",
+    "reports/final_evaluation/worldcup_group_scored_frequency.csv": "e738c180d013cf1a2efda1a3e64e8ec9c7933e4366e2319d51639f82496c353e",
+    "reports/final_evaluation/worldcup_group_scored_logistic.csv": "d81c801a26737d38229801a11618b4fc16b69d3e003ca4eaef767ee03c9178da",
+    "reports/final_evaluation/worldcup_group_scored_ordinal.csv": "3de2f10485a6b76486be10db62b4ad42fddd0b2f89de03104ccd3d30fddbb046",
+    "reports/final_evaluation/worldcup_group_scored_poisson.csv": "5da8897e0f1f749c5b23638f5b3ad02108c0914b5ad73aec241768e28330da8e",
+    "reports/final_evaluation/worldcup_group_scored_xgboost.csv": "ac1e23b885f9fff247f4efcb4714c49294c4573d667df9dbefc663b5160c0d5f",
+    "reports/final_evaluation/worldcup_group_scored_xgboost_poisson.csv": "6dde955452689bdae2105d81476b5047c1ca01c0103ed2daba9cbebc569c3367",
+    "reports/final_evaluation/worldcup_knockout_calibration.csv": "aeb46fb98827a2c0ffc40bcb99e2f5875ebef615acfdf4bc7d57bec1e72d6533",
+    "reports/final_evaluation/worldcup_knockout_metrics.csv": "dfe996824c1830db5d107d7f51405e0ccd6c38b14457da3a5bf2a7a57d9fe951",
+    "reports/final_evaluation/worldcup_knockout_reliability.csv": "16b78b433148ed5872d7ab684f2e4d863796d12b84b2f4ca2a8047f927546e40",
+    "reports/final_evaluation/worldcup_knockout_scored_dixon_coles.csv": "7b138c9ad7ab99b4f5142f975b944742939640272b4617ef2424cc2eb9c8ed04",
+    "reports/final_evaluation/worldcup_knockout_scored_elo.csv": "cdacb4f9b7b00dc5a66f52062ed2e2730b8c2b632978e0de48464640f3d9f071",
+    "reports/final_evaluation/worldcup_knockout_scored_frequency.csv": "f55c1312f516a532997db5d6aa3b7304f4b17ecc58df3ed3490cf49478605b32",
+    "reports/final_evaluation/worldcup_knockout_scored_logistic.csv": "5ef0125503316b39f572a5798dad8731f061556818d1dbe32f16a9ae8777418e",
+    "reports/final_evaluation/worldcup_knockout_scored_ordinal.csv": "56fa86d59a911bb45a22cdd71c075c931d3b119b91923ada271da6651909ccd3",
+    "reports/final_evaluation/worldcup_knockout_scored_poisson.csv": "944489171b3a46c5156f5af589194f70bcbaeb3859366f1414321d2f7d219400",
+    "reports/final_evaluation/worldcup_knockout_scored_xgboost.csv": "19d6d4a4d5641967f9868edca8ce653be181ea7fdb40375f543d32d6a8b62d91",
+    "reports/final_evaluation/worldcup_knockout_scored_xgboost_poisson.csv": "326d40c57f3e5e8ea329207e83faba4cced51e496362970f7cb0d09021333aa9",
+    "reports/final_evaluation/worldcup_largest_errors.csv": "7d3e6ae1997d7c564a0dc8487066cd34118f99e2cfe694bb7c3d1a1c24ae026b",
+    "reports/final_evaluation/worldcup_source_comparison.csv": "143502a938eb49259bca1173c2049682735662a1bc3dcc2b1c2e33ad9efd9794",
+    "reports/final_evaluation/worldcup_unmatched.csv": "b4be087fd2466436941c7379cdcaeec05b1513224e31970f88800a69ba44a960"
+  },
+  "local_intermediate_sha256": {
+    "history_precut.csv": "0d0e7c8abda04d8d7723d5bd1d11e70af8f9415727a7c0353be03227e475f8d6",
+    "features_precut.csv": "d5dc90fe41b0933aeb23c8bb9a3a845cbd6d1e07dd8586a7631b3abb29809ca2"
+  },
+  "documentation_sha256": {
+    "README.md": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+    "RESULTADOS.md": "04c828dac99319166573657481e375658211e27efb8c0d01c95b345180465d0e",
+    "docs/DECISIONES_DE_DISEÑO.md": "c418ec6be0602454e2a7b918fcf4877a0fcad436682516c5ffab14930654e776",
+    "docs/DATOS_Y_DICCIONARIO.md": "46335d1277c44c290da1ce66cfa4a3c3bf4214c38389fb6119a78cee83121a22"
+  },
+  "asset_sha256": {
+    "assets/calibration.png": "4706950c40e9778f47e5b45aa2baf19ca9abb403ba2d95160bc2231e977ab3aa",
+    "assets/model_comparison.png": "abea1d7e5a825051e9ea478c26122b2e3f5901675cfc23400ac5830b744372d1",
+    "assets/model_comparison.svg": "f5eb33635bc3acbb034ec75456d163b21cbff7874b60f6ae9a5b56e7e9422778",
+    "assets/report_preview.png": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1"
+  },
+  "final_evaluator_code_sha256_lf_normalized": {
+    "src/football_forecast/final_evaluation.py": "bf27b5e16a27d107548ca5c34c7b8e8419bc0d46118cf6e5a552049e91fa1e77",
+    "run_final_evaluation.py": "db00a9032cf9e45237f9929de50f33619b0d3b1d90309e5459f93926ea711c79"
+  }
+}

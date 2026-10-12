@@ -1,0 +1,105 @@
+date,date_utc,home_team,away_team,recorded_home_score,recorded_away_score,home_score_90,away_score_90,extra_time,shootout_record,stage,group,openfootball_match_id,venue
+2026-06-11,2026-06-11 19:00:00,Mexico,South Africa,2,0,2,0,False,False,group,A,,Mexico City
+2026-06-11,2026-06-12 02:00:00,Korea Republic,Czech Republic,2,1,2,1,False,False,group,A,,Guadalajara (Zapopan)
+2026-06-18,2026-06-18 16:00:00,Czech Republic,South Africa,1,1,1,1,False,False,group,A,,Atlanta
+2026-06-18,2026-06-19 01:00:00,Mexico,Korea Republic,1,0,1,0,False,False,group,A,,Guadalajara (Zapopan)
+2026-06-24,2026-06-25 01:00:00,Czech Republic,Mexico,0,3,0,3,False,False,group,A,,Mexico City
+2026-06-24,2026-06-25 01:00:00,South Africa,Korea Republic,1,0,1,0,False,False,group,A,,Monterrey (Guadalupe)
+2026-06-12,2026-06-12 19:00:00,Canada,Bosnia-Herzegovina,1,1,1,1,False,False,group,B,,Toronto
+2026-06-13,2026-06-13 19:00:00,Qatar,Switzerland,1,1,1,1,False,False,group,B,,San Francisco Bay Area (Santa Clara)
+2026-06-18,2026-06-18 19:00:00,Switzerland,Bosnia-Herzegovina,4,1,4,1,False,False,group,B,,Los Angeles (Inglewood)
+2026-06-18,2026-06-18 22:00:00,Canada,Qatar,6,0,6,0,False,False,group,B,,Vancouver
+2026-06-24,2026-06-24 19:00:00,Switzerland,Canada,2,1,2,1,False,False,group,B,,Vancouver
+2026-06-24,2026-06-24 19:00:00,Bosnia-Herzegovina,Qatar,3,1,3,1,False,False,group,B,,Seattle
+2026-06-13,2026-06-13 22:00:00,Brazil,Morocco,1,1,1,1,False,False,group,C,,New York/New Jersey (East Rutherford)
+2026-06-13,2026-06-14 01:00:00,Haiti,Scotland,0,1,0,1,False,False,group,C,,Boston (Foxborough)
+2026-06-19,2026-06-19 22:00:00,Scotland,Morocco,0,1,0,1,False,False,group,C,,Boston (Foxborough)
+2026-06-19,2026-06-20 00:30:00,Brazil,Haiti,3,0,3,0,False,False,group,C,,Philadelphia
+2026-06-24,2026-06-24 22:00:00,Scotland,Brazil,0,3,0,3,False,False,group,C,,Miami (Miami Gardens)
+2026-06-24,2026-06-24 22:00:00,Morocco,Haiti,4,2,4,2,False,False,group,C,,Atlanta
+2026-06-12,2026-06-13 01:00:00,United States,Paraguay,4,1,4,1,False,False,group,D,,Los Angeles (Inglewood)
+2026-06-13,2026-06-14 04:00:00,Australia,Turkey,2,0,2,0,False,False,group,D,,Vancouver
+2026-06-19,2026-06-19 19:00:00,United States,Australia,2,0,2,0,False,False,group,D,,Seattle
+2026-06-19,2026-06-20 03:00:00,Turkey,Paraguay,0,1,0,1,False,False,group,D,,San Francisco Bay Area (Santa Clara)
+2026-06-25,2026-06-26 02:00:00,Turkey,United States,3,2,3,2,False,False,group,D,,Los Angeles (Inglewood)
+2026-06-25,2026-06-26 02:00:00,Paraguay,Australia,0,0,0,0,False,False,group,D,,San Francisco Bay Area (Santa Clara)
+2026-06-14,2026-06-14 17:00:00,Germany,Curacao,7,1,7,1,False,False,group,E,,Houston
+2026-06-14,2026-06-14 23:00:00,Ivory Coast,Ecuador,1,0,1,0,False,False,group,E,,Philadelphia
+2026-06-20,2026-06-20 20:00:00,Germany,Ivory Coast,2,1,2,1,False,False,group,E,,Toronto
+2026-06-20,2026-06-21 00:00:00,Ecuador,Curacao,0,0,0,0,False,False,group,E,,Kansas City
+2026-06-25,2026-06-25 20:00:00,Curacao,Ivory Coast,0,2,0,2,False,False,group,E,,Philadelphia
+2026-06-25,2026-06-25 20:00:00,Ecuador,Germany,2,1,2,1,False,False,group,E,,New York/New Jersey (East Rutherford)
+2026-06-14,2026-06-14 20:00:00,Netherlands,Japan,2,2,2,2,False,False,group,F,,Dallas (Arlington)
+2026-06-14,2026-06-15 02:00:00,Sweden,Tunisia,5,1,5,1,False,False,group,F,,Monterrey (Guadalupe)
+2026-06-20,2026-06-20 17:00:00,Netherlands,Sweden,5,1,5,1,False,False,group,F,,Houston
+2026-06-20,2026-06-21 04:00:00,Tunisia,Japan,0,4,0,4,False,False,group,F,,Monterrey (Guadalupe)
+2026-06-25,2026-06-25 23:00:00,Japan,Sweden,1,1,1,1,False,False,group,F,,Dallas (Arlington)
+2026-06-25,2026-06-25 23:00:00,Tunisia,Netherlands,1,3,1,3,False,False,group,F,,Kansas City
+2026-06-15,2026-06-15 19:00:00,Belgium,Egypt,1,1,1,1,False,False,group,G,,Seattle
+2026-06-15,2026-06-16 01:00:00,IR Iran,New Zealand,2,2,2,2,False,False,group,G,,Los Angeles (Inglewood)
+2026-06-21,2026-06-21 19:00:00,Belgium,IR Iran,0,0,0,0,False,False,group,G,,Los Angeles (Inglewood)
+2026-06-21,2026-06-22 01:00:00,New Zealand,Egypt,1,3,1,3,False,False,group,G,,Vancouver
+2026-06-26,2026-06-27 03:00:00,Egypt,IR Iran,1,1,1,1,False,False,group,G,,Seattle
+2026-06-26,2026-06-27 03:00:00,New Zealand,Belgium,1,5,1,5,False,False,group,G,,Vancouver
+2026-06-15,2026-06-15 16:00:00,Spain,Cabo Verde,0,0,0,0,False,False,group,H,,Atlanta
+2026-06-15,2026-06-15 22:00:00,Saudi Arabia,Uruguay,1,1,1,1,False,False,group,H,,Miami (Miami Gardens)
+2026-06-21,2026-06-21 16:00:00,Spain,Saudi Arabia,4,0,4,0,False,False,group,H,,Atlanta
+2026-06-21,2026-06-21 22:00:00,Uruguay,Cabo Verde,2,2,2,2,False,False,group,H,,Miami (Miami Gardens)
+2026-06-26,2026-06-27 00:00:00,Cabo Verde,Saudi Arabia,0,0,0,0,False,False,group,H,,Houston
+2026-06-26,2026-06-27 00:00:00,Uruguay,Spain,0,1,0,1,False,False,group,H,,Guadalajara (Zapopan)
+2026-06-16,2026-06-16 19:00:00,France,Senegal,3,1,3,1,False,False,group,I,,New York/New Jersey (East Rutherford)
+2026-06-16,2026-06-16 22:00:00,Iraq,Norway,1,4,1,4,False,False,group,I,,Boston (Foxborough)
+2026-06-22,2026-06-22 21:00:00,France,Iraq,3,0,3,0,False,False,group,I,,Philadelphia
+2026-06-22,2026-06-23 00:00:00,Norway,Senegal,3,2,3,2,False,False,group,I,,New York/New Jersey (East Rutherford)
+2026-06-26,2026-06-26 19:00:00,Norway,France,1,4,1,4,False,False,group,I,,Boston (Foxborough)
+2026-06-26,2026-06-26 19:00:00,Senegal,Iraq,5,0,5,0,False,False,group,I,,Toronto
+2026-06-16,2026-06-17 01:00:00,Argentina,Algeria,3,0,3,0,False,False,group,J,,Kansas City
+2026-06-16,2026-06-17 04:00:00,Austria,Jordan,3,1,3,1,False,False,group,J,,San Francisco Bay Area (Santa Clara)
+2026-06-22,2026-06-22 17:00:00,Argentina,Austria,2,0,2,0,False,False,group,J,,Dallas (Arlington)
+2026-06-22,2026-06-23 03:00:00,Jordan,Algeria,1,2,1,2,False,False,group,J,,San Francisco Bay Area (Santa Clara)
+2026-06-27,2026-06-28 02:00:00,Algeria,Austria,3,3,3,3,False,False,group,J,,Kansas City
+2026-06-27,2026-06-28 02:00:00,Jordan,Argentina,1,3,1,3,False,False,group,J,,Dallas (Arlington)
+2026-06-17,2026-06-17 17:00:00,Portugal,DR Congo,1,1,1,1,False,False,group,K,,Houston
+2026-06-17,2026-06-18 02:00:00,Uzbekistan,Colombia,1,3,1,3,False,False,group,K,,Mexico City
+2026-06-23,2026-06-23 17:00:00,Portugal,Uzbekistan,5,0,5,0,False,False,group,K,,Houston
+2026-06-23,2026-06-24 02:00:00,Colombia,DR Congo,1,0,1,0,False,False,group,K,,Guadalajara (Zapopan)
+2026-06-27,2026-06-27 23:30:00,Colombia,Portugal,0,0,0,0,False,False,group,K,,Miami (Miami Gardens)
+2026-06-27,2026-06-27 23:30:00,DR Congo,Uzbekistan,3,1,3,1,False,False,group,K,,Atlanta
+2026-06-17,2026-06-17 20:00:00,England,Croatia,4,2,4,2,False,False,group,L,,Dallas (Arlington)
+2026-06-17,2026-06-17 23:00:00,Ghana,Panama,1,0,1,0,False,False,group,L,,Toronto
+2026-06-23,2026-06-23 20:00:00,England,Ghana,0,0,0,0,False,False,group,L,,Boston (Foxborough)
+2026-06-23,2026-06-23 23:00:00,Panama,Croatia,0,1,0,1,False,False,group,L,,Toronto
+2026-06-27,2026-06-27 21:00:00,Panama,England,0,2,0,2,False,False,group,L,,New York/New Jersey (East Rutherford)
+2026-06-27,2026-06-27 21:00:00,Croatia,Ghana,2,1,2,1,False,False,group,L,,Philadelphia
+2026-06-28,2026-06-28 19:00:00,South Africa,Canada,0,1,0,1,False,False,knockout,,73,Los Angeles (Inglewood)
+2026-06-29,2026-06-29 20:30:00,Germany,Paraguay,1,1,1,1,True,True,knockout,,74,Boston (Foxborough)
+2026-06-29,2026-06-30 01:00:00,Netherlands,Morocco,1,1,1,1,True,True,knockout,,75,Monterrey (Guadalupe)
+2026-06-29,2026-06-29 17:00:00,Brazil,Japan,2,1,2,1,False,False,knockout,,76,Houston
+2026-06-30,2026-06-30 21:00:00,France,Sweden,3,0,3,0,False,False,knockout,,77,New York/New Jersey (East Rutherford)
+2026-06-30,2026-06-30 17:00:00,Ivory Coast,Norway,1,2,1,2,False,False,knockout,,78,Dallas (Arlington)
+2026-06-30,2026-07-01 01:00:00,Mexico,Ecuador,2,0,2,0,False,False,knockout,,79,Mexico City
+2026-07-01,2026-07-01 16:00:00,England,DR Congo,2,1,2,1,False,False,knockout,,80,Atlanta
+2026-07-01,2026-07-02 00:00:00,United States,Bosnia-Herzegovina,2,0,2,0,False,False,knockout,,81,San Francisco Bay Area (Santa Clara)
+2026-07-01,2026-07-01 20:00:00,Belgium,Senegal,3,2,2,2,True,False,knockout,,82,Seattle
+2026-07-02,2026-07-02 23:00:00,Portugal,Croatia,2,1,2,1,False,False,knockout,,83,Toronto
+2026-07-02,2026-07-02 19:00:00,Spain,Austria,3,0,3,0,False,False,knockout,,84,Los Angeles (Inglewood)
+2026-07-02,2026-07-03 03:00:00,Switzerland,Algeria,2,0,2,0,False,False,knockout,,85,Vancouver
+2026-07-03,2026-07-03 22:00:00,Argentina,Cabo Verde,3,2,1,1,True,False,knockout,,86,Miami (Miami Gardens)
+2026-07-03,2026-07-04 01:30:00,Colombia,Ghana,1,0,1,0,False,False,knockout,,87,Kansas City
+2026-07-03,2026-07-03 18:00:00,Australia,Egypt,1,1,1,1,True,True,knockout,,88,Dallas (Arlington)
+2026-07-04,2026-07-04 21:00:00,Paraguay,France,0,1,0,1,False,False,knockout,,89,Philadelphia
+2026-07-04,2026-07-04 17:00:00,Canada,Morocco,0,3,0,3,False,False,knockout,,90,Houston
+2026-07-05,2026-07-05 20:00:00,Brazil,Norway,1,2,1,2,False,False,knockout,,91,New York/New Jersey (East Rutherford)
+2026-07-05,2026-07-06 00:00:00,Mexico,England,2,3,2,3,False,False,knockout,,92,Mexico City
+2026-07-06,2026-07-06 19:00:00,Portugal,Spain,0,1,0,1,False,False,knockout,,93,Dallas (Arlington)
+2026-07-06,2026-07-07 00:00:00,United States,Belgium,1,4,1,4,False,False,knockout,,94,Seattle
+2026-07-07,2026-07-07 16:00:00,Argentina,Egypt,3,2,3,2,False,False,knockout,,95,Atlanta
+2026-07-07,2026-07-07 20:00:00,Switzerland,Colombia,0,0,0,0,True,True,knockout,,96,Vancouver
+2026-07-09,2026-07-09 20:00:00,France,Morocco,2,0,2,0,False,False,knockout,,97,Boston (Foxborough)
+2026-07-10,2026-07-10 19:00:00,Spain,Belgium,2,1,2,1,False,False,knockout,,98,Los Angeles (Inglewood)
+2026-07-11,2026-07-11 21:00:00,Norway,England,1,2,1,1,True,False,knockout,,99,Miami (Miami Gardens)
+2026-07-11,2026-07-12 01:00:00,Argentina,Switzerland,3,1,1,1,True,False,knockout,,100,Kansas City
+2026-07-14,2026-07-14 19:00:00,France,Spain,0,2,0,2,False,False,knockout,,101,Dallas (Arlington)
+2026-07-15,2026-07-15 19:00:00,England,Argentina,1,2,1,2,False,False,knockout,,102,Atlanta
+2026-07-18,2026-07-18 21:00:00,France,England,4,6,4,6,False,False,knockout,,103,Miami (Miami Gardens)
+2026-07-19,2026-07-19 19:00:00,Spain,Argentina,1,0,0,0,True,False,knockout,,104,New York/New Jersey (East Rutherford)

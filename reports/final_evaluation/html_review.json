@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-10-12T20:49:00.396398+00:00",
+  "method": "Codex browser, local 127.0.0.1 page; screenshot and live controls",
+  "html_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
+  "javascript_syntax_check": "node tools/check_report_js.js, passed",
+  "observed_matches": 72,
+  "observed_model_options": 8,
+  "search_Colombia_matches": 3,
+  "verified_controls": [
+    "selection search",
+    "model selector: logistic and Poisson",
+    "match detail selection"
+  ],
+  "verified_match": "Colombia vs Portugal, 2026-06-27; recorded score 0-0",
+  "distinct_products_visible": true,
+  "screenshot_file": "assets/report_preview.png",
+  "screenshot_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
+  "browser_initial_javascript_escape_error_fixed_before_delivery": true
+}

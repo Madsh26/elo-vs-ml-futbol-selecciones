@@ -1,0 +1,33 @@
+match_id,home_team,away_team,full_score_agrees,verified_90_score_agrees,martj42_regulation_score,openfootball_regulation_score
+73,South Africa,Canada,True,True,0-1,0-1
+74,Germany,Paraguay,True,True,1-1,1-1
+75,Netherlands,Morocco,True,True,1-1,1-1
+76,Brazil,Japan,True,True,2-1,2-1
+77,France,Sweden,True,True,3-0,3-0
+78,Ivory Coast,Norway,True,True,1-2,1-2
+79,Mexico,Ecuador,True,True,2-0,2-0
+80,England,DR Congo,True,True,2-1,2-1
+81,United States,Bosnia-Herzegovina,True,True,2-0,2-0
+82,Belgium,Senegal,True,True,2-2,2-2
+83,Portugal,Croatia,True,True,2-1,2-1
+84,Spain,Austria,True,True,3-0,3-0
+85,Switzerland,Algeria,True,True,2-0,2-0
+86,Argentina,Cabo Verde,True,True,1-1,1-1
+87,Colombia,Ghana,True,True,1-0,1-0
+88,Australia,Egypt,True,True,1-1,1-1
+89,Paraguay,France,True,True,0-1,0-1
+90,Canada,Morocco,True,True,0-3,0-3
+91,Brazil,Norway,True,True,1-2,1-2
+92,Mexico,England,True,True,2-3,2-3
+93,Portugal,Spain,True,True,0-1,0-1
+94,United States,Belgium,True,True,1-4,1-4
+95,Argentina,Egypt,True,True,3-2,3-2
+96,Switzerland,Colombia,True,True,0-0,0-0
+97,France,Morocco,True,True,2-0,2-0
+98,Spain,Belgium,True,True,2-1,2-1
+99,Norway,England,True,True,1-1,1-1
+100,Argentina,Switzerland,True,True,1-1,1-1
+101,France,Spain,True,True,0-2,0-2
+102,England,Argentina,True,True,1-2,1-2
+103,France,England,True,True,4-6,4-6
+104,Spain,Argentina,True,True,0-0,0-0

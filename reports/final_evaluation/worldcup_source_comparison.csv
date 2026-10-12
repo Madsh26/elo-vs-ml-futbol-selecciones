@@ -1,0 +1,73 @@
+match_id,home_team,away_team,primary_date,fixture_utc_date,openfootball_date,transfermarkt_date,martj42_score,openfootball_score,transfermarkt_score,openfootball_agrees,transfermarkt_agrees,utc_local_date_difference,swapped_primary_order
+1,Mexico,South Africa,2026-06-11,2026-06-11 19:00:00,2026-06-11,2026-06-11,2-0,2-0,2-0,True,True,False,False
+2,Korea Republic,Czech Republic,2026-06-11,2026-06-12 02:00:00,2026-06-11,2026-06-12,2-1,2-1,2-1,True,True,True,False
+3,Canada,Bosnia-Herzegovina,2026-06-12,2026-06-12 19:00:00,2026-06-12,2026-06-12,1-1,1-1,1-1,True,True,False,False
+4,United States,Paraguay,2026-06-12,2026-06-13 01:00:00,2026-06-12,2026-06-13,4-1,4-1,4-1,True,True,True,False
+5,Australia,Turkey,2026-06-13,2026-06-13 04:00:00,2026-06-13,2026-06-14,2-0,2-0,2-0,True,True,False,False
+6,Qatar,Switzerland,2026-06-13,2026-06-13 19:00:00,2026-06-13,2026-06-13,1-1,1-1,1-1,True,True,False,False
+7,Brazil,Morocco,2026-06-13,2026-06-13 22:00:00,2026-06-13,2026-06-13,1-1,1-1,1-1,True,True,False,False
+8,Haiti,Scotland,2026-06-13,2026-06-14 01:00:00,2026-06-13,2026-06-14,0-1,0-1,0-1,True,True,True,False
+9,Germany,Curacao,2026-06-14,2026-06-14 17:00:00,2026-06-14,2026-06-14,7-1,7-1,7-1,True,True,False,False
+10,Netherlands,Japan,2026-06-14,2026-06-14 20:00:00,2026-06-14,2026-06-14,2-2,2-2,2-2,True,True,False,False
+11,Ivory Coast,Ecuador,2026-06-14,2026-06-14 23:00:00,2026-06-14,2026-06-15,1-0,1-0,1-0,True,True,False,False
+12,Sweden,Tunisia,2026-06-14,2026-06-15 02:00:00,2026-06-14,2026-06-15,5-1,5-1,5-1,True,True,True,False
+13,Spain,Cabo Verde,2026-06-15,2026-06-15 16:00:00,2026-06-15,2026-06-15,0-0,0-0,0-0,True,True,False,False
+14,Belgium,Egypt,2026-06-15,2026-06-15 19:00:00,2026-06-15,2026-06-15,1-1,1-1,1-1,True,True,False,False
+15,Saudi Arabia,Uruguay,2026-06-15,2026-06-15 22:00:00,2026-06-15,2026-06-15,1-1,1-1,1-1,True,True,False,False
+16,IR Iran,New Zealand,2026-06-15,2026-06-16 01:00:00,2026-06-15,2026-06-16,2-2,2-2,2-2,True,True,True,False
+17,Austria,Jordan,2026-06-16,2026-06-16 04:00:00,2026-06-16,2026-06-17,3-1,3-1,3-1,True,True,False,False
+18,France,Senegal,2026-06-16,2026-06-16 19:00:00,2026-06-16,2026-06-16,3-1,3-1,3-1,True,True,False,False
+19,Iraq,Norway,2026-06-16,2026-06-16 22:00:00,2026-06-16,2026-06-16,1-4,1-4,1-4,True,True,False,False
+20,Argentina,Algeria,2026-06-16,2026-06-17 01:00:00,2026-06-16,2026-06-17,3-0,3-0,3-0,True,True,True,False
+21,Portugal,DR Congo,2026-06-17,2026-06-17 17:00:00,2026-06-17,2026-06-17,1-1,1-1,1-1,True,True,False,False
+22,England,Croatia,2026-06-17,2026-06-17 20:00:00,2026-06-17,2026-06-17,4-2,4-2,4-2,True,True,False,False
+23,Ghana,Panama,2026-06-17,2026-06-17 23:00:00,2026-06-17,2026-06-18,1-0,1-0,1-0,True,True,False,False
+24,Uzbekistan,Colombia,2026-06-17,2026-06-18 02:00:00,2026-06-17,2026-06-18,1-3,1-3,1-3,True,True,True,False
+25,Czech Republic,South Africa,2026-06-18,2026-06-18 16:00:00,2026-06-18,2026-06-18,1-1,1-1,1-1,True,True,False,False
+26,Switzerland,Bosnia-Herzegovina,2026-06-18,2026-06-18 19:00:00,2026-06-18,2026-06-18,4-1,4-1,4-1,True,True,False,False
+27,Canada,Qatar,2026-06-18,2026-06-18 22:00:00,2026-06-18,2026-06-18,6-0,6-0,6-0,True,True,False,False
+28,Mexico,Korea Republic,2026-06-18,2026-06-19 01:00:00,2026-06-18,2026-06-19,1-0,1-0,1-0,True,True,True,False
+29,Turkey,Paraguay,2026-06-19,2026-06-19 04:00:00,2026-06-19,2026-06-20,0-1,0-1,0-1,True,True,False,False
+30,United States,Australia,2026-06-19,2026-06-19 19:00:00,2026-06-19,2026-06-19,2-0,2-0,2-0,True,True,False,False
+31,Scotland,Morocco,2026-06-19,2026-06-19 22:00:00,2026-06-19,2026-06-19,0-1,0-1,0-1,True,True,False,False
+32,Brazil,Haiti,2026-06-19,2026-06-20 01:00:00,2026-06-19,2026-06-20,3-0,3-0,3-0,True,True,True,False
+33,Tunisia,Japan,2026-06-20,2026-06-20 04:00:00,2026-06-20,2026-06-21,0-4,0-4,0-4,True,True,False,False
+34,Netherlands,Sweden,2026-06-20,2026-06-20 17:00:00,2026-06-20,2026-06-20,5-1,5-1,5-1,True,True,False,False
+35,Germany,Ivory Coast,2026-06-20,2026-06-20 20:00:00,2026-06-20,2026-06-20,2-1,2-1,2-1,True,True,False,False
+36,Ecuador,Curacao,2026-06-20,2026-06-21 00:00:00,2026-06-20,2026-06-21,0-0,0-0,0-0,True,True,True,False
+37,Spain,Saudi Arabia,2026-06-21,2026-06-21 16:00:00,2026-06-21,2026-06-21,4-0,4-0,4-0,True,True,False,False
+38,Belgium,IR Iran,2026-06-21,2026-06-21 19:00:00,2026-06-21,2026-06-21,0-0,0-0,0-0,True,True,False,False
+39,Uruguay,Cabo Verde,2026-06-21,2026-06-21 22:00:00,2026-06-21,2026-06-21,2-2,2-2,2-2,True,True,False,False
+40,New Zealand,Egypt,2026-06-21,2026-06-22 01:00:00,2026-06-21,2026-06-22,1-3,1-3,1-3,True,True,True,False
+41,Argentina,Austria,2026-06-22,2026-06-22 17:00:00,2026-06-22,2026-06-22,2-0,2-0,2-0,True,True,False,False
+42,France,Iraq,2026-06-22,2026-06-22 21:00:00,2026-06-22,2026-06-22,3-0,3-0,3-0,True,True,False,False
+43,Norway,Senegal,2026-06-22,2026-06-23 00:00:00,2026-06-22,2026-06-23,3-2,3-2,3-2,True,True,True,False
+44,Jordan,Algeria,2026-06-22,2026-06-23 03:00:00,2026-06-22,2026-06-23,1-2,1-2,1-2,True,True,True,False
+45,Portugal,Uzbekistan,2026-06-23,2026-06-23 17:00:00,2026-06-23,2026-06-23,5-0,5-0,5-0,True,True,False,False
+46,England,Ghana,2026-06-23,2026-06-23 20:00:00,2026-06-23,2026-06-23,0-0,0-0,0-0,True,True,False,False
+47,Panama,Croatia,2026-06-23,2026-06-23 23:00:00,2026-06-23,2026-06-24,0-1,0-1,0-1,True,True,False,False
+48,Colombia,DR Congo,2026-06-23,2026-06-24 02:00:00,2026-06-23,2026-06-24,1-0,1-0,1-0,True,True,True,False
+49,Switzerland,Canada,2026-06-24,2026-06-24 19:00:00,2026-06-24,2026-06-24,2-1,2-1,2-1,True,True,False,True
+50,Bosnia-Herzegovina,Qatar,2026-06-24,2026-06-24 19:00:00,2026-06-24,2026-06-24,3-1,3-1,3-1,True,True,False,False
+51,Scotland,Brazil,2026-06-24,2026-06-24 22:00:00,2026-06-24,2026-06-24,0-3,0-3,0-3,True,True,False,False
+52,Morocco,Haiti,2026-06-24,2026-06-24 22:00:00,2026-06-24,2026-06-24,4-2,4-2,4-2,True,True,False,False
+53,Czech Republic,Mexico,2026-06-24,2026-06-25 01:00:00,2026-06-24,2026-06-25,0-3,0-3,0-3,True,True,True,True
+54,South Africa,Korea Republic,2026-06-24,2026-06-25 01:00:00,2026-06-24,2026-06-25,1-0,1-0,1-0,True,True,True,False
+55,Curacao,Ivory Coast,2026-06-25,2026-06-25 20:00:00,2026-06-25,2026-06-25,0-2,0-2,0-2,True,True,False,False
+56,Ecuador,Germany,2026-06-25,2026-06-25 20:00:00,2026-06-25,2026-06-25,2-1,2-1,2-1,True,True,False,False
+57,Japan,Sweden,2026-06-25,2026-06-25 23:00:00,2026-06-25,2026-06-26,1-1,1-1,1-1,True,True,False,False
+58,Tunisia,Netherlands,2026-06-25,2026-06-25 23:00:00,2026-06-25,2026-06-26,1-3,1-3,1-3,True,True,False,False
+59,United States,Turkey,2026-06-25,2026-06-26 02:00:00,2026-06-25,2026-06-26,2-3,2-3,2-3,True,True,True,False
+60,Paraguay,Australia,2026-06-25,2026-06-26 02:00:00,2026-06-25,2026-06-26,0-0,0-0,0-0,True,True,True,False
+61,Norway,France,2026-06-26,2026-06-26 19:00:00,2026-06-26,2026-06-26,1-4,1-4,1-4,True,True,False,False
+62,Senegal,Iraq,2026-06-26,2026-06-26 19:00:00,2026-06-26,2026-06-26,5-0,5-0,5-0,True,True,False,False
+63,Cabo Verde,Saudi Arabia,2026-06-26,2026-06-27 00:00:00,2026-06-26,2026-06-27,0-0,0-0,0-0,True,True,True,False
+64,Uruguay,Spain,2026-06-26,2026-06-27 00:00:00,2026-06-26,2026-06-27,0-1,0-1,0-1,True,True,True,False
+65,Egypt,IR Iran,2026-06-26,2026-06-27 03:00:00,2026-06-26,2026-06-27,1-1,1-1,1-1,True,True,True,False
+66,New Zealand,Belgium,2026-06-26,2026-06-27 03:00:00,2026-06-26,2026-06-27,1-5,1-5,1-5,True,True,True,False
+67,Panama,England,2026-06-27,2026-06-27 21:00:00,2026-06-27,2026-06-27,0-2,0-2,0-2,True,True,False,False
+68,Croatia,Ghana,2026-06-27,2026-06-27 21:00:00,2026-06-27,2026-06-27,2-1,2-1,2-1,True,True,False,False
+69,Colombia,Portugal,2026-06-27,2026-06-27 23:30:00,2026-06-27,2026-06-28,0-0,0-0,0-0,True,True,False,False
+70,DR Congo,Uzbekistan,2026-06-27,2026-06-27 23:30:00,2026-06-27,2026-06-28,3-1,3-1,3-1,True,True,False,False
+71,Algeria,Austria,2026-06-27,2026-06-28 02:00:00,2026-06-27,2026-06-28,3-3,3-3,3-3,True,True,True,False
+72,Jordan,Argentina,2026-06-27,2026-06-28 02:00:00,2026-06-27,2026-06-28,1-3,1-3,1-3,True,True,True,False

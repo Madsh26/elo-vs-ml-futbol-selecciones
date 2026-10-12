@@ -1,0 +1,69 @@
+{
+  "executed_at_utc": "2026-10-12T20:37:17.871216+00:00",
+  "history_matches": 49469,
+  "history_first_date": "1872-11-30",
+  "history_latest_date": "2026-06-09",
+  "historical_team_entities": 337,
+  "model_training_matches": 21781,
+  "model_training_first_date": "2000-01-04",
+  "model_training_latest_date": "2022-12-30",
+  "pre2023_history_matches": 45845,
+  "pre2023_walk_forward_matches": 6376,
+  "semiconfirmatory_matches": 3624,
+  "group_forecasts": 72,
+  "worldcup_teams": 48,
+  "independent_verified_duration_matches": 951,
+  "shootouts": 690,
+  "proven_extra_time_goal_matches": 176,
+  "goals_duration_assumed_matches": 34020,
+  "fifa_semester_rows_used_for_diagnostic": 13128,
+  "fifa_last_conservative_availability": "2025-01-01",
+  "history_sha256": "0d0e7c8abda04d8d7723d5bd1d11e70af8f9415727a7c0353be03227e475f8d6",
+  "features_sha256": "d5dc90fe41b0933aeb23c8bb9a3a845cbd6d1e07dd8586a7631b3abb29809ca2",
+  "model_features": [
+    "elo_effective",
+    "gf_diff",
+    "ga_diff",
+    "form_diff",
+    "opponent_diff",
+    "goal_coverage_sum"
+  ],
+  "feature_ranges": {
+    "elo_effective": {
+      "minimum": -2.8285455672137823,
+      "maximum": 3.329794612833049,
+      "missing": 0,
+      "distinct_values": 49434
+    },
+    "gf_diff": {
+      "minimum": -7.375000000000001,
+      "maximum": 6.500000000000001,
+      "missing": 0,
+      "distinct_values": 798
+    },
+    "ga_diff": {
+      "minimum": -8.5,
+      "maximum": 9.079166666666667,
+      "missing": 0,
+      "distinct_values": 919
+    },
+    "form_diff": {
+      "minimum": -0.625,
+      "maximum": 0.625,
+      "missing": 0,
+      "distinct_values": 211
+    },
+    "opponent_diff": {
+      "minimum": -1.7217308910068914,
+      "maximum": 1.992782718077039,
+      "missing": 0,
+      "distinct_values": 49403
+    },
+    "goal_coverage_sum": {
+      "minimum": 0.0,
+      "maximum": 2.0,
+      "missing": 0,
+      "distinct_values": 3
+    }
+  }
+}

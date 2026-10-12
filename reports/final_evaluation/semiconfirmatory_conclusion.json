@@ -1,0 +1,19 @@
+{
+  "evaluation_completed_at_utc": "2026-10-12T20:13:44.466128+00:00",
+  "evidence": "semiconfirmatory, not untouched",
+  "selection_confirmed": true,
+  "blocks_improving": 4,
+  "primary_log_loss_difference": -0.008868507034180831,
+  "primary_log_loss_difference_ci": [
+    -0.014749163857872945,
+    -0.0033667985566373636
+  ],
+  "primary_brier_difference": -0.006301907929577991,
+  "model_weights_refitted": false,
+  "product_discrepancy_mean_percentage_points": 2.474811432385552,
+  "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+  "prediction_commit": "61483a3eda12b48b0f327b608c913f8a48071b97",
+  "matches": 3624,
+  "actual_quarter_clusters": 14,
+  "actual_month_clusters": 39
+}
