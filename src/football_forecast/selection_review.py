@@ -173,13 +173,18 @@ def form_features(history,ratings,policy):
     full=full.drop(columns=['elo_home','elo_away','elo_diff'])
     full=full.merge(ratings[MATCH_KEY+['elo_home','elo_away','elo_diff']],on=MATCH_KEY,validate='one_to_one')
     opponents=defaultdict(lambda:deque(maxlen=10))
-    for _,day in full.groupby('date',sort=True):
+    home_opponent=np.full(len(full),1500.,dtype=float)
+    away_opponent=np.full(len(full),1500.,dtype=float)
+    for _,day in full[['date','home_team','away_team','elo_home','elo_away']].groupby('date',sort=True):
         additions=[]
         for r in day.itertuples():
             for t,side,v in [(r.home_team,'home',r.elo_away),(r.away_team,'away',r.elo_home)]:
-                full.at[r.Index,f'opponent_elo_{side}']=np.mean(opponents[t]) if opponents[t] else 1500.
+                destination=home_opponent if side=='home' else away_opponent
+                destination[r.Index]=np.mean(opponents[t]) if opponents[t] else 1500.
                 additions.append((t,v))
         for t,v in additions: opponents[t].append(v)
+    full['opponent_elo_home']=home_opponent
+    full['opponent_elo_away']=away_opponent
     full['gf_diff']=full.gf5_home-full.gf5_away
     full['ga_diff']=full.ga5_home-full.ga5_away
     full['form_diff']=full.form5_home-full.form5_away
@@ -480,7 +485,7 @@ Las tasas y diferencias de **cada conjunto en cada bloque** están en `selection
 
 ## Cuánto explicaba el artefacto
 
-    {markdown_table(decomposition.rename(columns={'scope':'Estrato','matches':'Partidos','fraction':'Participación','elo_log_loss':'Log loss Elo','candidate_log_loss':'Log loss combinación sesgada','mean_improvement':'Mejora media','contribution_to_pooled_improvement':'Contribución a la mejora agregada'}),precision=6)}
+{markdown_table(decomposition.rename(columns={'scope':'Estrato','matches':'Partidos','fraction':'Participación','elo_log_loss':'Log loss Elo','candidate_log_loss':'Log loss combinación sesgada','mean_improvement':'Mejora media','contribution_to_pooled_improvement':'Contribución a la mejora agregada'}),precision=6)}
 
 Esta descomposición utiliza los mismos partidos de aquella validación. La aportación de los amistosos seleccionados solo por 0–0 no demuestra capacidad predictiva y retiro esa comparación como evidencia vigente de mejora. Las selecciones y ablaciones siguientes utilizan conjuntos independientes del marcador.
 

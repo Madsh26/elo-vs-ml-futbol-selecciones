@@ -1,33 +1,25 @@
 # Decisiones de diseño
 
-Construyo un estudio retrospectivo con el torneo ya jugado. El corte deportivo final es exclusivo, 2026-06-10. Las fechas reales de preparación, selección, revisión, congelado y carga de resultados son operaciones distintas; no presento el trabajo como un pronóstico publicado previamente.
+Construyo un estudio retrospectivo con el torneo ya jugado. Distingo el corte deportivo exclusivo 2026-06-10 de las fechas reales de construcción, selección, congelado y carga de resultados. No lo presento como pronóstico publicado antes del Mundial.
 
-## Principio de evaluación
+## Conjuntos sin selección por marcador
 
-**Los conjuntos de evaluación se definen sin depender del resultado.** Exijo la misma cobertura o la misma suposición de duración a todos los marcadores. Un 0–0 no recibe una excepción que excluiría un partido con goles en la misma situación. La comprobación estándar compara proporciones de 0–0 y empates por conjunto, dominio y bloque antes de atribuir mejoras a variables o modelos.
+Los conjuntos de evaluación se definen sin depender del resultado. Esta es una comprobación estándar: reviso 0–0 y empates por población, dominio y bloque. Una tanda no prueba empate a 90 minutos; las filas idénticas de goleadores no se eliminan automáticamente. Mantengo entidades históricas distintas, incluido Czechoslovakia respecto a Czech Republic.
 
-El protocolo previo a ejecución está en PROTOCOLO_CONJUNTOS.md; su fecha y SHA256 están registrados en selection_protocol.json. La descomposición del sesgo queda conservada como diagnóstico, no como evidencia vigente de rendimiento.
+Admito todo el historial válido para goles y 1X2 bajo duración supuesta donde falta evidencia. Reconstruyo 90 minutos cuando se puede verificar. Marco tandas y prórrogas probadas. El catálogo independiente Fjelstul de Mundiales valida la aproximación; no es el entrenamiento principal. Repito con exclusión de marcados y con entrenamiento solo no amistoso. La exclusión también retira esos partidos de la historia de forma, pero Elo conserva todo el historial. No uso la tasa de empates para decidir admisiones.
 
-## Dos objetivos y dos conjuntos
+## Selección temporal y simplicidad
 
-Admito todos los registros válidos para 1X2, incluidos amistosos, tandas y prórrogas. Reconstruyo 90 minutos con evidencia o uso el final como aproximación declarada. Una tanda nunca determina automáticamente empate. Reporto amistosos y no amistosos por separado y el total.
+Resultados desde 2023 están reservados. Calculo variables antes de actualizar todos los resultados de una fecha. Elo tiene inicialización 1500, plazo de inactividad 730 días y una búsqueda conjunta de 32 combinaciones de sede, regresión, pesos K y margen de goles. La regresión 0.1 de la referencia era un parámetro fijado, no una elección de datos de la búsqueda aislada.
 
-Para goles estrictos uso un catálogo independiente de partidos, Fjelstul. Una ficha sin prórroga admite cualquier marcador; con prórroga reconstruyo por periodo y reconcilio integridad. La presencia de goles en martj42 no define cobertura del conjunto estricto. Las sensibilidades añaden todos los amistosos o todo el historial bajo una suposición común de duración.
+El protocolo escrito previamente está en reports/models_selected/protocol.json. Selecciono por log loss de no amistosos en los cuatro bloques. Dentro de un error estándar pareado del mínimo prefiero, por orden, ausencia de regresión, pesos de referencia, gamma menor y ventaja de sede menor. Para modelos y variables exijo IC superior de diferencia de log loss <0, Brier sin empeorar y mejora en tres bloques; entre candidatos admitidos cercanos uso el orden de complejidad escrito. Los intervalos usan trimestres completos, 400 réplicas, semilla fija. Estos bloques de selección necesitan confirmación independiente.
 
-## Selección temporal
+## Variables y modelos
 
-No abro resultados desde 2023. Uso bloques 2016–2017, 2018–2019, 2020–2021 y 2022, ajustando una logística con los 1X2 desde 2000 hasta cada inicio de bloque. Selecciono parámetros Elo por log loss de no amistosos; el estado usa todo el historial previo y se actualiza después de calcular todas las variables de una fecha.
+La forma con duración supuesta está admitida explícitamente y se verifica al excluir marcados. No incorporo automáticamente grupos secundarios; guardo ablaciones de sede adicional, descanso, competición, altitud y ranking. El ranking está disponible después del semestre y caduca a 90 días, sin extrapolación a 2026. Mercado queda fuera: no tengo pertenencia fechada a selecciones anterior a 2023. No uso tablas actuales players/national_teams como históricos. GeoNames aporta solo altitud estática identificable; no invento viajes ni altitud de entrenamiento. No pondero por afiliaciones históricas supuestas a partir de confederaciones actuales.
 
-Solo Elo incluye la ventaja configurada de sede en su diferencia efectiva. Elo + sede comparte esa ventaja y permite un coeficiente adicional aprendido. Comparo todos los grupos contra Elo + sede. Un grupo pasa si el intervalo pareado de log loss de no amistosos tiene límite superior menor que cero, Brier no empeora y mejora en tres o más de cuatro bloques. Las sensibilidades de duración no se adoptan automáticamente.
+Todos los clasificadores reconcilian ambos órdenes. Los modelos de goles comparten una regresión orientada de tasas y generan victoria/empate/derrota desde su distribución conjunta. Dixon-Coles usa covariables y corrección de marcadores bajos; no efectos libres por selección. Tasas y corrección tienen límites explícitos de validez. No calibro por separado el 1X2 del marcador: reporto ECE nativo por clase y fiabilidad. XGBoost tiene configuración pequeña fija, sin parada temprana usando el bloque evaluado.
 
-Uso 400 remuestreos de trimestres completos con semilla fija, log loss y Brier sin dividir. Informo intervalos y tasas de empate en los tres estratos. La selección comparte bloques y requiere evaluación independiente. No interpreto el mínimo de una rejilla como mejora demostrada en el Mundial.
+## Congelado
 
-## Variables complementarias
-
-El ranking semestral está disponible conservadoramente después de acabar el semestre y caduca a 90 días. Lo contrasto mediante ablación, sin extrapolar a 2026. Mercado queda excluido por ausencia de pertenencia jugador–selección fechada antes de 2023; no uso los campos actuales de players o national_teams como históricos.
-
-GeoNames aporta altitud estática de una sede identificada sin ambigüedad. No infiero altitud de entrenamiento o viajes reales de una nacionalidad. Los pesos por confederaciones actuales son una sensibilidad administrativa y no certifican afiliación histórica. En 1X2, admitir todo el historial elimina la diferencia de cobertura entre entrenamiento y su referencia de registros.
-
-## Trazabilidad
-
-Guardo fuentes en data/raw/ con nombres sin espacios ni tildes y verifico SHA256. Mantengo Fjelstul y Openfootball separados. Los resultados oficiales de 2026 solo se admiten después del congelado y sus hashes. La referencia guardada permanece intacta. La etiqueta selection-bias-fixed identifica esta revisión; la Fase 3 requiere aprobación.
+Congelo los modelos con entrenamiento anterior a 2023 en 2026-10-12T17:07:05.615286+00:00, con hashes en freeze_manifest.json. La etiqueta models-selected precede a abrir 2023–corte. El congelado de predicciones de los 72 partidos y la carga de resultados oficiales corresponden a fases posteriores; sus fechas no se inventan. El modelo guardado original permanece intacto. Mantengo archivos fuente en data/raw/ y reportes históricos como diagnósticos separados.

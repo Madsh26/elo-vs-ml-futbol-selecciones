@@ -1,0 +1,15 @@
+{
+  "selected_1x2": "logistic",
+  "passing_candidates": [
+    "logistic"
+  ],
+  "selected_score_model": "poisson",
+  "score_model_beats_elo_criterion": false,
+  "score_selection": "minimum score NLL among passing count candidates, or descriptive-only count candidates",
+  "form_main_passes": true,
+  "form_exclude_marked_passes": true,
+  "secondary_groups_passing": [
+    "recent_form"
+  ],
+  "reserved_results_opened": false
+}

@@ -103,62 +103,6 @@
       "role": "Not used as model input in this preparation."
     }
   ],
-  "selection": {
-    "parameters": {
-      "friendly_k": 12,
-      "nations_k": 20,
-      "continental_k": 28,
-      "worldcup_k": 40,
-      "other_k": 16,
-      "margin_strength": 0.5,
-      "home_advantage": 100,
-      "initial": 1500,
-      "inactivity_rate": 0.1,
-      "inactivity_grace_days": 730
-    },
-    "configuration_name": "Sede con ventaja fija mayor",
-    "selection_completed_at_utc": "2026-10-12T15:30:11.323572+00:00",
-    "previous_parameters": {
-      "friendly_k": 12,
-      "nations_k": 20,
-      "continental_k": 28,
-      "worldcup_k": 40,
-      "other_k": 16,
-      "margin_strength": 0.5,
-      "home_advantage": 60,
-      "initial": 1500,
-      "inactivity_rate": 0,
-      "inactivity_grace_days": 730
-    },
-    "changed_parameters": {
-      "home_advantage": {
-        "diagnostic_with_biased_cohort": 60,
-        "current": 100
-      },
-      "inactivity_rate": {
-        "diagnostic_with_biased_cohort": 0,
-        "current": 0.1
-      }
-    },
-    "selection_scope": "non_friendlies",
-    "training_scope": "all valid 1X2, friendlies with declared assumed duration",
-    "reserved_period_opened": false,
-    "canonical_common_initial": 1500,
-    "uniform_initial_shift_candidates_reuse_reference_metrics": true
-  },
-  "features": {
-    "groups_passing_against_elo_plus_venue": [],
-    "combined_groups_passing": false,
-    "goal_window_primary_policy": "strict",
-    "goal_window_sensitivities_not_automatically_adopted": true,
-    "coverage_weights_asof_affiliation_verified": false,
-    "coverage_weights_production_allowed": false,
-    "selection_scope": "non_friendlies",
-    "reserved_period_opened": false,
-    "fixed_venue_elo_vs_learned_venue_passes": false,
-    "primary_x12_baseline": "elo",
-    "form_all_assumed_passes_but_not_adopted": true
-  },
   "old_improvement_decomposition": [
     {
       "scope": "Amistosos",
@@ -189,7 +133,7 @@
   "construction_context": "Retrospective study; no claim of publication before the World Cup.",
   "reserved_results_opened": false,
   "official_2026_results_loaded": false,
-  "xgboost_executed": false,
+  "xgboost_executed": true,
   "model_frozen_at_utc": null,
   "official_results_loaded_at_utc": null,
   "primary_goals_policy": "strict independent Fjelstul catalogue; assumed policies remain sensitivity only",
@@ -224,8 +168,8 @@
     }
   },
   "verification": {
-    "executed_at_utc": "2026-10-12T15:48:24.146227+00:00",
-    "tests_run": 33,
+    "executed_at_utc": "2026-10-12T17:11:05.462640+00:00",
+    "tests_run": 41,
     "failures": 0,
     "errors": 0,
     "skipped": 1,
@@ -233,7 +177,8 @@
       "Baseline reproduction using reserved results is deferred to Phase 4"
     ],
     "successful": true,
-    "command": "python tools/verify_selection_review.py"
+    "command": "python tools/verify_models_selected.py",
+    "reserved_results_opened": false
   },
   "artifacts": [
     {
@@ -332,5 +277,283 @@
       "file": "reports/selection_review/walk_forward_predictions.csv",
       "sha256": "2c50b70bad451f91a9cff295ee5123b1e6e9e096f0e25182833fbef11f33e9cd"
     }
-  ]
+  ],
+  "selection_review_before_joint_search": {
+    "selection": {
+      "parameters": {
+        "friendly_k": 12,
+        "nations_k": 20,
+        "continental_k": 28,
+        "worldcup_k": 40,
+        "other_k": 16,
+        "margin_strength": 0.5,
+        "home_advantage": 100,
+        "initial": 1500,
+        "inactivity_rate": 0.1,
+        "inactivity_grace_days": 730
+      },
+      "configuration_name": "Sede con ventaja fija mayor",
+      "selection_completed_at_utc": "2026-10-12T15:30:11.323572+00:00",
+      "previous_parameters": {
+        "friendly_k": 12,
+        "nations_k": 20,
+        "continental_k": 28,
+        "worldcup_k": 40,
+        "other_k": 16,
+        "margin_strength": 0.5,
+        "home_advantage": 60,
+        "initial": 1500,
+        "inactivity_rate": 0,
+        "inactivity_grace_days": 730
+      },
+      "changed_parameters": {
+        "home_advantage": {
+          "diagnostic_with_biased_cohort": 60,
+          "current": 100
+        },
+        "inactivity_rate": {
+          "diagnostic_with_biased_cohort": 0,
+          "current": 0.1
+        }
+      },
+      "selection_scope": "non_friendlies",
+      "training_scope": "all valid 1X2, friendlies with declared assumed duration",
+      "reserved_period_opened": false,
+      "canonical_common_initial": 1500,
+      "uniform_initial_shift_candidates_reuse_reference_metrics": true
+    },
+    "features": {
+      "groups_passing_against_elo_plus_venue": [],
+      "combined_groups_passing": false,
+      "goal_window_primary_policy": "strict",
+      "goal_window_sensitivities_not_automatically_adopted": true,
+      "coverage_weights_asof_affiliation_verified": false,
+      "coverage_weights_production_allowed": false,
+      "selection_scope": "non_friendlies",
+      "reserved_period_opened": false,
+      "fixed_venue_elo_vs_learned_venue_passes": false,
+      "primary_x12_baseline": "elo",
+      "form_all_assumed_passes_but_not_adopted": true
+    }
+  },
+  "selection": {
+    "parameters": {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 1.0,
+      "home_advantage": 100,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    },
+    "selected_configuration": "H100_R0_Kreference_G1.0",
+    "minimum_configuration": "H100_R0_Kreference_G1.0",
+    "selection_completed_at_utc": "2026-10-12T16:55:59.775656+00:00",
+    "previous_inactivity_0_1_was_reference_not_selected_by_isolated_search": true,
+    "one_se_eligible_configurations": 4,
+    "reserved_results_opened": false
+  },
+  "features": {
+    "goal_window_primary_policy": "all_assumed",
+    "admitted_groups": [
+      "recent_form_all_assumed"
+    ],
+    "secondary_groups_adopted": [],
+    "form_sensitivity": {
+      "selected_1x2": "logistic",
+      "passing_candidates": [
+        "logistic"
+      ],
+      "selected_score_model": "poisson",
+      "score_model_beats_elo_criterion": false,
+      "score_selection": "minimum score NLL among passing count candidates, or descriptive-only count candidates",
+      "form_main_passes": true,
+      "form_exclude_marked_passes": true,
+      "secondary_groups_passing": [
+        "recent_form"
+      ],
+      "reserved_results_opened": false
+    },
+    "market_excluded": "no dated national-team membership before 2023",
+    "ranking_2026_available": false,
+    "ranking_used_in_final_models": false
+  },
+  "models_frozen_at_utc": "2026-10-12T17:07:05.615286+00:00",
+  "active_workflow": "reports/models_selected",
+  "model_selection": {
+    "models_frozen_at_utc": "2026-10-12T17:07:05.615286+00:00",
+    "protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "training_latest_result": "2022-12-30",
+    "reserved_results_opened": false,
+    "models": [
+      {
+        "path": "reports/models_selected/model_frequency.joblib",
+        "sha256": "22f7b287af829adc89a35fec9c0250d51da2283cc49c2e3700ebb13699a8472e"
+      },
+      {
+        "path": "reports/models_selected/model_elo.joblib",
+        "sha256": "b7715f67680c850e4fa241e4731c86bc1e88beff1e4ff67e35821defccbd150b"
+      },
+      {
+        "path": "reports/models_selected/model_logistic.joblib",
+        "sha256": "01ddf890d3a55e5fcd3e14099bcfc581764548f35ae530d08e502f08ee064342"
+      },
+      {
+        "path": "reports/models_selected/model_ordinal.joblib",
+        "sha256": "e15a7435514b3dc795f891962e83f813ccf4dce3b07ffad0a416d2d4fedcd03a"
+      },
+      {
+        "path": "reports/models_selected/model_xgboost.joblib",
+        "sha256": "12a04906c30b95a03009e24758fa75d8a06a4c45e708bb031b2d0b9e4596a58d"
+      },
+      {
+        "path": "reports/models_selected/model_poisson.joblib",
+        "sha256": "ed2935f800f298fb2ac4903ff745a8ae9b7a26a3133a570498f6894195ab3c3f"
+      },
+      {
+        "path": "reports/models_selected/model_dixon_coles.joblib",
+        "sha256": "841eee9b5843f14fc6efbb59a2ffc337aa3e034612f53471e0aa9bcc28b40c8f"
+      },
+      {
+        "path": "reports/models_selected/model_xgboost_poisson.joblib",
+        "sha256": "e2b11d83a8891e92eb2372bac8bac00276699f4812e5448a3bf829647a6ba236"
+      }
+    ],
+    "decision": {
+      "selected_1x2": "logistic",
+      "passing_candidates": [
+        "logistic"
+      ],
+      "selected_score_model": "poisson",
+      "score_model_beats_elo_criterion": false,
+      "score_selection": "minimum score NLL among passing count candidates, or descriptive-only count candidates",
+      "form_main_passes": true,
+      "form_exclude_marked_passes": true,
+      "secondary_groups_passing": [
+        "recent_form"
+      ],
+      "reserved_results_opened": false
+    },
+    "selection": {
+      "parameters": {
+        "friendly_k": 12,
+        "nations_k": 20,
+        "continental_k": 28,
+        "worldcup_k": 40,
+        "other_k": 16,
+        "margin_strength": 1.0,
+        "home_advantage": 100,
+        "initial": 1500,
+        "inactivity_rate": 0,
+        "inactivity_grace_days": 730
+      },
+      "selected_configuration": "H100_R0_Kreference_G1.0",
+      "minimum_configuration": "H100_R0_Kreference_G1.0",
+      "selection_completed_at_utc": "2026-10-12T16:55:59.775656+00:00",
+      "previous_inactivity_0_1_was_reference_not_selected_by_isolated_search": true,
+      "one_se_eligible_configurations": 4,
+      "reserved_results_opened": false
+    },
+    "retrospective": true,
+    "forecast_cutoff_exclusive": "2026-06-10",
+    "training_cutoff_exclusive": "2023-01-01",
+    "official_results_loaded_at_utc": null,
+    "code_sha256": {
+      "src/football_forecast/model_selection.py": "206b3277b3e07dfc09207f4fb9dfc408e39e1dc2e0cb47f809af8a6c440cc39b",
+      "src/football_forecast/selected_models.py": "96a29d9a03d443ea20cfe93e976c05b533d1acf582570070e43609dab836469c",
+      "src/football_forecast/selection_review.py": "a9931d2d2bd057510d5b8c76dbe677c9c3e803d841f4cb4931962423cacef543",
+      "src/football_forecast/elo_calibration.py": "448f325d443fb1026abfc11495456fa3042ff2f5a234e89cb47b495b3dec262d",
+      "src/football_forecast/preparation.py": "571335c98ffb934b8ce9b2df6f4a3661c215bb72b788ea86349b1a58d844e1a9"
+    },
+    "documentation_completed_at_utc": "2026-10-12T17:12:41.174975+00:00",
+    "code_hash_line_endings": "LF normalized"
+  },
+  "pre2023_history_sha256": "2ef1583a3ae5e1d9dc0972c522b63075cec623a8cf120fb3c0db968121b60c15",
+  "goals_primary": {
+    "policy": "all_assumed",
+    "matches": 45845,
+    "shootouts": 616,
+    "proven_extra_time": 159,
+    "union_flagged": 763,
+    "flagged_fraction": 0.01664303631802814,
+    "strict_independent_catalogue": 951,
+    "unknown_timing_matches": 31905
+  },
+  "training_model_rows": 21781,
+  "models_git_tag": "models-selected",
+  "artifacts_models_selected": {
+    "reports/models_selected/elo_joint_grid.csv": "32a0f99f55d056b32f25d736354740a4678d6419f8a09c903a7396b0208f2952",
+    "reports/models_selected/elo_neighbors.csv": "fad0de3f73488e6425e7b637dde00e8bec6a509d97ef5cff4a4a000573e0b33d",
+    "reports/models_selected/elo_predictions.csv": "fd39d24b1453bc19ef0a1a5d3c64a8413b7b9891aaf97d09159a4f0cb3316a1d",
+    "reports/models_selected/form_exclude_marked_predictions.csv": "d7527f44c7496ebf8e2ca3643ea1b4e1916d5da42cf4316f2a97740d205119ee",
+    "reports/models_selected/form_sensitivity.csv": "1272f57fcdcad582ad0e000af1c02191731751732472bf65eb8a9600b35dc5d5",
+    "reports/models_selected/freeze_manifest.json": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "reports/models_selected/goal_population_coverage.csv": "94a667cb042d4e4eb6ca0e39f85579c3a5fd231d29a59cd9f32c0095429892dd",
+    "reports/models_selected/goal_sensitivity.csv": "ec47b48e7d3c397c6bbb5c9746fa301c23ff7ba51820b36b3fdef8db72c6f47d",
+    "reports/models_selected/model_comparison.csv": "9ddd4d94a4a2afd5b051aa34a619a51e65cc13355183575bad038eff7d97a673",
+    "reports/models_selected/model_decision.json": "5991a9676e3fe124dfcf4afacf3208d7912ef7fd1adc463b2c280a38f9312bcd",
+    "reports/models_selected/model_dixon_coles.joblib": "841eee9b5843f14fc6efbb59a2ffc337aa3e034612f53471e0aa9bcc28b40c8f",
+    "reports/models_selected/model_elo.joblib": "b7715f67680c850e4fa241e4731c86bc1e88beff1e4ff67e35821defccbd150b",
+    "reports/models_selected/model_frequency.joblib": "22f7b287af829adc89a35fec9c0250d51da2283cc49c2e3700ebb13699a8472e",
+    "reports/models_selected/model_logistic.joblib": "01ddf890d3a55e5fcd3e14099bcfc581764548f35ae530d08e502f08ee064342",
+    "reports/models_selected/model_ordinal.joblib": "e15a7435514b3dc795f891962e83f813ccf4dce3b07ffad0a416d2d4fedcd03a",
+    "reports/models_selected/model_poisson.joblib": "ed2935f800f298fb2ac4903ff745a8ae9b7a26a3133a570498f6894195ab3c3f",
+    "reports/models_selected/model_xgboost.joblib": "12a04906c30b95a03009e24758fa75d8a06a4c45e708bb031b2d0b9e4596a58d",
+    "reports/models_selected/model_xgboost_poisson.joblib": "e2b11d83a8891e92eb2372bac8bac00276699f4812e5448a3bf829647a6ba236",
+    "reports/models_selected/predictions_dixon_coles.csv": "4563d54fc7d80cb3831da7e266405706e2dc6934e7d8180ad26b5dfca29b8372",
+    "reports/models_selected/predictions_elo.csv": "a8ce44154ca506ab9fca13a4926a9ab2d2c3eeaadf954e3a0d8a3d96e2507abc",
+    "reports/models_selected/predictions_frequency.csv": "8ca4ca93835f356c460053b285a4753b232174120e6d8f883687da498a6b7554",
+    "reports/models_selected/predictions_logistic.csv": "6650b852bb52ff2edfbd62f776d69786b591fc1b02de4ab43d8028059984086a",
+    "reports/models_selected/predictions_ordinal.csv": "0b1e56acb3e5c916acf9fb1816629bf59b1b2643f46c470ca2cd4b7d3d0914db",
+    "reports/models_selected/predictions_poisson.csv": "84218f3f52a913e8348e0e606b5164c37eda5fd3c110e2bbea67f1656342be38",
+    "reports/models_selected/predictions_xgboost.csv": "d35ef3dae3c66f8e3196c766bb34fcce85d2aeaca5455e08e9b57c5222e60c3d",
+    "reports/models_selected/predictions_xgboost_poisson.csv": "60440c3acb221faf71f360a84491b101cd4e81f3747bcddbe0ed6f42404d3bbc",
+    "reports/models_selected/protocol.json": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "reports/models_selected/reliability.csv": "c1a1409a86d17660ea2f5c684b1a5cbed7cf22b6c6d5deb27480a08904c0009c",
+    "reports/models_selected/RESULTADOS.md": "7116eec3f3ed97eef8a7e704191f8d5cc8078b996dcf59c772fcf965b9cabfba",
+    "reports/models_selected/secondary_ablations.csv": "eefedb8aa6da27c8463c42b17b05a800700ef948701f27935173eb04e95023cb",
+    "reports/models_selected/selected_elo.json": "beeea38048021fe6559ed5a30de6e1a13c5e6ce3c16a784958421d9cdf0a4219",
+    "reports/models_selected/sensitivity_dixon_coles_exclude_marked.csv": "b6becf7b1b311a0d7710bd3ba8252bbecf9ddd1478c834824b266f2c4ffa2776",
+    "reports/models_selected/sensitivity_dixon_coles_non_friendlies.csv": "d4b1e7e1e8340502865debcc2d2b650cad40c7d863904bdc5aef01ad1033c967",
+    "reports/models_selected/sensitivity_dixon_coles_strict_worldcup.csv": "e0c0509203fbac3e34963c103c17cf5d96863eb3e99fc94cda5c961b3a48f6ba",
+    "reports/models_selected/sensitivity_poisson_exclude_marked.csv": "8f88f7cb2965c67ebd44a2c9dccc8ded3011d1b81ac986dd2948bf6249d8f8f3",
+    "reports/models_selected/sensitivity_poisson_non_friendlies.csv": "9c3a1e1e2faa505dee4ec9ec9d418b1e3a880162f4a1db584d93ed5485ff428d",
+    "reports/models_selected/sensitivity_poisson_strict_worldcup.csv": "ab0afee2f55a15bec5348a8b1f0402c951c2878bdf2d11c1d52da7b012237d63",
+    "reports/models_selected/sensitivity_xgboost_poisson_exclude_marked.csv": "98c556e11b10921c320c75528a8d1a2f0a413348515b12a94aaef7238ab89a99",
+    "reports/models_selected/sensitivity_xgboost_poisson_non_friendlies.csv": "e9c9030e994d90b7e0b9d8f569ca75126fe4840e55ca5db69192366919278aea",
+    "reports/models_selected/sensitivity_xgboost_poisson_strict_worldcup.csv": "0a32af01687761d36cc54edae6d8c85d537ecb70e5961e03a60e17b8996a16e8",
+    "reports/models_selected/verification.json": "0bf9190ab792e56988aabf0edf101553b49e860c162995308c81ba589bd1824f",
+    "reports/models_selected/walk_forward_blocks.csv": "d3db1805dc3a710ea69960425055592450f4554371abd8b0579c12d8ba0740bb"
+  },
+  "final_document_sha256": {
+    "README.md": "94c3e018f0d015aa3177615456ab451c9ceed8d935cd0f5b789c2b3e0594315a",
+    "RESULTADOS.md": "7116eec3f3ed97eef8a7e704191f8d5cc8078b996dcf59c772fcf965b9cabfba",
+    "docs/DECISIONES_DE_DISEÑO.md": "89b98142009b95806936734f97f75dba09811a7ebbcf29761715ef7b0940fcab"
+  },
+  "friendly_duration_validation": {
+    "independently_verified_matches": 0,
+    "proportion_with_extra_time_goals": null,
+    "shootouts_in_verified_set": 0,
+    "interpretation": "No independently verified friendlies before 2023; proportions unavailable, not zero."
+  },
+  "score_distribution_constraints": {
+    "poisson": {
+      "evaluated_matches": 6376,
+      "rho_clamped_matches": 0,
+      "upper_rate_limit_matches": 3
+    },
+    "dixon_coles": {
+      "evaluated_matches": 6376,
+      "rho_clamped_matches": 0,
+      "upper_rate_limit_matches": 3
+    },
+    "xgboost_poisson": {
+      "evaluated_matches": 6376,
+      "rho_clamped_matches": 0,
+      "upper_rate_limit_matches": 0
+    }
+  }
 }

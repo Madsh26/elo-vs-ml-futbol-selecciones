@@ -1,0 +1,13 @@
+{
+  "executed_at_utc": "2026-10-12T17:11:05.462640+00:00",
+  "tests_run": 41,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "skip_reasons": [
+    "Baseline reproduction using reserved results is deferred to Phase 4"
+  ],
+  "successful": true,
+  "command": "python tools/verify_models_selected.py",
+  "reserved_results_opened": false
+}

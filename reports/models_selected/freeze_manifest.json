@@ -1,0 +1,88 @@
+{
+  "models_frozen_at_utc": "2026-10-12T17:07:05.615286+00:00",
+  "protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+  "training_latest_result": "2022-12-30",
+  "reserved_results_opened": false,
+  "models": [
+    {
+      "path": "reports/models_selected/model_frequency.joblib",
+      "sha256": "22f7b287af829adc89a35fec9c0250d51da2283cc49c2e3700ebb13699a8472e"
+    },
+    {
+      "path": "reports/models_selected/model_elo.joblib",
+      "sha256": "b7715f67680c850e4fa241e4731c86bc1e88beff1e4ff67e35821defccbd150b"
+    },
+    {
+      "path": "reports/models_selected/model_logistic.joblib",
+      "sha256": "01ddf890d3a55e5fcd3e14099bcfc581764548f35ae530d08e502f08ee064342"
+    },
+    {
+      "path": "reports/models_selected/model_ordinal.joblib",
+      "sha256": "e15a7435514b3dc795f891962e83f813ccf4dce3b07ffad0a416d2d4fedcd03a"
+    },
+    {
+      "path": "reports/models_selected/model_xgboost.joblib",
+      "sha256": "12a04906c30b95a03009e24758fa75d8a06a4c45e708bb031b2d0b9e4596a58d"
+    },
+    {
+      "path": "reports/models_selected/model_poisson.joblib",
+      "sha256": "ed2935f800f298fb2ac4903ff745a8ae9b7a26a3133a570498f6894195ab3c3f"
+    },
+    {
+      "path": "reports/models_selected/model_dixon_coles.joblib",
+      "sha256": "841eee9b5843f14fc6efbb59a2ffc337aa3e034612f53471e0aa9bcc28b40c8f"
+    },
+    {
+      "path": "reports/models_selected/model_xgboost_poisson.joblib",
+      "sha256": "e2b11d83a8891e92eb2372bac8bac00276699f4812e5448a3bf829647a6ba236"
+    }
+  ],
+  "decision": {
+    "selected_1x2": "logistic",
+    "passing_candidates": [
+      "logistic"
+    ],
+    "selected_score_model": "poisson",
+    "score_model_beats_elo_criterion": false,
+    "score_selection": "minimum score NLL among passing count candidates, or descriptive-only count candidates",
+    "form_main_passes": true,
+    "form_exclude_marked_passes": true,
+    "secondary_groups_passing": [
+      "recent_form"
+    ],
+    "reserved_results_opened": false
+  },
+  "selection": {
+    "parameters": {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 1.0,
+      "home_advantage": 100,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    },
+    "selected_configuration": "H100_R0_Kreference_G1.0",
+    "minimum_configuration": "H100_R0_Kreference_G1.0",
+    "selection_completed_at_utc": "2026-10-12T16:55:59.775656+00:00",
+    "previous_inactivity_0_1_was_reference_not_selected_by_isolated_search": true,
+    "one_se_eligible_configurations": 4,
+    "reserved_results_opened": false
+  },
+  "retrospective": true,
+  "forecast_cutoff_exclusive": "2026-06-10",
+  "training_cutoff_exclusive": "2023-01-01",
+  "official_results_loaded_at_utc": null,
+  "code_sha256": {
+    "src/football_forecast/model_selection.py": "206b3277b3e07dfc09207f4fb9dfc408e39e1dc2e0cb47f809af8a6c440cc39b",
+    "src/football_forecast/selected_models.py": "96a29d9a03d443ea20cfe93e976c05b533d1acf582570070e43609dab836469c",
+    "src/football_forecast/selection_review.py": "a9931d2d2bd057510d5b8c76dbe677c9c3e803d841f4cb4931962423cacef543",
+    "src/football_forecast/elo_calibration.py": "448f325d443fb1026abfc11495456fa3042ff2f5a234e89cb47b495b3dec262d",
+    "src/football_forecast/preparation.py": "571335c98ffb934b8ce9b2df6f4a3661c215bb72b788ea86349b1a58d844e1a9"
+  },
+  "documentation_completed_at_utc": "2026-10-12T17:12:41.174975+00:00",
+  "code_hash_line_endings": "LF normalized"
+}

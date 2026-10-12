@@ -1,0 +1,112 @@
+{
+  "written_at_utc": "2026-10-12T16:53:59.018688+00:00",
+  "definition": {
+    "boundary_exclusive": "2023-01-01",
+    "blocks": [
+      [
+        "2016-01-01",
+        "2018-01-01"
+      ],
+      [
+        "2018-01-01",
+        "2020-01-01"
+      ],
+      [
+        "2020-01-01",
+        "2022-01-01"
+      ],
+      [
+        "2022-01-01",
+        "2023-01-01"
+      ]
+    ],
+    "goal_policy": "all_assumed: verified 90 where known, registered final otherwise; every score admitted",
+    "membership_independent_of_score": true,
+    "elo_grid": {
+      "home_advantage": [
+        60,
+        100,
+        120,
+        150
+      ],
+      "inactivity_rate": [
+        0,
+        0.1
+      ],
+      "k": [
+        "reference",
+        "higher"
+      ],
+      "margin_strength": [
+        0.5,
+        1.0
+      ]
+    },
+    "elo_selection": "minimum pooled non-friendly log loss; candidate eligible if paired excess <= one paired SE",
+    "paired_se": "standard deviation of 400 paired bootstrap differences, whole calendar quarters, seed 20261012",
+    "simplicity_order": [
+      "no inactivity regression",
+      "reference K",
+      "gamma 0.5",
+      "smaller home advantage",
+      "log loss"
+    ],
+    "model_adoption": "non-friendly paired log-loss upper 95% CI < 0; mean Brier difference <= 0; at least 3/4 blocks improve",
+    "model_tie_break": "smallest feature/model complexity among passing models within one paired SE of best",
+    "complexity_order": [
+      "elo",
+      "logistic",
+      "ordinal",
+      "poisson",
+      "dixon_coles",
+      "xgboost",
+      "xgboost_poisson"
+    ],
+    "bootstrap": {
+      "replicates": 400,
+      "unit": "calendar quarter",
+      "seed": 20261012
+    },
+    "ece": {
+      "bins": 10,
+      "edges": "equal width [0,1]",
+      "classes": [
+        "home win",
+        "draw",
+        "away win"
+      ]
+    },
+    "train_start": "2000-01-01",
+    "training": "all earlier valid outcomes, both team orders; Elo state all available historical dates",
+    "xgboost_fixed": {
+      "n_estimators": 160,
+      "max_depth": 2,
+      "learning_rate": 0.04,
+      "min_child_weight": 20,
+      "reg_lambda": 5,
+      "subsample": 1,
+      "colsample_bytree": 1,
+      "threads": 2,
+      "seed": 20261012
+    },
+    "calibration": "native probabilities; no post-hoc outcome calibration for count models, preserving score/1X2 coherence",
+    "sensitivities": {
+      "exclude_marked": "omit shootout or proven ET from count/form history, train and evaluation; retain all for Elo",
+      "non_friendlies": "fit count models on all prior non-friendlies, evaluate separately",
+      "strict_worldcup": "evaluate main count-model predictions on independently verified World Cup rows; not an alternative fitting population"
+    },
+    "form_admission": "approved all-assumed duration group; repeat against selected fixed-venue Elo and excluding marked history",
+    "secondary_features": "repeat individual ablations vs Elo + free venue; report, do not silently add new groups",
+    "symmetry": "predict both role orders, reconcile; count rates use one shared oriented regressor; tolerance 1e-9",
+    "score_nll": "infinite-support joint likelihood, optional bounded Dixon-Coles correction",
+    "count_rate_limits": [
+      0.0024787521766663585,
+      12.0
+    ],
+    "rho_validity": "per-match clamp to positive low-score cell bounds; report activation",
+    "no_2023_results": true,
+    "retrospective": true,
+    "score_model_selection": "minimum non-friendly score NLL among passing count candidates; if none pass, descriptive score model only"
+  },
+  "clarified_before_execution_at_utc": "2026-10-12T16:54:53.343807+00:00"
+}
