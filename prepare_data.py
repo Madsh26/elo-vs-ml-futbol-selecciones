@@ -15,7 +15,7 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--data-dir',type=Path,default=ROOT)
     parser.add_argument('--output-dir',type=Path,default=ROOT/'reports/data_preparation')
-    parser.add_argument('--cutoff',default='2026-06-10')
+    parser.add_argument('--cutoff',default='2023-01-01')
     args=parser.parse_args()
     prepare_local_data(args.data_dir,args.output_dir,args.cutoff)
     from football_forecast.source_audit import inspect_sources

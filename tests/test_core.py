@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 import unittest
+import os
 from types import SimpleNamespace
 import numpy as np
 import pandas as pd
@@ -51,14 +52,14 @@ class ProbabilityTests(unittest.TestCase):
 class LocalDataTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.history,cls.fixtures,cls.audit=load_local(ROOT,'2026-06-10')
+        cls.history,cls.fixtures,cls.audit=load_local(ROOT,'2023-01-01')
 
     def test_fixture_resolution(self):
         self.assertEqual(len(self.fixtures),72)
         self.assertEqual(self.fixtures[['home_team','away_team']].stack().nunique(),48)
         self.assertFalse(self.fixtures[['home_team','away_team']].stack().str.contains('Playoff').any())
-        self.assertEqual(self.audit['worldcup_2026_scored_rows'],0)
-        self.assertLess(self.history.date.max(),pd.Timestamp('2026-06-10'))
+        self.assertIsNone(self.audit['worldcup_2026_scored_rows'])
+        self.assertLess(self.history.date.max(),pd.Timestamp('2023-01-01'))
 
     def test_final_2022_regulation_score(self):
         row=self.history[(self.history.date==pd.Timestamp('2022-12-18')) &
@@ -82,6 +83,8 @@ class ExportTests(unittest.TestCase):
         np.testing.assert_allclose(scores.groupby(['model','match_id']).probability.sum(),1,atol=1e-10)
         self.assertTrue((scores.probability>=0).all())
 
+    @unittest.skipUnless(os.environ.get('ALLOW_RESERVED_EVALUATION')=='1',
+                         'Baseline reproduction using reserved results is deferred to Phase 4')
     def test_saved_model_reproduces_fixture(self):
         import joblib
         from football_forecast.models import goal_rates, score_probabilities

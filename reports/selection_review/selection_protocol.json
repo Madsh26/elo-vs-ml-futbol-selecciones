@@ -1,0 +1,273 @@
+{
+  "written_at_utc": "2026-10-12T15:29:04.508745+00:00",
+  "document": "docs/PROTOCOLO_CONJUNTOS.md",
+  "document_sha256": "b82bf1252d24a1033de343bf0d18e4cd1b37c90dd1cedaec3be7a93ed0159849",
+  "membership_independent_of_target": true,
+  "data_cutoff_exclusive": "2023-01-01",
+  "sports_forecast_cutoff_exclusive": "2026-06-10",
+  "selection_scope": "non_friendlies",
+  "blocks": [
+    [
+      "2016-01-01",
+      "2018-01-01"
+    ],
+    [
+      "2018-01-01",
+      "2020-01-01"
+    ],
+    [
+      "2020-01-01",
+      "2022-01-01"
+    ],
+    [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  ],
+  "grid": [
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 8,
+      "nations_k": 16,
+      "continental_k": 24,
+      "worldcup_k": 32,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 16,
+      "nations_k": 24,
+      "continental_k": 32,
+      "worldcup_k": 48,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 1,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 0,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 100,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.25,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 365
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1400,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1600,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0,
+      "home_advantage": 0,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    }
+  ],
+  "goal_policies": [
+    "strict",
+    "friendly_assumed",
+    "all_assumed"
+  ],
+  "ablation_groups": {
+    "recent_form": [
+      [
+        "gf_diff",
+        "ga_diff",
+        "form_diff",
+        "opponent_diff",
+        "goal_coverage_sum"
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "rest": [
+      [
+        "rest_diff",
+        "rest_missing"
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "competition": [
+      [
+        "competitive",
+        "worldcup",
+        "neutral"
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "altitude": [
+      [
+        "altitude_scaled",
+        "venue_altitude_missing"
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "fifa_rank": [
+      [
+        "rank_diff",
+        "ranking_missing"
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "fifa_rank_points": [
+      [
+        "rank_diff",
+        "points_diff",
+        "ranking_missing",
+        "points_missing"
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1
+      ]
+    ]
+  },
+  "baseline": "effective elo difference including fixed venue advantage; comparator effective Elo + separately learned venue coefficient",
+  "acceptance": "non-friendlies paired log-loss upper CI <0, Brier not worse, >=3/4 blocks improve",
+  "bootstrap": {
+    "blocks": "calendar quarters",
+    "replicas": 400,
+    "seed": 20261012
+  },
+  "xgboost_executed": false,
+  "reserved_results_opened": false
+}

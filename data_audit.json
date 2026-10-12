@@ -1,0 +1,336 @@
+{
+  "correction_started_at_utc": "2026-10-12T15:29:04.508745+00:00",
+  "correction_completed_at_utc": "2026-10-12T16:27:33.457951+00:00",
+  "review_git_tag": "selection-bias-fixed",
+  "correction_date_local": "2026-10-12",
+  "correction_timezone": "America/Bogota",
+  "prediction_cutoff_exclusive": "2026-06-10",
+  "selection_and_review_cutoff_exclusive": "2023-01-01",
+  "latest_result_admitted": "2022-12-30",
+  "history_rows": 45845,
+  "strict_goal_rows": 951,
+  "result_1x2_rows": 45845,
+  "protocol_sha256": "4d2d73f33989a4709b6ba9c040f0b98c909cdfd4035cbecc84a66da9104ad61d",
+  "sources": [
+    {
+      "file": "data/raw/international_results_current.zip",
+      "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
+      "role": "Historical results, goal events and shootouts filtered by cutoff; post-cutoff target values are not admitted."
+    },
+    {
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
+      "role": "Fjelstul historical period verification."
+    },
+    {
+      "file": "reports/probabilistic/resolved_fixtures.csv",
+      "sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+      "role": "Fixture metadata only."
+    },
+    {
+      "file": "data/raw/datacamp_worldcup_notebook.pdf",
+      "sha256": "1409bca81056893d22c302a64b01fef657a3ff0294bdc4ad958d40bd164f8dec",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2018_statistics.csv",
+      "sha256": "c1f6229b642389b796b4c79e72c80802924f962fc7463a9eba83d49c5b842176",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_2022_match_data.csv",
+      "sha256": "2757d74f93b8916277e75e2e874f46985212a6a6c3c498306cf536669584bf6c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/fifa_rank_repeated_snapshot_excluded.csv",
+      "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
+      "role": "Excluded repeated snapshot; fingerprint only."
+    },
+    {
+      "file": "data/raw/fifa_rank_semesters.zip",
+      "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
+      "role": "Secondary enrichment candidate; not used in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2014_teams.csv",
+      "sha256": "9c497ec461ba98ea5e84f0e3010bf61c5a6af16538fc815f96fc78e130376ba5",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2018_matches.csv",
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/footystats_2022_teams.csv",
+      "sha256": "837d2f96a1b1b31d2ec618c4511240c92c1dd96aa102c76c77d376dec9ef6cda",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/geonames_cities15000.zip",
+      "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
+      "role": "Static altitude reserved for context; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/international_results_baseline.zip",
+      "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c",
+      "role": "Not used as model input in this preparation."
+    },
+    {
+      "file": "data/raw/openfootball_worldcup.zip",
+      "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
+      "role": "Openfootball reserved for sealed evaluation; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/statsbomb_open_data.zip",
+      "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
+      "role": "Validation only; fingerprint only in this step."
+    },
+    {
+      "file": "data/raw/transfermarkt.duckdb",
+      "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+      "role": "Dated valuations and snapshot metadata; separate audit before enrichment."
+    },
+    {
+      "file": "data/raw/transfermarkt_repository.zip",
+      "sha256": "d684fe944e12d80e99740b69653aede13a4f309911c9d2d4dd955e5c23376ba5",
+      "role": "Repository code without valuation/player data; unavailable enrichment."
+    },
+    {
+      "file": "data/raw/worldcup_fixtures.zip",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
+      "role": "Not used as model input in this preparation."
+    }
+  ],
+  "selection": {
+    "parameters": {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 100,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    "configuration_name": "Sede con ventaja fija mayor",
+    "selection_completed_at_utc": "2026-10-12T15:30:11.323572+00:00",
+    "previous_parameters": {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    },
+    "changed_parameters": {
+      "home_advantage": {
+        "diagnostic_with_biased_cohort": 60,
+        "current": 100
+      },
+      "inactivity_rate": {
+        "diagnostic_with_biased_cohort": 0,
+        "current": 0.1
+      }
+    },
+    "selection_scope": "non_friendlies",
+    "training_scope": "all valid 1X2, friendlies with declared assumed duration",
+    "reserved_period_opened": false,
+    "canonical_common_initial": 1500,
+    "uniform_initial_shift_candidates_reuse_reference_metrics": true
+  },
+  "features": {
+    "groups_passing_against_elo_plus_venue": [],
+    "combined_groups_passing": false,
+    "goal_window_primary_policy": "strict",
+    "goal_window_sensitivities_not_automatically_adopted": true,
+    "coverage_weights_asof_affiliation_verified": false,
+    "coverage_weights_production_allowed": false,
+    "selection_scope": "non_friendlies",
+    "reserved_period_opened": false,
+    "fixed_venue_elo_vs_learned_venue_passes": false,
+    "primary_x12_baseline": "elo",
+    "form_all_assumed_passes_but_not_adopted": true
+  },
+  "old_improvement_decomposition": [
+    {
+      "scope": "Amistosos",
+      "matches": 197,
+      "fraction": 0.062858966177409,
+      "elo_log_loss": 1.033825864911335,
+      "candidate_log_loss": 0.0037502761059322,
+      "mean_improvement": 1.030075588805403,
+      "contribution_to_pooled_improvement": 0.0647494865968935
+    },
+    {
+      "scope": "No amistosos",
+      "matches": 2937,
+      "fraction": 0.937141033822591,
+      "elo_log_loss": 0.8929382340243436,
+      "candidate_log_loss": 0.8570776496642033,
+      "mean_improvement": 0.0358605843601402,
+      "contribution_to_pooled_improvement": 0.0336064251007441
+    }
+  ],
+  "zero_score_exception_removed": true,
+  "membership_independent_of_target": true,
+  "timing_uncertainty": {
+    "1x2_unverified_count": 31905,
+    "shootouts_admitted": 616,
+    "matches_with_proven_extra_time_goals": 159
+  },
+  "construction_context": "Retrospective study; no claim of publication before the World Cup.",
+  "reserved_results_opened": false,
+  "official_2026_results_loaded": false,
+  "xgboost_executed": false,
+  "model_frozen_at_utc": null,
+  "official_results_loaded_at_utc": null,
+  "primary_goals_policy": "strict independent Fjelstul catalogue; assumed policies remain sensitivity only",
+  "market_value": "Excluded: no dated national membership before 2023; current snapshot prohibited.",
+  "coverage_weights": "Current administrative confederations for sensitivity only; no verified historical affiliation dates.",
+  "ingestion_quality": {
+    "ambiguous_result_rows_excluded": [
+      {
+        "date": "1974-02-17",
+        "home_team": "Tahiti",
+        "away_team": "New Caledonia",
+        "home_score": "2",
+        "away_score": "1"
+      },
+      {
+        "date": "1974-02-17",
+        "home_team": "Tahiti",
+        "away_team": "New Caledonia",
+        "home_score": "1",
+        "away_score": "2"
+      }
+    ],
+    "invalid_result_rows_excluded": [],
+    "duplicate_looking_goal_events_kept": 79,
+    "goal_events_missing_minute": 254,
+    "normalization": {
+      "expected_worldcup_teams": 48,
+      "matched_in_pre_cutoff_history": 48,
+      "unmatched": [],
+      "czechoslovakia_is_separate": true,
+      "former_name_intervals_respected": true
+    }
+  },
+  "verification": {
+    "executed_at_utc": "2026-10-12T15:48:24.146227+00:00",
+    "tests_run": 33,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "skip_reasons": [
+      "Baseline reproduction using reserved results is deferred to Phase 4"
+    ],
+    "successful": true,
+    "command": "python tools/verify_selection_review.py"
+  },
+  "artifacts": [
+    {
+      "file": "reports/selection_review/additional_venue_coefficient.json",
+      "sha256": "791e5a33fa9ad73f2782f81dba1bfaa2ae3c2c5b9ad1ab940d3db0a035925d51"
+    },
+    {
+      "file": "reports/selection_review/archived_bias_decomposition.csv",
+      "sha256": "d8c64a00c634830b7532d909965c9606916e809169a709ddb1bba357668bcd2f"
+    },
+    {
+      "file": "reports/selection_review/catalogue_integrity_exclusions.csv",
+      "sha256": "7b1ea62f7423fad6cb9b877a823ce7c0b2147cb005d5cd3a4a63690bc1bcda88"
+    },
+    {
+      "file": "reports/selection_review/catalogue_unmatched_worldcup.csv",
+      "sha256": "eb9ce78ba852d6e69607173721b03fc5fcb7484db95a9bdb2f96db66ba339443"
+    },
+    {
+      "file": "reports/selection_review/domain_references.csv",
+      "sha256": "68666d9131c118f663211f6ce83c881bf9a0aff283673f768f50f05dde03f851"
+    },
+    {
+      "file": "reports/selection_review/elo_parameter_comparison.csv",
+      "sha256": "dfadfc7e520872163565cd9872f0603b9bff4ccce40bc662f0d94f60ba7a3022"
+    },
+    {
+      "file": "reports/selection_review/elo_walk_forward_predictions.csv",
+      "sha256": "a04242472127b7cadd72f8e72653b606af76f61b1c7f129d0fe75f1ef61028d5"
+    },
+    {
+      "file": "reports/selection_review/feature_ablation.csv",
+      "sha256": "ff266df2328f2a6b65c35978b96fbc0a1dac9b4eb04a431968d96dff3cb0fc23"
+    },
+    {
+      "file": "reports/selection_review/feature_selection.json",
+      "sha256": "fd9b9d07110a7376b969ea1c4a4a268c87f4771b0c63f8cb9b8af5ede70881e6"
+    },
+    {
+      "file": "reports/selection_review/features_all_assumed.csv",
+      "sha256": "6eeb13a11e9eb1bb05de79463337f5bea934a799c3212be55216b723ecd6a5d5"
+    },
+    {
+      "file": "reports/selection_review/features_friendly_assumed.csv",
+      "sha256": "bfbd8fdd827130ac98dd7c270ac1f95c7408b4ebe76fd6989bb04f399642185a"
+    },
+    {
+      "file": "reports/selection_review/goals_all_assumed.csv",
+      "sha256": "856c14948b523ab999eeab6f1253e950544c5004cc379ad434c1eb8694b345e2"
+    },
+    {
+      "file": "reports/selection_review/goals_friendly_assumed.csv",
+      "sha256": "fc6e180faf6bb7bada0896b0cb2de27eab7e49640cb395e0d3c82c4ec3798e1a"
+    },
+    {
+      "file": "reports/selection_review/goals_strict.csv",
+      "sha256": "6a3778f33c3dc03da5bd588f5f40d2c512b2870e18745b4c2fdfecbbe4de0d72"
+    },
+    {
+      "file": "reports/selection_review/historical_features.csv",
+      "sha256": "9a53f04429ed1f96fca48e45bde147dd26df3808aea5f06c70562237090f8432"
+    },
+    {
+      "file": "reports/selection_review/historical_results.csv",
+      "sha256": "2ef1583a3ae5e1d9dc0972c522b63075cec623a8cf120fb3c0db968121b60c15"
+    },
+    {
+      "file": "reports/selection_review/ingestion_audit.json",
+      "sha256": "8c78e7b66f7e2985f07a347b65241d41202037c051b7c6f52e304f0eb5721944"
+    },
+    {
+      "file": "reports/selection_review/RESULTADOS.md",
+      "sha256": "3eef65bb923d084adea2687ada02fde6d94d951eff038bb80457399ca2fc2271"
+    },
+    {
+      "file": "reports/selection_review/selected_elo.json",
+      "sha256": "adb93c3ea696474e6f86767622fc5ba0321abe63c1ba217742bd804922fc5fb4"
+    },
+    {
+      "file": "reports/selection_review/selection_bias_diagnostics.csv",
+      "sha256": "be6c44f7e78d315181a480c5fcbdad700aea0643446c2f7faeab5ff7f2c07a26"
+    },
+    {
+      "file": "reports/selection_review/selection_protocol.json",
+      "sha256": "4d2d73f33989a4709b6ba9c040f0b98c909cdfd4035cbecc84a66da9104ad61d"
+    },
+    {
+      "file": "reports/selection_review/verification.json",
+      "sha256": "7cfedb60cd5ee17c0e4b88a0b27045aa82873bde1a9c046faa1b5d05d84e1ec3"
+    },
+    {
+      "file": "reports/selection_review/walk_forward_blocks.csv",
+      "sha256": "cc15743a1674b112e1868bbe285c269c53ae77fbfb81918fe086352940520c5d"
+    },
+    {
+      "file": "reports/selection_review/walk_forward_predictions.csv",
+      "sha256": "2c50b70bad451f91a9cff295ee5123b1e6e9e096f0e25182833fbef11f33e9cd"
+    }
+  ]
+}

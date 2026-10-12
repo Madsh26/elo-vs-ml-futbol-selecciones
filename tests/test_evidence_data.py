@@ -36,7 +36,7 @@ class EvidenceUnitTests(unittest.TestCase):
         self.assertEqual(goal_event_evidence(pd.DataFrame([{'team':'A','minute':90},{'team':'B','minute':117}]),'A','B',1,1)[0],(1,0))
         self.assertIsNone(goal_event_evidence(pd.DataFrame([{'team':'A','minute':np.nan}]),'A','B',1,0)[0])
         self.assertIsNone(goal_event_evidence(pd.DataFrame([{'team':'A','minute':60}]),'A','B',2,0)[0])
-        self.assertEqual(goal_event_evidence(None,'A','B',0,0)[0],(0,0))
+        self.assertIsNone(goal_event_evidence(None,'A','B',0,0)[0])
 
     def test_unverified_goals_do_not_enter_windows_or_leak_same_day(self):
         rows=[]
@@ -59,13 +59,13 @@ class EvidenceUnitTests(unittest.TestCase):
 class EvidenceLocalTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.data=load_study_data(ROOT,'2026-06-10')
+        cls.data=load_study_data(ROOT,'2023-01-01')
 
     def test_official_competitions_retained_and_no_future_labels(self):
         h=self.data.history
         for tournament in ['FIFA World Cup qualification','UEFA Euro','Copa América','UEFA Nations League','CONCACAF Nations League']:
             self.assertTrue((h.tournament==tournament).any(),tournament)
-        self.assertTrue((h.date<pd.Timestamp('2026-06-10')).all())
+        self.assertTrue((h.date<pd.Timestamp('2023-01-01')).all())
         self.assertFalse(self.data.audit['official_2026_results_loaded'])
         teams=set(self.data.fixtures[['home_team','away_team']].stack())
         self.assertEqual(len(teams),48)
@@ -78,14 +78,15 @@ class EvidenceLocalTests(unittest.TestCase):
 
     def test_tanda_not_forced_to_draw(self):
         h=self.data.history
-        row=h[(h.date==pd.Timestamp('2023-11-21'))&(h.home_team=='Mexico')&(h.away_team=='Honduras')].iloc[0]
+        row=h[h.shootout_record & h.x12_uncertain_timing & h.recorded_home_score.ne(h.recorded_away_score)].iloc[0]
         self.assertTrue(row.shootout_record)
         # This archive has no complete goal events for this match. Its
         # recorded 2-0 must neither become a draw nor an invented 90' label.
         self.assertFalse(row.goal_training_eligible)
         self.assertTrue(pd.isna(row.home_score_90))
-        self.assertEqual(row.duration_reason,'no_goal_event_coverage')
-        self.assertEqual((row.elo_home_score,row.elo_away_score),(2,0))
+        self.assertTrue(row.x12_eligible)
+        self.assertNotEqual(row.x12_target,1)
+        self.assertEqual((row.elo_home_score,row.elo_away_score),(row.recorded_home_score,row.recorded_away_score))
 
     def test_verified_worldcup_extra_time(self):
         h=self.data.history

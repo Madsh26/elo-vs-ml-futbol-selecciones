@@ -1,6 +1,10 @@
+# Diagnóstico histórico de selección
+
+Este archivo conserva la evidencia anterior a la regla de conjuntos independientes del resultado. Sus métricas no son evidencia vigente de mejora. La narrativa del diseño y sus resultados vigentes están en [RESULTADOS.md](../../RESULTADOS.md) y reports/selection_review/.
+
 # Datos y definición del resultado
 
-Construí el estudio con archivos locales y un corte exclusivo del 2026-06-10. El trabajo se realiza con el torneo ya jugado; no representa un pronóstico publicado antes del Mundial. En esta preparación no entrené modelos ni cargué resultados oficiales posteriores al corte.
+Construí el estudio con archivos locales y un corte exclusivo del 2026-06-10. El trabajo se realiza con el torneo ya jugado; no representa un pronóstico publicado antes del Mundial. La preparación descrita aquí constituye un registro histórico de auditoría.
 
 ## Qué representa cada resultado
 

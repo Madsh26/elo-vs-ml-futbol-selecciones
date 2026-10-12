@@ -107,8 +107,6 @@ def competition_family(tournament):
 def goal_event_evidence(events, home, away, full_home, full_away):
     """Keep duplicate-looking events; validate counts and credited teams first."""
     if events is None or not len(events):
-        if full_home == 0 and full_away == 0:
-            return (0, 0), 'zero_score_invariant'
         return None, 'no_goal_event_coverage'
     counts = Counter(events.team)
     if set(counts) - {home, away}:
@@ -127,7 +125,33 @@ def goal_event_evidence(events, home, away, full_home, full_away):
     a90 = int(full_away - et.get(away, 0))
     return (h90, a90), 'martj42_complete_goal_events'
 
-def fjelstul_evidence(root, cutoff, registry):
+def fjelstul_from_frames(wc,goals):
+    """Match-catalogue duration policy, identical for zero and positive scores."""
+    grouped = {key:group for key,group in goals.groupby('match_id')}
+    evidence, catalogue = {}, set()
+    for row in wc.itertuples(index=False):
+        key = (pd.Timestamp(row.match_date),row.home_team_name,row.away_team_name)
+        catalogue.add(key)
+        h,a = int(row.home_team_score),int(row.away_team_score)
+        flag = str(row.extra_time).casefold()
+        if flag in ('0','0.0','false'):
+            # Duration is independently certified by the match table.
+            evidence[key] = (h,a,h,a)
+            continue
+        if flag not in ('1','1.0','true'):
+            continue
+        events = grouped.get(row.match_id)
+        counts = events.team_name.value_counts() if events is not None else pd.Series(dtype=int)
+        if counts.get(row.home_team_name,0)!=h or counts.get(row.away_team_name,0)!=a:
+            continue
+        if events is not None and (events.minute_regulation.isna().any() or events.match_period.isna().any()):
+            continue
+        et = (events[events.match_period.str.contains('extra time',case=False,regex=False)].team_name.value_counts()
+              if events is not None else pd.Series(dtype=int))
+        evidence[key] = (int(h-et.get(row.home_team_name,0)),int(a-et.get(row.away_team_name,0)),h,a)
+    return evidence,catalogue
+
+def fjelstul_evidence(root, cutoff, registry,return_catalogue=False):
     path = Path(root) / 'data/raw/fjelstul_worldcup.zip'
     wc = archive_before(path, 'worldcup-master/data-csv/matches.csv', cutoff, 'match_date')
     wc = wc[wc.tournament_name.str.contains("Men's", regex=False)].copy()
@@ -135,25 +159,8 @@ def fjelstul_evidence(root, cutoff, registry):
     goals = archive_before(path, 'worldcup-master/data-csv/goals.csv', cutoff, 'match_date')
     goals = registry.frame(goals, ['team_name'], 'match_date')
     goals['minute_regulation'] = pd.to_numeric(goals.minute_regulation, errors='coerce')
-    grouped = {key: group for key, group in goals.groupby('match_id')}
-    evidence = {}
-    for row in wc.itertuples(index=False):
-        h, a = int(row.home_team_score), int(row.away_team_score)
-        events = grouped.get(row.match_id)
-        key = (pd.Timestamp(row.match_date), row.home_team_name, row.away_team_name)
-        if events is None:
-            if h == a == 0:
-                evidence[key] = (0, 0, h, a)
-            continue
-        counts = events.team_name.value_counts()
-        if counts.get(row.home_team_name, 0) != h or counts.get(row.away_team_name, 0) != a:
-            continue
-        if events.minute_regulation.isna().any():
-            continue
-        et = events[events.match_period.str.contains('extra time', case=False, regex=False)].team_name.value_counts()
-        evidence[key] = (int(h - et.get(row.home_team_name, 0)),
-                         int(a - et.get(row.away_team_name, 0)), h, a)
-    return evidence
+    evidence,catalogue = fjelstul_from_frames(wc,goals)
+    return (evidence,catalogue) if return_catalogue else evidence
 
 @dataclass
 class StudyData:
@@ -166,6 +173,10 @@ class StudyData:
     # the result/goal evidence contract or requiring those sources to exist.
     enrichments: dict = field(default_factory=lambda: {
         'market_values_asof':None, 'fifa_publications_asof':None, 'venue_altitude_static':None})
+
+    @property
+    def result_history(self):
+        return self.history[self.history.x12_eligible].copy()
 
 def load_study_data(root='.', cutoff='2026-06-10'):
     root = Path(root)
@@ -202,7 +213,7 @@ def load_study_data(root='.', cutoff='2026-06-10'):
     shootouts['date'] = pd.to_datetime(shootouts.date)
     shootouts = registry.frame(shootouts, ['home_team','away_team','winner'])
     tandas = set(shootouts[MATCH_KEY].itertuples(index=False, name=None))
-    fjelstul = fjelstul_evidence(root, cutoff, registry)
+    fjelstul,catalogue = fjelstul_evidence(root, cutoff, registry,return_catalogue=True)
     records = []
     for row in history.itertuples(index=False):
         key = (row.date, row.home_team, row.away_team)
@@ -221,26 +232,31 @@ def load_study_data(root='.', cutoff='2026-06-10'):
                 recovered, reason, conflict = None, 'regulation_sources_disagree', True
             else:
                 recovered, reason = f[:2], 'fjelstul_verified_periods'
-        # Standard friendlies can form an explicitly assumed alternative,
-        # never a regulation-time label in the primary training dataset.
-        # Tandas and conflicting evidence prevent even this alternative.
-        assumed = False
-        if recovered is None and not conflict and row.tournament == 'Friendly' and key not in tandas:
-            if reason == 'no_goal_event_coverage':
-                assumed, reason = True, 'friendly_duration_unverified'
-        usable = recovered is not None
+        reconstructed = recovered is not None
+        # Membership uses the independent match catalogue, never its score.
+        usable = f is not None and not conflict
+        assumed = not reconstructed
+        label_h,label_a = recovered if reconstructed else (full_h,full_a)
         item = row._asdict()
-        item.update(home_score_90=recovered[0] if usable else np.nan,
-                    away_score_90=recovered[1] if usable else np.nan,
+        item.update(home_score_90=f[0] if usable else np.nan,
+                    away_score_90=f[1] if usable else np.nan,
                     goal_training_eligible=usable, duration_reason=reason,
                     duration_assumed=assumed,
-                    assumed_home_score_90=full_h if assumed else np.nan,
-                    assumed_away_score_90=full_a if assumed else np.nan,
+                    assumed_home_score_90=label_h,
+                    assumed_away_score_90=label_a,
                     shootout_record=key in tandas,
-                    competition_family=competition_family(row.tournament))
-        item['elo_home_score'] = recovered[0] if usable else full_h
-        item['elo_away_score'] = recovered[1] if usable else full_a
-        item['elo_result_source'] = 'regulation_90' if usable else 'recorded_final_without_shootout_winner'
+                    competition_family=competition_family(row.tournament),
+                    independent_goal_catalogue=key in catalogue or reverse in catalogue,
+                    x12_eligible=True,x12_home_score=label_h,x12_away_score=label_a,
+                    x12_90_reconstructed=reconstructed,
+                    x12_source=reason if reconstructed else 'recorded_final_duration_assumed',
+                    x12_uncertain_timing=not reconstructed,
+                    proven_extra_time_goals=max(0,full_h+full_a-label_h-label_a) if reconstructed else 0,
+                    goal_policy='independent_fjelstul_catalogue',
+                    x12_target=0 if label_h>label_a else 1 if label_h==label_a else 2)
+        item['elo_home_score'] = label_h
+        item['elo_away_score'] = label_a
+        item['elo_result_source'] = 'regulation_90_reconstructed' if reconstructed else 'recorded_final_without_shootout_winner'
         records.append(item)
     all_matches = pd.DataFrame(records).sort_values(MATCH_KEY).reset_index(drop=True)
     all_matches['competitive'] = all_matches.competition_family != 'friendly'
@@ -260,7 +276,7 @@ def load_study_data(root='.', cutoff='2026-06-10'):
         raise ValueError(f'Fixture coverage failure: {missing}')
     paths = [archive, raw/'fjelstul_worldcup.zip', fixture_path]
     paths = list(dict.fromkeys(paths + sorted(raw.glob('*'))))
-    sources = [{'file':str(p.relative_to(root)), 'sha256':digest_file(p)} for p in paths if p.is_file()]
+    sources = [{'file':p.relative_to(root).as_posix(), 'sha256':digest_file(p)} for p in paths if p.is_file()]
     roles = {
         'datos nuevos/international_results-master.zip':'Historical results, goal events and shootouts filtered by cutoff; post-cutoff target values are not admitted.',
         'worldcup-master.zip':'Fjelstul historical period verification.',
@@ -298,6 +314,7 @@ def load_study_data(root='.', cutoff='2026-06-10'):
              'goal_events_missing_minute':int(goals.minute.isna().sum()),
              'elo_policy':'Use verified regulation score when available; otherwise recorded final score, possibly including extra time. Never use shootout winner or force a draw from shootout membership.',
              'time_filter':'Apply exclusive date filter before numeric interpretation or retention of any target fields.',
+             'set_membership_rule':'Independent of score: all valid results for 1X2; independent Fjelstul match catalogue for strict regulation goals; no zero-score exception.',
              'market_value':'DuckDB supplied; audited and attached separately by the dated-enrichment step. Current snapshot fields are prohibited predictors.',
              'ranking_repeated_snapshot':'Excluded by approved decision; not a historical source.',
              'ranking_original':'Original archive inspected through 2024, semester 2. Future enrichment may use end-of-semester lag and age <=90 days; no 2026 extrapolation.',

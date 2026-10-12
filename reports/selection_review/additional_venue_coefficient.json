@@ -1,0 +1,89 @@
+{
+  "metrics": [
+    {
+      "model": "elo_venue",
+      "scope": "total",
+      "matches": 6376,
+      "log_loss": 0.8899636423634005,
+      "brier": 0.5237789326542498,
+      "log_loss_ci": [
+        0.8671793318897467,
+        0.9190956978523981
+      ],
+      "brier_ci": [
+        0.5091325992188245,
+        0.5426334520050478
+      ],
+      "actual_draw_rate": 0.23698243412797992,
+      "predicted_draw_rate": 0.23173351253432592,
+      "paired_log_loss_difference": 0.0005250779873595824,
+      "paired_log_loss_ci": [
+        -2.2739434944573488e-05,
+        0.0010427607788528904
+      ],
+      "paired_brier_difference": 0.0003549768383450617,
+      "paired_brier_ci": [
+        -3.106021964388318e-05,
+        0.000716000731027506
+      ],
+      "blocks_improving": 1
+    },
+    {
+      "model": "elo_venue",
+      "scope": "non_friendlies",
+      "matches": 4473,
+      "log_loss": 0.862336619057557,
+      "brier": 0.5059900126547278,
+      "log_loss_ci": [
+        0.8317350297783184,
+        0.8975778517389786
+      ],
+      "brier_ci": [
+        0.4867286255449146,
+        0.5285183558594433
+      ],
+      "actual_draw_rate": 0.2260228034875922,
+      "predicted_draw_rate": 0.22975232795024852,
+      "paired_log_loss_difference": 0.0007036439247549807,
+      "paired_log_loss_ci": [
+        -6.367356255691697e-05,
+        0.0014922210977744398
+      ],
+      "paired_brier_difference": 0.0004265283837504164,
+      "paired_brier_ci": [
+        -4.5924678334206184e-05,
+        0.0009534374255234628
+      ],
+      "blocks_improving": 2
+    },
+    {
+      "model": "elo_venue",
+      "scope": "friendlies",
+      "matches": 1903,
+      "log_loss": 0.9549009388673613,
+      "brier": 0.5655917750913818,
+      "log_loss_ci": [
+        0.9245251079470088,
+        0.9829181949383294
+      ],
+      "brier_ci": [
+        0.5464338261545877,
+        0.5840725672760183
+      ],
+      "actual_draw_rate": 0.2627430373095113,
+      "predicted_draw_rate": 0.23639028533757245,
+      "paired_log_loss_difference": 0.00010535889226256916,
+      "paired_log_loss_ci": [
+        -0.0009733618813563046,
+        0.0011549939007547368
+      ],
+      "paired_brier_difference": 0.00018679498726878636,
+      "paired_brier_ci": [
+        -0.00043383946236543884,
+        0.0009080826965449264
+      ],
+      "blocks_improving": 1
+    }
+  ],
+  "passes_criterion_against_fixed_venue_elo": false
+}

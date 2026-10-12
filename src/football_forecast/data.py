@@ -6,6 +6,7 @@ import unicodedata
 import zipfile
 import numpy as np
 import pandas as pd
+from .ingestion import archive_before,boolean
 
 ALIASES = {
     'USA': 'United States', 'South Korea': 'Korea Republic', 'Iran': 'IR Iran',
@@ -20,20 +21,27 @@ def normalize(name):
     return ''.join(c for c in unicodedata.normalize('NFKD', name)
                    if not unicodedata.combining(c))
 
-def read_archive(root, archive, member):
+def read_archive(root, archive, member,usecols=None):
     names = {'international_results-master.zip':'international_results_baseline.zip',
              'worldcup-master.zip':'fjelstul_worldcup.zip', 'data.zip':'worldcup_fixtures.zip'}
     with zipfile.ZipFile(Path(root) / 'data/raw' / names.get(archive,archive)) as z:
-        return pd.read_csv(z.open(member))
+        return pd.read_csv(z.open(member),usecols=usecols)
 
 def load_local(root, cutoff):
-    results = read_archive(root, 'international_results-master.zip',
-                           'international_results-master/results.csv')
+    results = archive_before(Path(root)/'data/raw/international_results_baseline.zip',
+                             'international_results-master/results.csv',cutoff)
+    for column in ['home_score','away_score']:
+        results[column]=pd.to_numeric(results[column],errors='coerce')
+    results['neutral']=boolean(results.neutral)
     results['date'] = pd.to_datetime(results['date'])
     for col in ['home_team', 'away_team', 'country']:
         results[col] = results[col].map(normalize)
-    wc = read_archive(root, 'worldcup-master.zip', 'worldcup-master/data-csv/matches.csv')
-    goals = read_archive(root, 'worldcup-master.zip', 'worldcup-master/data-csv/goals.csv')
+    wc = archive_before(Path(root)/'data/raw/fjelstul_worldcup.zip','worldcup-master/data-csv/matches.csv',cutoff,'match_date')
+    goals = archive_before(Path(root)/'data/raw/fjelstul_worldcup.zip','worldcup-master/data-csv/goals.csv',cutoff,'match_date')
+    goals['minute_regulation']=pd.to_numeric(goals.minute_regulation)
+    for column in ['home_team_score','away_team_score']:
+        wc[column]=pd.to_numeric(wc[column])
+    wc['extra_time']=boolean(wc.extra_time)
     wc = wc[wc.tournament_name.str.contains("Men's", regex=False)].copy()
     wc['date'] = pd.to_datetime(wc.match_date)
     for col in ['home_team_name', 'away_team_name']:
@@ -88,8 +96,12 @@ def load_local(root, cutoff):
     fixtures = read_archive(root, 'data.zip', 'data/group_fixtures.csv')
     for col in ['home_team', 'away_team']:
         fixtures[col] = fixtures[col].map(normalize)
-    scheduled = results[(results.tournament == 'FIFA World Cup') &
-                        (results.date.dt.year == 2026)].copy()
+    schedule_metadata=read_archive(root,'international_results-master.zip','international_results-master/results.csv',
+                                   usecols=['date','home_team','away_team','tournament'])
+    schedule_metadata['date']=pd.to_datetime(schedule_metadata.date)
+    for column in ['home_team','away_team']:schedule_metadata[column]=schedule_metadata[column].map(normalize)
+    scheduled = schedule_metadata[(schedule_metadata.tournament == 'FIFA World Cup') &
+                                  (schedule_metadata.date.dt.year == 2026)].copy()
     replacements = {}
     # Match on the known opposing team. Two anchors must identify exactly
     # one scheduled participant; dates can differ because the sources use
@@ -123,7 +135,8 @@ def load_local(root, cutoff):
                 'raw_rows': len(results), 'raw_last_date': str(results.date.max().date()),
                 'latest_scored_date': str(results.dropna(subset=['home_score', 'away_score']).date.max().date()),
                 'worldcup_2026_scheduled_rows': len(scheduled),
-                'worldcup_2026_scored_rows': int(scheduled[['home_score', 'away_score']].notna().all(axis=1).sum()),
+                'worldcup_2026_scored_rows': None,
+                'future_labels_inspected':False,
                 'verified_90_history_rows': len(history),
                 'excluded_unverified_scored_rows': len(scored) - len(history),
                 'worldcup_extra_time_matches_recovered': recovered,

@@ -1,0 +1,43 @@
+{
+  "parameters": {
+    "friendly_k": 12,
+    "nations_k": 20,
+    "continental_k": 28,
+    "worldcup_k": 40,
+    "other_k": 16,
+    "margin_strength": 0.5,
+    "home_advantage": 100,
+    "initial": 1500,
+    "inactivity_rate": 0.1,
+    "inactivity_grace_days": 730
+  },
+  "configuration_name": "Sede con ventaja fija mayor",
+  "selection_completed_at_utc": "2026-10-12T15:30:11.323572+00:00",
+  "previous_parameters": {
+    "friendly_k": 12,
+    "nations_k": 20,
+    "continental_k": 28,
+    "worldcup_k": 40,
+    "other_k": 16,
+    "margin_strength": 0.5,
+    "home_advantage": 60,
+    "initial": 1500,
+    "inactivity_rate": 0,
+    "inactivity_grace_days": 730
+  },
+  "changed_parameters": {
+    "home_advantage": {
+      "diagnostic_with_biased_cohort": 60,
+      "current": 100
+    },
+    "inactivity_rate": {
+      "diagnostic_with_biased_cohort": 0,
+      "current": 0.1
+    }
+  },
+  "selection_scope": "non_friendlies",
+  "training_scope": "all valid 1X2, friendlies with declared assumed duration",
+  "reserved_period_opened": false,
+  "canonical_common_initial": 1500,
+  "uniform_initial_shift_candidates_reuse_reference_metrics": true
+}

@@ -1,0 +1,5 @@
+# Preserve audited bytes across Windows/Linux checkouts.
+reports/selection_review/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/probabilistic/resolved_fixtures.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/PROTOCOLO_CONJUNTOS.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data_audit.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

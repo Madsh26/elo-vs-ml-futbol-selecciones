@@ -1,0 +1,13 @@
+{
+  "groups_passing_against_elo_plus_venue": [],
+  "combined_groups_passing": false,
+  "goal_window_primary_policy": "strict",
+  "goal_window_sensitivities_not_automatically_adopted": true,
+  "coverage_weights_asof_affiliation_verified": false,
+  "coverage_weights_production_allowed": false,
+  "selection_scope": "non_friendlies",
+  "reserved_period_opened": false,
+  "fixed_venue_elo_vs_learned_venue_passes": false,
+  "primary_x12_baseline": "elo",
+  "form_all_assumed_passes_but_not_adopted": true
+}

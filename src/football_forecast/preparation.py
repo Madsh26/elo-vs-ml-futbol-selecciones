@@ -102,8 +102,8 @@ def evidence_features(history, fixtures):
     return full, training, future, state
 
 def sensitivity(history, teams):
-    assumed_alternative = history[history.goal_training_eligible | history.duration_assumed].copy()
-    mask = assumed_alternative.duration_assumed
+    assumed_alternative = history[history.goal_training_eligible | history.tournament.eq('Friendly')].copy()
+    mask = ~assumed_alternative.goal_training_eligible
     assumed_alternative.loc[mask,'home_score_90'] = assumed_alternative.loc[mask,'assumed_home_score_90']
     assumed_alternative.loc[mask,'away_score_90'] = assumed_alternative.loc[mask,'assumed_away_score_90']
     cases = {
@@ -204,8 +204,8 @@ def prepare_local_data(root='.', output='reports/data_preparation', cutoff='2026
     audit['field_definitions'] = {
         'recorded_home_score':'Local recorded final goals, including extra time if played; excludes shootout conversions.',
         'home_score_90':'Regulation score reconstructed from evidence; missing when unverified.',
-        'goal_training_eligible':'Verified regulation target, including the invariant zero-score case. Assumed friendly duration is excluded.',
-        'duration_assumed':'Standard friendly duration is available only as a sensitivity alternative; not admitted to primary goals training.',
+        'goal_training_eligible':'Independent Fjelstul match catalogue and reconciled regulation target, with no zero-score exception.',
+        'duration_assumed':'1X2 final-score proxy when regulation is unverified; admission never depends on this result-derived flag.',
         'competitive':'Non-Friendly label in the source; not a certification of FIFA-official status.',
         'country':'Venue territory normalized without historical federation-succession mapping.',
     }

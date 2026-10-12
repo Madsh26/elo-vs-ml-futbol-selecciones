@@ -1,3 +1,7 @@
+# Diagnóstico histórico de selección
+
+Este archivo conserva la evidencia anterior a la regla de conjuntos independientes del resultado. Sus métricas no son evidencia vigente de mejora. La narrativa del diseño y sus resultados vigentes están en [RESULTADOS.md](../../RESULTADOS.md) y reports/selection_review/.
+
 # Calibración del estado histórico
 
 Construyo este estudio retrospectivo con corte deportivo exclusivo 2026-06-10. Seleccioné Elo sin evaluar el periodo reservado desde 2023. Comparé 13 configuraciones con una logística de una sola variable: diferencia de Elo. Las predicciones se reconcilian con el orden inverso para respetar simetría.

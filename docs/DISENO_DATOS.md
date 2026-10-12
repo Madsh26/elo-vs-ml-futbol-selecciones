@@ -1,60 +1,31 @@
-# Definición del historial y del marcador
+# Definición del historial y del resultado
 
-Uso dos conjuntos relacionados. El historial conserva los partidos válidos de las fuentes locales, incluidas eliminatorias, campeonatos continentales y Nations League. El conjunto de entrenamiento de goles contiene únicamente los partidos cuyo marcador a 90 minutos puedo reconstruir. Los supuestos de duración de amistosos quedan en una alternativa de sensibilidad, fuera del conjunto principal.
+Construyo un estudio retrospectivo y separo pertenencia a un conjunto, reconstrucción de la etiqueta e integridad de las fuentes. El corte deportivo final es 2026-06-10; la selección actual solo admite resultados anteriores a 2023.
 
-Un partido sin marcador verificable a 90 minutos no desaparece del historial. Puede actualizar Elo y la forma basada en resultados, pero no aporta goles a las ventanas de ataque y defensa. Cada ventana registra qué proporción de sus partidos tiene información de goles comparable. Para muestras pequeñas, el promedio de goles incluye un prior fijo equivalente a tres partidos con 1,3 goles por equipo; no lo interpreto como datos observados.
+## Pertenencia independiente del resultado
 
-## Evidencia de duración
+No uso marcador, empate, goles o ganador para definir cobertura. El conjunto 1X2 contiene todo registro válido del dominio declarado. Una tanda permanece en el historial: no transforma automáticamente un marcador en empate. Cuando puedo reconstruir 90 minutos, uso ese resultado; cuando no puedo, conservo el final registrado como aproximación y marco la incertidumbre.
 
-1. Filtro las fechas antes de interpretar y conservar valores de goles. El límite es exclusivo: no entra ningún partido del 10 de junio de 2026 o posterior.
-2. En Fjelstul compruebo que la cantidad de goles atribuida a cada equipo coincide con el marcador final. Descuento únicamente los eventos identificados como prórroga por su periodo.
-3. En martj42 compruebo equipo anotador, cantidades de goles, minutos presentes y rango de minutos. El descuento se codifica como minuto 90; los eventos mayores de 90 corresponden a prórroga en la semántica contrastada de esta fuente.
-4. Conservo eventos aparentemente idénticos. Dos goles pueden compartir equipo, minuto y jugador; eliminarlos sin contrastar el marcador altera la evidencia.
-5. Un marcador final 0–0 permite conocer el 0–0 a 90 minutos aunque el encuentro haya continuado sin goles.
-6. No convierto una tanda automáticamente en empate. Una tanda puede resolver una eliminatoria a dos partidos. Si falta evidencia de goles a 90 minutos, el partido conserva una marca de exclusión del entrenamiento de goles.
-7. Un amistoso sin tanda conocida y sin eventos disponibles queda excluido del entrenamiento principal de goles. En una alternativa de sensibilidad declaro la suposición de duración estándar. No uso esa alternativa para resolver conflictos entre fuentes o minutos faltantes.
-8. Si las fuentes discrepan o los eventos no coinciden con el marcador, excluyo la etiqueta de goles y conservo el motivo.
+El catálogo de Fjelstul identifica partidos independientemente de la presencia de goles. La ficha sin prórroga certifica el resultado a 90 minutos para cualquier marcador. La reconstrucción con prórroga utiliza periodos del corpus y reconciliación de cantidades. Distingo conflictos de integridad de ausencia de cruce de identidad/fecha; ambas listas permanecen visibles.
 
-StatsBomb se reserva para comprobar marcadores y semántica de periodos, no para construir características predictivas. Su minuto numérico puede superar 90 durante el descuento; no aplico allí la regla de minutos de martj42.
+No considero que la ausencia de filas en goalscorers demuestre cobertura de un 0–0. Martj42 lista goles y codifica descuento como 90; sus eventos completos pueden ayudar a reconstruir una etiqueta 1X2, pero no definen admisión al conjunto estricto de goles. StatsBomb distingue descuento y prórroga por periodo y queda reservado para validación.
 
-## Resultado utilizado por Elo
+## Sensibilidades
 
-La política principal utiliza el marcador a 90 minutos cuando está disponible. En los casos no verificables utiliza el marcador final registrado, posiblemente con prórroga, sin incorporar el ganador de la tanda. Esta limitación queda identificada en cada fila.
+El conjunto estricto de goles usa el catálogo independiente. Las alternativas agregan todos los amistosos o todos los registros con duración supuesta, sin excepciones por marcador, tanda o ausencia de goles. Cada ventana de ataque y defensa utiliza solo partidos previos admitidos bajo su política y conserva cobertura. Un promedio con pocos partidos tiene un prior fijo equivalente a tres encuentros de 1,3 goles; no lo presento como goles observados.
 
-Comparo cinco políticas manteniendo los mismos parámetros de Elo:
+Los indicadores de verificación del partido actual no son predictores: se utilizan para auditoría de etiquetas. Las variables de forma provienen de resultados previos. Las suposiciones de duración se informan por separado y no se convierten en prueba de duración física del partido.
 
-- Historial completo con marcador a 90 minutos cuando está disponible y marcador registrado en los demás casos.
-- Historial completo utilizando siempre el marcador final registrado.
-- Solo partidos con etiqueta de goles a 90 minutos admisible.
-- Esos partidos más los amistosos de duración estándar supuesta, como alternativa explícita.
-- `baseline_elo_amistosos`: restringe el historial a amistosos y Mundiales, utilizando el mismo archivo de resultados y corte que las demás políticas. No uso sus goles no verificables como etiquetas del conjunto principal.
+## Diagnóstico estándar
 
-La sensibilidad mide cambios en el estado Elo y en la cobertura. No demuestra mejoras de predicción. Los parámetros se mantienen fijos para aislar estas decisiones sobre datos; su calibración temporal corresponde a una operación posterior.
+Comparo 0–0 y empates registrados y de la etiqueta, por conjunto y bloque. El conjunto completo 1X2 tiene las mismas proporciones registradas que el historial por construcción. Una diferencia en la etiqueta reconstruida puede deberse a prórroga y no a selección. Comparo además dominios equivalentes: amistosos con amistosos, no amistosos con no amistosos y catálogo de Mundiales con Mundiales. No igualo tasas de dominios distintos artificialmente.
 
-El modelo guardado de la referencia de amistosos se conserva por separado. No atribuyo a esa referencia entrenada las métricas de una política recalculada con otro archivo de resultados.
+## Identidad y tiempo
 
-## Identidad y fechas
+Aplico el filtro de fecha antes de interpretar goles. Los alias históricos respetan intervalos; Czechoslovakia y Czech Republic permanecen distintas. Las sedes se normalizan como territorios, no como sucesiones de federaciones. Los partidos del mismo día comparten el estado anterior a ese día.
 
-Mantengo los alias de una misma selección y las correspondencias históricas con sus intervalos de vigencia. Czechoslovakia y Czech Republic son entidades distintas. Fjelstul y Openfootball son fuentes distintas aunque sus archivos ZIP compartan nombre.
+Mercado no tiene pertenencia fechada antes de 2023 y queda excluido. El ranking semestral se considera disponible el día siguiente al fin del semestre y caduca a 90 días; no hay extrapolación a 2026. La altitud de sede es estática; las ciudades ambiguas y viajes no verificables permanecen faltantes.
 
-Para los partidos de una misma fecha calculo todas las características antes de actualizar el historial con cualquiera de sus resultados. Las consultas del fixture utilizan el historial conocido en el corte; no simulo resultados intermedios para actualizarlo.
+## Registro y sellado
 
-## Variables complementarias
-
-Inspecciono Transfermarkt en modo de solo lectura. Consulto valoraciones anteriores a la fecha de predicción y al corte. La nacionalidad actual sirve únicamente para describir cobertura de la base, sin afirmar pertenencia histórica a una selección. El adaptador de plantilla usa alineaciones internacionales fechadas y nombres del partido histórico, con un conjunto de jugadores observados en los últimos 730 días. Ese conjunto no es una convocatoria oficial.
-
-Las alineaciones disponibles empiezan en 2024: no puedo validar mercado en los bloques de selección anteriores a 2023. Excluyo mercado del modelo principal y publico el diagnóstico de cobertura. No uso club actual, valor actual ni el ranking actual de national_teams. La ausencia de información no significa un valor de mercado de cero.
-
-El archivo de ranking con una fotografía repetida en fechas distintas está excluido. El ranking de año/semestre presente en los archivos llega a 2024. Solo puede estudiarse como variable secundaria con disponibilidad conservadora después del semestre y un máximo de 90 días de antigüedad. No extrapolo un ranking vigente para 2026 ni afirmo que haya sido incorporado al modelo en esta preparación.
-
-GeoNames se considera una fuente de altitud estática. Su fecha de edición no se usa como información de rendimiento deportivo. La elección del lugar representativo del país de origen debe ser explícita, no una supuesta altitud de toda la selección.
-
-Identifico altitud de sede solo cuando coinciden ciudad y país sin ambigüedad. La elevación tiene prioridad sobre DEM y conservo la procedencia. No tengo ubicaciones de campamentos ni viajes reales: no construyo diferencias de altitud de origen o distancia viajada con supuestos silenciosos. El descanso representa días desde el último partido internacional observado.
-
-La calibración y las ablaciones de selección usan exclusivamente resultados anteriores a 2023. La extensión del estado histórico y las variables del fixture con resultados del periodo reservado quedan pendientes hasta la Fase 4. No presento puntuaciones o forma de 2022 como información vigente para 2026.
-
-## Estudio retrospectivo y sellado
-
-Construyo el estudio con el Mundial ya jugado. No lo presento como un pronóstico publicado antes de su comienzo. Las fechas de corte, preparación, congelado y carga de resultados oficiales representan operaciones distintas.
-
-La preparación no congela un modelo ni carga resultados oficiales posteriores al corte. El congelado deberá registrar modelo, configuración y predicciones, con sus hashes, antes de iniciar la evaluación de 2026. Los marcadores vistos en documentación de Openfootball no intervienen en decisiones de modelado.
+El protocolo de conjuntos se fija antes de ejecutar las métricas. Guardo decisiones, fechas y hashes en data_audit.json. La selección actual no carga resultados reservados ni entrena XGBoost. El congelado del modelo y predicciones y la carga de resultados oficiales siguen pendientes. No presento el estudio como una publicación anterior al torneo.
