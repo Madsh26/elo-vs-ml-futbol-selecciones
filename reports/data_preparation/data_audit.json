@@ -4,12 +4,12 @@
     {
       "file": "data\\raw\\international_results_current.zip",
       "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
-      "role": "Not used as model input in this preparation."
+      "role": "Historical results/events filtered before target interpretation."
     },
     {
       "file": "data\\raw\\fjelstul_worldcup.zip",
       "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
-      "role": "Not used as model input in this preparation."
+      "role": "Historical regulation period verification."
     },
     {
       "file": "reports\\probabilistic\\resolved_fixtures.csv",
@@ -34,12 +34,12 @@
     {
       "file": "data\\raw\\fifa_rank_repeated_snapshot_excluded.csv",
       "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
-      "role": "Not used as model input in this preparation."
+      "role": "Excluded repeated ranking snapshot; hash only."
     },
     {
       "file": "data\\raw\\fifa_rank_semesters.zip",
       "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
-      "role": "Not used as model input in this preparation."
+      "role": "Conservative dated secondary ablation."
     },
     {
       "file": "data\\raw\\footystats_2014_teams.csv",
@@ -59,27 +59,27 @@
     {
       "file": "data\\raw\\geonames_cities15000.zip",
       "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
-      "role": "Not used as model input in this preparation."
+      "role": "Static venue altitude; exact country/city matching and explicit missingness."
     },
     {
       "file": "data\\raw\\international_results_baseline.zip",
       "sha256": "e77915aa3333e62b09bf7adcf8f6eed095ae7d4825be8be5db335e2f83323c5c",
-      "role": "Not used as model input in this preparation."
+      "role": "Preserved baseline source."
     },
     {
       "file": "data\\raw\\openfootball_worldcup.zip",
       "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
-      "role": "Not used as model input in this preparation."
+      "role": "Official 2026 results reserved until model freeze; hash only."
     },
     {
       "file": "data\\raw\\statsbomb_open_data.zip",
       "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
-      "role": "Not used as model input in this preparation."
+      "role": "Optional historical validation only; no predictive input."
     },
     {
       "file": "data\\raw\\transfermarkt.duckdb",
       "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
-      "role": "Not used as model input in this preparation."
+      "role": "Dated valuations, dated lineup coverage and undated metadata audit; current snapshot features prohibited."
     },
     {
       "file": "data\\raw\\transfermarkt_repository.zip",
@@ -89,7 +89,7 @@
     {
       "file": "data\\raw\\worldcup_fixtures.zip",
       "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
-      "role": "Not used as model input in this preparation."
+      "role": "Fixture and venue metadata only."
     }
   ],
   "history_rows": 49469,
@@ -138,7 +138,7 @@
   "goal_events_missing_minute": 254,
   "elo_policy": "Use verified regulation score when available; otherwise recorded final score, possibly including extra time. Never use shootout winner or force a draw from shootout membership.",
   "time_filter": "Apply exclusive date filter before numeric interpretation or retention of any target fields.",
-  "market_value": "DuckDB supplied; audited and attached separately by the dated-enrichment step. Current snapshot fields are prohibited predictors.",
+  "market_value": "Excluded from primary model: no dated membership before 2023 allows feature validation without opening reserved period. As-of adapter and coverage diagnostics retained.",
   "ranking_repeated_snapshot": "Excluded by approved decision; not a historical source.",
   "ranking_original": "Original archive inspected through 2024, semester 2. Future enrichment may use end-of-semester lag and age <=90 days; no 2026 extrapolation.",
   "statsbomb_role": "Validation only; not an input in this ingestion step.",
@@ -250,7 +250,7 @@
     },
     {
       "file": "elo_policy_sensitivity.csv",
-      "sha256": "7c6080dfaf6489f27b2d17b6d279960c616a3568c728640ddd0f55182f085b55"
+      "sha256": "a03e81ecd3fcc5eceb2ef6afab2a0badd735687602ba7726f80ad7c1239ba2f4"
     },
     {
       "file": "fixture_features.csv",
@@ -1293,7 +1293,35 @@
     "national_teams_role": "Current undated snapshot; no historical predictor or ranking.",
     "market_feature_decision": "Dated valuations can be joined as-of. Undated citizenship does not establish historical national-team membership; nationality aggregates are diagnostic only, excluded from primary models.",
     "coverage_denominator": "Database players by current citizenship, not a verified national squad. True squad coverage is unavailable.",
-    "unmapped_worldcup_confederations": []
+    "unmapped_worldcup_confederations": [],
+    "dated_membership_context": {
+      "information_cutoff_exclusive": "2026-06-10",
+      "historical_feature_cutoff_exclusive": "2023-01-01",
+      "elo_parameters_selected_before_reserved_state_extension": true,
+      "reserved_result_period_opened": false,
+      "fixture_elo_form_and_rest_pending_phase4": true,
+      "reserved_period_metrics_computed": false,
+      "fifa_missing_home_2026": 72,
+      "fifa_missing_away_2026": 72,
+      "historical_altitude_coverage": 0.3488057585341913,
+      "fixture_altitude_coverage": 0.8055555555555556,
+      "geography_matching": "Exact normalized primary/ASCII city + explicit country ISO; ambiguous cities remain missing. Elevation with DEM fallback, provenance retained.",
+      "origin_altitude_difference": "Unavailable: country identity is not training-camp altitude.",
+      "travel_distance": "Unavailable: dated team travel or camp locations not provided; city coordinates are not actual itineraries.",
+      "rest": "Days since last observed international match; not verified player recovery time.",
+      "market_membership_first_date": "2024-01-12",
+      "market_membership_last_date": "2026-01-18",
+      "market_pre2023_membership_rows": 0,
+      "worldcup_teams_with_dated_player_pool": 17,
+      "market_decision": "Excluded from primary model: no dated membership before 2023 allows feature validation without opening reserved period. As-of adapter and coverage diagnostics retained.",
+      "feature_selection_pending_phase3": [
+        "recent form",
+        "rest",
+        "altitude",
+        "coverage weights"
+      ],
+      "official_2026_results_loaded": false
+    }
   },
   "friendly_duration_evidence": {
     "complete_event_friendlies": 0,
@@ -1301,7 +1329,8 @@
     "proportion_with_goal_after_minute90": null,
     "complete_event_friendlies_in_shootouts": 0,
     "all_recorded_friendlies_in_shootouts": 63,
-    "interpretation": "Event-complete nonzero friendlies only. No claim about the duration of matches without complete events; stoppage is encoded as 90."
+    "interpretation": "Event-complete nonzero friendlies only. No claim about the duration of matches without complete events; stoppage is encoded as 90.",
+    "verified_friendlies_from_zero_score_invariant": 1558
   },
   "coverage_bias": [
     {
@@ -1371,6 +1400,202 @@
   "confederation_scope": "Current administrative confederations for coverage diagnostics only; historical changes not silently asserted. Unmapped entities retained as an explicit stratum.",
   "checks": {
     "preparation_unit_tests_passed": 15,
-    "official_2026_results_loaded": false
+    "official_2026_results_loaded": false,
+    "verification": {
+      "executed_at_utc": "2026-10-12T05:46:45.522501+00:00",
+      "tests_run": 25,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "successful": true,
+      "command": "python tools/verify_project.py"
+    }
+  },
+  "friendly_duration_catalogues": {
+    "statsbomb_friendly_competition_seasons": 0,
+    "fjelstul_scope": "World Cups only; no friendly events.",
+    "duration_proportion_status": "Not estimable in these local sources; no friendly complete-event sample."
+  },
+  "feature_design": {
+    "selected_elo": {
+      "selected_candidate": 7,
+      "parameters": {
+        "friendly_k": 12,
+        "nations_k": 20,
+        "continental_k": 28,
+        "worldcup_k": 40,
+        "other_k": 16,
+        "margin_strength": 0.5,
+        "home_advantage": 60,
+        "initial": 1500,
+        "inactivity_rate": 0,
+        "inactivity_grace_days": 730
+      },
+      "selection_completed_at_utc": "2026-10-12T05:39:43.770012+00:00",
+      "protocol_sha256": "3107ad0cff30d638f7d0c73d50f659543539e9531e9ab3ae48a5ab98339f2ae0",
+      "max_selection_date": "2022-12-30",
+      "reserved_period_evaluated": false,
+      "selected_metrics": {
+        "candidate": 7,
+        "log_loss": 0.9017942848490842,
+        "brier": 0.5373330170651918,
+        "log_loss_ci": [
+          0.8597140934640295,
+          0.9441387195094818
+        ],
+        "brier_ci": [
+          0.5107536756265428,
+          0.5662226745942446
+        ],
+        "matches": 3134,
+        "friendly_k": 12,
+        "nations_k": 20,
+        "continental_k": 28,
+        "worldcup_k": 40,
+        "other_k": 16,
+        "margin_strength": 0.5,
+        "home_advantage": 60,
+        "initial": 1500,
+        "inactivity_rate": 0,
+        "inactivity_grace_days": 730
+      },
+      "fifa": {
+        "latest_semester_available_date": "2025-01-01",
+        "latest_observation_semester": "2024 semester 2",
+        "last_observation_date": "2024-12-31 (semester end, not actual publication)",
+        "both_teams_available_share_validation": 0.3991703892788768,
+        "elo_log_loss": 0.9017942848490842,
+        "elo_plus_ranking_log_loss": 0.9022690893090329,
+        "paired_log_loss_difference": 0.00047480445994864916,
+        "paired_difference_ci": [
+          -0.0007974916212332998,
+          0.0018842951664766105
+        ],
+        "elo_brier": 0.5373330170651918,
+        "elo_plus_ranking_brier": 0.5375943759390728,
+        "blocks_improving": 1,
+        "accepted_secondary_feature": false,
+        "valid_2026_ranking_available": false,
+        "max_age_days": 90,
+        "extrapolation": false
+      }
+    },
+    "context": {
+      "information_cutoff_exclusive": "2026-06-10",
+      "historical_feature_cutoff_exclusive": "2023-01-01",
+      "elo_parameters_selected_before_reserved_state_extension": true,
+      "reserved_result_period_opened": false,
+      "fixture_elo_form_and_rest_pending_phase4": true,
+      "reserved_period_metrics_computed": false,
+      "fifa_missing_home_2026": 72,
+      "fifa_missing_away_2026": 72,
+      "historical_altitude_coverage": 0.3488057585341913,
+      "fixture_altitude_coverage": 0.8055555555555556,
+      "geography_matching": "Exact normalized primary/ASCII city + explicit country ISO; ambiguous cities remain missing. Elevation with DEM fallback, provenance retained.",
+      "origin_altitude_difference": "Unavailable: country identity is not training-camp altitude.",
+      "travel_distance": "Unavailable: dated team travel or camp locations not provided; city coordinates are not actual itineraries.",
+      "rest": "Days since last observed international match; not verified player recovery time.",
+      "market_membership_first_date": "2024-01-12",
+      "market_membership_last_date": "2026-01-18",
+      "market_pre2023_membership_rows": 0,
+      "worldcup_teams_with_dated_player_pool": 17,
+      "market_decision": "Excluded from primary model: no dated membership before 2023 allows feature validation without opening reserved period. As-of adapter and coverage diagnostics retained.",
+      "feature_selection_pending_phase3": [
+        "recent form",
+        "rest",
+        "altitude",
+        "coverage weights"
+      ],
+      "official_2026_results_loaded": false
+    },
+    "artifact_hashes": [
+      {
+        "file": "reports/feature_design/context_audit.json",
+        "sha256": "ccfd503051a4c36b5f3557a6af218a1803be9226dfe530c1b5d46c95fe5c512a"
+      },
+      {
+        "file": "reports/feature_design/dated_international_membership.csv",
+        "sha256": "468b616c0f0b3a4e2f834ac91ec82d1e84f521b87f43c46a53ecf90117902874"
+      },
+      {
+        "file": "reports/feature_design/dated_market_coverage.csv",
+        "sha256": "d874ecdfc1a2d9f9edde8fd9d771e881fd46f1c56a2509423675f4026f330131"
+      },
+      {
+        "file": "reports/feature_design/elo_calibration.csv",
+        "sha256": "70912d22d459bf6229b068ca6357437d3c5581d174102cae2f5454aae263f9d9"
+      },
+      {
+        "file": "reports/feature_design/elo_protocol.json",
+        "sha256": "3107ad0cff30d638f7d0c73d50f659543539e9531e9ab3ae48a5ab98339f2ae0"
+      },
+      {
+        "file": "reports/feature_design/elo_walk_forward_blocks.csv",
+        "sha256": "fdc8b3a95ee73e73a6517e5ad3da9ff788e61f2683f8276a8c9b30e92d8e3a36"
+      },
+      {
+        "file": "reports/feature_design/elo_walk_forward_predictions.csv",
+        "sha256": "c8a77f6bd460875d70289b22703fbb9709d49f8f1eb5b6cfc4c4bff178bc1c14"
+      },
+      {
+        "file": "reports/feature_design/fifa_ablation.json",
+        "sha256": "8cde9783ac68643201a28d2dcf0b48b2fe8cd9848527b6255036eb2a357efaec"
+      },
+      {
+        "file": "reports/feature_design/fifa_points_protocol.json",
+        "sha256": "d814c34b24aa90c426461238d6fa257902a9494598fe596bf90fb95c988a4dbe"
+      },
+      {
+        "file": "reports/feature_design/fifa_points_walk_forward_predictions.csv",
+        "sha256": "2f3c165835db0b66979a28432127c542bf0dc2c25763b54f042f0e87c15c6dfe"
+      },
+      {
+        "file": "reports/feature_design/fifa_rank_points_ablation.json",
+        "sha256": "d08c1994ac074c93fce6dae3e8e9f49c66d674fa228191ca73d26449de7b4a52"
+      },
+      {
+        "file": "reports/feature_design/fifa_walk_forward_predictions.csv",
+        "sha256": "c25daa628bfee0d768d79fa21b470d0aa692ae5bb728e8a338737ff0a845d7e0"
+      },
+      {
+        "file": "reports/feature_design/fixture_features.csv",
+        "sha256": "e8eed293e5eb59b53f928c0b849d969ef8b26b1e90d2027fe24bde448af17542"
+      },
+      {
+        "file": "reports/feature_design/historical_features.csv",
+        "sha256": "fea5e2c43ad30801457e88234bca8f0624523f5e5cfddc203fe3e5dc07f1fe14"
+      },
+      {
+        "file": "reports/feature_design/RESULTADOS.md",
+        "sha256": "abf05c17d6cdde4c85d7e505bb821dec630fce84e08bec79424d5486efb9c2e3"
+      },
+      {
+        "file": "reports/feature_design/selected_elo.json",
+        "sha256": "16f648be067813a6699b553895405ed78f16d8d2fc34e75685d54ddce6a1a41c"
+      },
+      {
+        "file": "reports/feature_design/verification.json",
+        "sha256": "18ccbd16fe88a242e841078733964b264c3cd1d813400098f4161bc68e2af06e"
+      }
+    ],
+    "fifa_rank_and_points": {
+      "elo_log_loss": 0.9017942848490843,
+      "elo_plus_rank_and_points_log_loss": 0.9025548577776292,
+      "elo_brier": 0.5373330170651918,
+      "elo_plus_rank_and_points_brier": 0.5377978133876886,
+      "paired_log_loss_difference": 0.0007605729285448787,
+      "paired_difference_ci": [
+        -0.000490938143671981,
+        0.0021381899157004304
+      ],
+      "blocks_improving": 1,
+      "accepted_secondary_feature": false,
+      "protocol_sha256": "d814c34b24aa90c426461238d6fa257902a9494598fe596bf90fb95c988a4dbe"
+    }
+  },
+  "feature_design_audited_at_utc": "2026-10-12T05:50:40.038010+00:00",
+  "git_preparation": {
+    "tag": "data-prepared",
+    "commit": "be5a38eb91920c1afb17bf05e19db8ffcba17785"
   }
 }

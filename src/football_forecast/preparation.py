@@ -16,12 +16,12 @@ SCENARIO_LABELS = {
     'baseline_elo_amistosos':'Elo con amistosos y Mundiales',
 }
 
-def markdown_table(frame):
+def markdown_table(frame,precision=2):
     """Render ordinary tables without adding a tabulate dependency."""
     columns = list(frame.columns)
     lines = ['| '+' | '.join(columns)+' |', '| '+' | '.join(['---']*len(columns))+' |']
     for row in frame.itertuples(index=False,name=None):
-        items = [f'{x:.2f}' if isinstance(x,(float,np.floating)) else str(x) for x in row]
+        items = [f'{x:.{precision}f}' if isinstance(x,(float,np.floating)) else str(x) for x in row]
         lines.append('| '+' | '.join(items)+' |')
     return '\n'.join(lines)
 
@@ -143,7 +143,12 @@ def sensitivity(history, teams):
                           'mean_absolute_centered_difference':float(abs(centered).mean()),
                           'max_absolute_centered_difference':float(abs(centered).max()),
                           'interpretation':'Descriptive sensitivity of historical state; not a predictive-performance metric.'})
-    return pd.DataFrame(rows), pd.DataFrame(summaries)
+    detailed = pd.DataFrame(rows)
+    detailed['elo_centered_48'] = detailed.elo-detailed.groupby('scenario').elo.transform('mean')
+    detailed['rank_in_worldcup_cohort_48'] = detailed.groupby('scenario').elo.rank(ascending=False,method='min').astype(int)
+    baseline = detailed[detailed.scenario=='historial_completo_90_verificado_o_final_registrado'].set_index('team').elo_centered_48
+    detailed['centered_difference_from_reference'] = detailed.elo_centered_48-detailed.team.map(baseline)
+    return detailed, pd.DataFrame(summaries)
 
 def prepare_local_data(root='.', output='reports/data_preparation', cutoff='2026-06-10'):
     root, output = Path(root), Path(output)

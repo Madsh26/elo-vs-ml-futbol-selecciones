@@ -8,12 +8,22 @@ import duckdb
 from .ingestion import NameRegistry, archive_before, MATCH_KEY, digest_file
 from .preparation import markdown_table
 
+def friendly_catalogue_evidence(raw):
+    with zipfile.ZipFile(Path(raw)/'statsbomb_open_data.zip') as archive:
+        name=next(n for n in archive.namelist() if n.endswith('/data/competitions.json'))
+        competitions=json.load(archive.open(name))
+    return {'statsbomb_friendly_competition_seasons':sum('friendly' in r['competition_name'].lower() for r in competitions),
+            'fjelstul_scope':'World Cups only; no friendly events.',
+            'duration_proportion_status':'Not estimable in these local sources; no friendly complete-event sample.'}
+
 def inspect_sources(root, output, cutoff):
     root, output = Path(root), Path(output)
     raw = root/'data/raw'
     registry = NameRegistry()
     c = duckdb.connect(str(raw/'transfermarkt.duckdb'), read_only=True)
     c.execute('SET threads=2')
+    c.execute("SET memory_limit='384MB'")
+    c.execute('SET enable_progress_bar=false')
     metadata = {}
     for (table,) in c.execute('SHOW TABLES').fetchall():
         schema = c.execute(f'DESCRIBE "{table}"').fetchall()
@@ -114,6 +124,7 @@ def inspect_sources(root, output, cutoff):
                               'coverage_denominator':'Database players by current citizenship, not a verified national squad. True squad coverage is unavailable.',
                               'unmapped_worldcup_confederations':missing}
     audit['friendly_duration_evidence'] = stats
+    audit['friendly_duration_catalogues'] = friendly_catalogue_evidence(raw)
     audit['coverage_bias'] = conf.to_dict('records')
     audit['confederation_scope'] = 'Current administrative confederations for coverage diagnostics only; historical changes not silently asserted. Unmapped entities retained as an explicit stratum.'
     pd.DataFrame([{'team':t,'confederation':mappings.get(t)} for t in sorted(mappings)]).to_csv(output/'confederations.csv',index=False)

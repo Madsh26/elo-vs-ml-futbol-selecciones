@@ -1,0 +1,14 @@
+{
+  "elo_log_loss": 0.9017942848490843,
+  "elo_plus_rank_and_points_log_loss": 0.9025548577776292,
+  "elo_brier": 0.5373330170651918,
+  "elo_plus_rank_and_points_brier": 0.5377978133876886,
+  "paired_log_loss_difference": 0.0007605729285448787,
+  "paired_difference_ci": [
+    -0.000490938143671981,
+    0.0021381899157004304
+  ],
+  "blocks_improving": 1,
+  "accepted_secondary_feature": false,
+  "protocol_sha256": "d814c34b24aa90c426461238d6fa257902a9494598fe596bf90fb95c988a4dbe"
+}

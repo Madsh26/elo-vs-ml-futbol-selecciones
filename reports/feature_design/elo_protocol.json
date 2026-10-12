@@ -1,0 +1,189 @@
+{
+  "written_at_utc": "2026-10-12T05:30:29.764280+00:00",
+  "selection_cutoff_exclusive": "2023-01-01",
+  "blocks": [
+    [
+      "2016-01-01",
+      "2018-01-01"
+    ],
+    [
+      "2018-01-01",
+      "2020-01-01"
+    ],
+    [
+      "2020-01-01",
+      "2022-01-01"
+    ],
+    [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  ],
+  "candidates": [
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 8,
+      "nations_k": 16,
+      "continental_k": 24,
+      "worldcup_k": 32,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 16,
+      "nations_k": 24,
+      "continental_k": 32,
+      "worldcup_k": 48,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 1,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 0,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 100,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.25,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1500,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 365
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1400,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0.5,
+      "home_advantage": 60,
+      "initial": 1600,
+      "inactivity_rate": 0.1,
+      "inactivity_grace_days": 730
+    },
+    {
+      "friendly_k": 12,
+      "nations_k": 20,
+      "continental_k": 28,
+      "worldcup_k": 40,
+      "other_k": 16,
+      "margin_strength": 0,
+      "home_advantage": 0,
+      "initial": 1500,
+      "inactivity_rate": 0,
+      "inactivity_grace_days": 730
+    }
+  ],
+  "primary_metric": "Pooled per-match log loss on verified regulation targets.",
+  "bootstrap": {
+    "unit": "calendar quarter",
+    "replicas": 400,
+    "seed": 20261012
+  },
+  "initial_rating_identifiability": "Common initial rating is translation-invariant for elo_diff; 1500 is a convention, not inferred team strength.",
+  "accept_secondary_feature": "Paired log-loss upper 95% CI <0, Brier not worse, better log loss in >=3/4 blocks.",
+  "reserved_period": "2023-01-01 through 2026-06-09: not evaluated or used for selection."
+}

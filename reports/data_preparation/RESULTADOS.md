@@ -96,4 +96,20 @@ La selección de partidos con eventos puede cambiar qué selecciones y competici
 
 Inspeccioné el DuckDB en modo de solo lectura. Excluí 94 valoraciones del corte o posteriores. `transfermarkt_coverage.csv` informa el porcentaje de jugadores de la base con valoración anterior al corte para las 48 selecciones. El denominador es la población de jugadores registrada por nacionalidad actual; no es una plantilla oficial de 23 jugadores.
 
-No uso valor actual, club actual, convocatorias actuales ni el ranking de `national_teams`. Las nacionalidades disponibles tampoco tienen fechas de vigencia. Por eso el agregado por nacionalidad queda como diagnóstico y adaptador experimental, sin atribuirle pertenencia histórica verificada ni usarlo en el modelo principal. Para incorporar valor de una plantilla necesito una relación fechada entre jugador y selección.
+No uso valor actual, club actual, convocatorias actuales ni el ranking de `national_teams`. Las nacionalidades disponibles tampoco tienen fechas de vigencia. Por eso el agregado por nacionalidad queda como diagnóstico y adaptador experimental, sin atribuirle pertenencia histórica verificada ni usarlo en el modelo principal. Las alineaciones fechadas disponibles comienzan en 2024: permiten un diagnóstico anterior al corte, pero no validar mercado en los bloques anteriores a 2023. El conjunto de jugadores observados no equivale a una convocatoria oficial.
+
+## Sensibilidad del orden
+
+Centro cada escenario en la media de las mismas 48 selecciones. Cuento los cambios de puesto del top 20 de referencia dentro de esas 48, y las entradas más salidas por separado.
+
+| Política | Spearman en 48 selecciones | Cambios de puesto del top 20 de referencia | Entradas más salidas del top 20 | Cambio medio de Elo centrado |
+| --- | --- | --- | --- | --- |
+| Historial completo con prioridad a 90 minutos | 1.0000 | 0 | 0 | 0.00 |
+| Historial completo con marcador final registrado | 0.9993 | 3 | 0 | 2.32 |
+| Solo marcadores a 90 minutos admisibles | 0.8671 | 19 | 6 | 38.80 |
+| Marcadores verificables y amistosos de duración supuesta | 0.9832 | 9 | 2 | 12.07 |
+| Elo con amistosos y Mundiales | 0.9341 | 17 | 2 | 34.65 |
+
+La tabla administrativa local no cruza el 29.42 % de las participaciones históricas; el análisis por confederación es parcial. Las 48 selecciones del fixture sí están cruzadas. No interpreto diferencias entre confederaciones como una estimación completa del sesgo sin atender esta cobertura.
+
+No hay amistosos con eventos completos en martj42, ni competiciones de amistosos en el catálogo local de StatsBomb. Los 1558 amistosos admisibles corresponden a marcadores finales 0–0 invariantes, no a una muestra representativa de goles de amistosos. En el historial, 63 amistosos aparecen en tandas; esto no equivale a disponer de sus eventos completos. No interpreto la proporción no estimable de prórrogas como cero. La evaluación de amistosos con esta cobertura requiere informar ese sesgo explícitamente.

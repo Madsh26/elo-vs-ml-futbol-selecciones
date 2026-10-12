@@ -1,0 +1,28 @@
+{
+  "information_cutoff_exclusive": "2026-06-10",
+  "historical_feature_cutoff_exclusive": "2023-01-01",
+  "elo_parameters_selected_before_reserved_state_extension": true,
+  "reserved_result_period_opened": false,
+  "fixture_elo_form_and_rest_pending_phase4": true,
+  "reserved_period_metrics_computed": false,
+  "fifa_missing_home_2026": 72,
+  "fifa_missing_away_2026": 72,
+  "historical_altitude_coverage": 0.3488057585341913,
+  "fixture_altitude_coverage": 0.8055555555555556,
+  "geography_matching": "Exact normalized primary/ASCII city + explicit country ISO; ambiguous cities remain missing. Elevation with DEM fallback, provenance retained.",
+  "origin_altitude_difference": "Unavailable: country identity is not training-camp altitude.",
+  "travel_distance": "Unavailable: dated team travel or camp locations not provided; city coordinates are not actual itineraries.",
+  "rest": "Days since last observed international match; not verified player recovery time.",
+  "market_membership_first_date": "2024-01-12",
+  "market_membership_last_date": "2026-01-18",
+  "market_pre2023_membership_rows": 0,
+  "worldcup_teams_with_dated_player_pool": 17,
+  "market_decision": "Excluded from primary model: no dated membership before 2023 allows feature validation without opening reserved period. As-of adapter and coverage diagnostics retained.",
+  "feature_selection_pending_phase3": [
+    "recent form",
+    "rest",
+    "altitude",
+    "coverage weights"
+  ],
+  "official_2026_results_loaded": false
+}

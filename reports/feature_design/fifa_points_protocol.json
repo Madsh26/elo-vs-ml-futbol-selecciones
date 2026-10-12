@@ -1,0 +1,32 @@
+{
+  "written_at_utc": "2026-10-12T05:45:21.109142+00:00",
+  "features": [
+    "elo_diff / 400",
+    "rank_diff / 200",
+    "points_diff / points_sum",
+    "ranking_missing",
+    "points_missing"
+  ],
+  "fixed_elo_parameters_file": "selected_elo.json",
+  "selection_cutoff_exclusive": "2023-01-01",
+  "blocks": [
+    [
+      "2016-01-01",
+      "2018-01-01"
+    ],
+    [
+      "2018-01-01",
+      "2020-01-01"
+    ],
+    [
+      "2020-01-01",
+      "2022-01-01"
+    ],
+    [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  ],
+  "acceptance": "Paired log-loss upper 95% CI < 0; Brier not worse; >=3/4 blocks improve.",
+  "context": "Joint rank-and-points check following the rank-only ablation; no held-out results admitted."
+}

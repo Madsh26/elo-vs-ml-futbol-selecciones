@@ -8,12 +8,17 @@ Construyo el estudio con el torneo ya jugado. El corte de información deportiva
 
 ```powershell
 python prepare_data.py
+python calibrate_features.py
 python -B -m unittest discover -s tests -v
+python tools/verify_project.py
+python tools/finalize_feature_audit.py
 ```
 
 La preparación no descarga archivos ni entrena modelos. Separa el historial que permite calcular Elo del conjunto que permite aprender goles comparables a 90 minutos. Los resultados de esta operación están en [RESULTADOS.md](reports/data_preparation/RESULTADOS.md) y sus decisiones, hashes y fechas en [data_audit.json](reports/data_preparation/data_audit.json).
 
-La capa de datos está implementada. La calibración del Elo, la comparación de modelos simétricos y la evaluación oficial de 2026 son operaciones posteriores que todavía no he ejecutado con este conjunto. No atribuyo al diseño métricas que aún no se han calculado.
+La preparación y la calibración temporal de Elo están implementadas. Los resultados ejecutados se describen en [RESULTADOS.md](RESULTADOS.md). Selecciono parámetros con cuatro bloques anteriores a 2023. La comparación de XGBoost, las políticas de duración y ponderación, la evaluación reservada y la comparación oficial de 2026 corresponden a operaciones posteriores.
+
+La extensión del estado Elo con los resultados de 2023–corte queda pendiente hasta abrir la evaluación reservada. En el fixture de esta fase identifico metadatos y altitud; no publico puntuaciones o forma de 2022 como si estuvieran vigentes en 2026.
 
 ## Fuentes locales
 
@@ -27,7 +32,7 @@ La capa de datos está implementada. La calibración del Elo, la comparación de
 | `data/raw/geonames_cities15000.zip` | Altitud estática, reservada para contexto de sede |
 | `data/raw/openfootball_worldcup.zip` | Openfootball, separado de Fjelstul; resultados reservados para evaluación después del sellado |
 
-El archivo `fifa_ranking_historico.csv` está excluido: repite la misma fotografía en fechas distintas. No dispongo de un ranking vigente para 2026. El archivo por semestre que inspeccioné llega a 2024; solo puede estudiarse con disponibilidad posterior al fin del semestre y un máximo de 90 días de antigüedad.
+El archivo `fifa_rank_repeated_snapshot_excluded.csv` está excluido: repite la misma fotografía en fechas distintas. No dispongo de un ranking vigente para 2026. El archivo por semestre que inspeccioné llega a 2024; solo puede estudiarse con disponibilidad posterior al fin del semestre y un máximo de 90 días de antigüedad.
 
 Inspecciono las tablas de Transfermarkt en data/raw/transfermarkt.duckdb. Las valoraciones se filtran por fecha. La nacionalidad actual no demuestra pertenencia histórica a una selección; por eso publico cobertura de la base como diagnóstico y excluyo estos agregados del modelo principal. No uso valor actual, club actual ni el ranking actual de national_teams.
 
@@ -87,7 +92,7 @@ Los datos fuente no se incluyen automáticamente en el repositorio. Para reprodu
 
 Las pruebas comprueban el corte exclusivo, nombres e identidades históricas, conservación de eventos iguales, reconstrucción de prórrogas, tandas que no implican empate y ventanas que no utilizan goles inciertos ni resultados de la misma fecha. Las comprobaciones de los modelos guardados se mantienen como pruebas de la referencia independiente.
 
-Los cambios están agrupados en [el registro de trabajo](docs/DECISIONES_DE_DISEÑO.md). La etiqueta Git data-prepared identifica la preparación de fuentes y objetivos.
+Las decisiones están descritas en [el registro de diseño](docs/DECISIONES_DE_DISEÑO.md). La etiqueta Git data-prepared identifica la preparación de fuentes y objetivos.
 
 ## Atribución
 

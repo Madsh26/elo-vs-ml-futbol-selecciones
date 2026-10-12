@@ -39,13 +39,19 @@ Mantengo los alias de una misma selección y las correspondencias históricas co
 
 Para los partidos de una misma fecha calculo todas las características antes de actualizar el historial con cualquiera de sus resultados. Las consultas del fixture utilizan el historial conocido en el corte; no simulo resultados intermedios para actualizarlo.
 
-## Fuentes pendientes
+## Variables complementarias
 
-No hay tablas de mercado disponibles: guardo la cobertura de Transfermarkt como faltante, no como cero. La estructura admite enriquecimientos opcionales posteriores; no utilizo clubes ni valores actuales de jugadores como sustitutos de información histórica.
+Inspecciono Transfermarkt en modo de solo lectura. Consulto valoraciones anteriores a la fecha de predicción y al corte. La nacionalidad actual sirve únicamente para describir cobertura de la base, sin afirmar pertenencia histórica a una selección. El adaptador de plantilla usa alineaciones internacionales fechadas y nombres del partido histórico, con un conjunto de jugadores observados en los últimos 730 días. Ese conjunto no es una convocatoria oficial.
+
+Las alineaciones disponibles empiezan en 2024: no puedo validar mercado en los bloques de selección anteriores a 2023. Excluyo mercado del modelo principal y publico el diagnóstico de cobertura. No uso club actual, valor actual ni el ranking actual de national_teams. La ausencia de información no significa un valor de mercado de cero.
 
 El archivo de ranking con una fotografía repetida en fechas distintas está excluido. El ranking de año/semestre presente en los archivos llega a 2024. Solo puede estudiarse como variable secundaria con disponibilidad conservadora después del semestre y un máximo de 90 días de antigüedad. No extrapolo un ranking vigente para 2026 ni afirmo que haya sido incorporado al modelo en esta preparación.
 
 GeoNames se considera una fuente de altitud estática. Su fecha de edición no se usa como información de rendimiento deportivo. La elección del lugar representativo del país de origen debe ser explícita, no una supuesta altitud de toda la selección.
+
+Identifico altitud de sede solo cuando coinciden ciudad y país sin ambigüedad. La elevación tiene prioridad sobre DEM y conservo la procedencia. No tengo ubicaciones de campamentos ni viajes reales: no construyo diferencias de altitud de origen o distancia viajada con supuestos silenciosos. El descanso representa días desde el último partido internacional observado.
+
+La calibración y las ablaciones de selección usan exclusivamente resultados anteriores a 2023. La extensión del estado histórico y las variables del fixture con resultados del periodo reservado quedan pendientes hasta la Fase 4. No presento puntuaciones o forma de 2022 como información vigente para 2026.
 
 ## Estudio retrospectivo y sellado
 

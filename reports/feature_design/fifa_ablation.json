@@ -1,0 +1,20 @@
+{
+  "latest_semester_available_date": "2025-01-01",
+  "latest_observation_semester": "2024 semester 2",
+  "last_observation_date": "2024-12-31 (semester end, not actual publication)",
+  "both_teams_available_share_validation": 0.3991703892788768,
+  "elo_log_loss": 0.9017942848490842,
+  "elo_plus_ranking_log_loss": 0.9022690893090329,
+  "paired_log_loss_difference": 0.00047480445994864916,
+  "paired_difference_ci": [
+    -0.0007974916212332998,
+    0.0018842951664766105
+  ],
+  "elo_brier": 0.5373330170651918,
+  "elo_plus_ranking_brier": 0.5375943759390728,
+  "blocks_improving": 1,
+  "accepted_secondary_feature": false,
+  "valid_2026_ranking_available": false,
+  "max_age_days": 90,
+  "extrapolation": false
+}
