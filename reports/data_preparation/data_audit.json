@@ -1402,7 +1402,7 @@
     "preparation_unit_tests_passed": 15,
     "official_2026_results_loaded": false,
     "verification": {
-      "executed_at_utc": "2026-10-12T05:46:45.522501+00:00",
+      "executed_at_utc": "2026-10-12T05:59:01.170404+00:00",
       "tests_run": 25,
       "failures": 0,
       "errors": 0,
@@ -1538,6 +1538,26 @@
         "sha256": "c8a77f6bd460875d70289b22703fbb9709d49f8f1eb5b6cfc4c4bff178bc1c14"
       },
       {
+        "file": "reports/feature_design/feature_ablation.csv",
+        "sha256": "c081b13bc9060cbdc09c1560dafa4f53d129e0e427901d24bde7c02e07738127"
+      },
+      {
+        "file": "reports/feature_design/feature_ablation_predictions.csv",
+        "sha256": "daad3676f496980f9f77061a409f3f59cacd754f69585e3e599a8df5c244c842"
+      },
+      {
+        "file": "reports/feature_design/feature_ablation_protocol.json",
+        "sha256": "8e618e6faa21568c2e75fc34673b827f3ac581ae14d2776c1b008188f18aca95"
+      },
+      {
+        "file": "reports/feature_design/feature_ablation_subgroups.csv",
+        "sha256": "d2b3d8a68a15afb71d1368125b7c207ecd489cb47682710109a70936cfa3d01e"
+      },
+      {
+        "file": "reports/feature_design/feature_selection.json",
+        "sha256": "c61b8cbd37a5be60c063a51feab1da6b6ff43c004f2fbaad187a4af1dbbe0845"
+      },
+      {
         "file": "reports/feature_design/fifa_ablation.json",
         "sha256": "8cde9783ac68643201a28d2dcf0b48b2fe8cd9848527b6255036eb2a357efaec"
       },
@@ -1567,7 +1587,7 @@
       },
       {
         "file": "reports/feature_design/RESULTADOS.md",
-        "sha256": "abf05c17d6cdde4c85d7e505bb821dec630fce84e08bec79424d5486efb9c2e3"
+        "sha256": "0af00bb703f3245ece3556d0eb9df7a0d865a15f712241b19be2f1c00c8ed165"
       },
       {
         "file": "reports/feature_design/selected_elo.json",
@@ -1575,7 +1595,7 @@
       },
       {
         "file": "reports/feature_design/verification.json",
-        "sha256": "18ccbd16fe88a242e841078733964b264c3cd1d813400098f4161bc68e2af06e"
+        "sha256": "a7a688e300d52c77dd985faf9faa38de851540c5a9cf2f7df13519bfa4f1f3c1"
       }
     ],
     "fifa_rank_and_points": {
@@ -1591,9 +1611,29 @@
       "blocks_improving": 1,
       "accepted_secondary_feature": false,
       "protocol_sha256": "d814c34b24aa90c426461238d6fa257902a9494598fe596bf90fb95c988a4dbe"
+    },
+    "feature_selection": {
+      "individual_groups_passing": [
+        "recent_form",
+        "competition_and_venue"
+      ],
+      "joint_groups_passing": true,
+      "coverage_weighting_passing": false,
+      "protocol_sha256": "8e618e6faa21568c2e75fc34673b827f3ac581ae14d2776c1b008188f18aca95",
+      "reserved_period_used": false,
+      "all_metrics_validation_only": true,
+      "competitive_subset_paired_ci": [
+        -0.053810303611971734,
+        -0.019681305199110134
+      ],
+      "friendly_evaluation_limitation": "Not a representative sample. Competition features partly learn observation selection.",
+      "friendly_evaluation_count": 197,
+      "friendly_zero_invariant_count": 197,
+      "coverage_weighting_membership_asof_verified": false,
+      "coverage_weighting_role": "Sensitivity diagnostic using explicitly current administrative strata; historical affiliation dates unavailable, not an approved as-of production policy."
     }
   },
-  "feature_design_audited_at_utc": "2026-10-12T05:50:40.038010+00:00",
+  "feature_design_audited_at_utc": "2026-10-12T06:02:11.212279+00:00",
   "git_preparation": {
     "tag": "data-prepared",
     "commit": "be5a38eb91920c1afb17bf05e19db8ffcba17785"

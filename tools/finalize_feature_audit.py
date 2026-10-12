@@ -16,6 +16,9 @@ if __name__=='__main__':
     features=ROOT/'reports/feature_design'
     selection=json.loads((features/'selected_elo.json').read_text(encoding='utf-8'))
     feature_report=(features/'RESULTADOS.md').read_text(encoding='utf-8')
+    feature_report=feature_report.replace('| True |','| Sí |').replace('| False |','| No |')
+    feature_report=feature_report.replace('La adopción de descanso, forma y altitud depende de ablaciones temporales en Fase 3.',
+                                        'Contrasto estos grupos con una logística mediante ablaciones temporales. Su evaluación con XGBoost y modelos de goles corresponde a la Fase 3.')
     calibration=pd.read_csv(features/'elo_calibration.csv')[['candidate','log_loss','brier','matches']]
     calibration.columns=['Configuración','Log loss','Brier','Partidos']
     start=feature_report.index('| Configuración |')
@@ -41,6 +44,7 @@ if __name__=='__main__':
                             'artifact_hashes':[{'file':str(p.relative_to(ROOT)).replace('\\','/'),'sha256':digest_file(p)}
                                              for p in sorted(features.iterdir()) if p.is_file()]}
     audit['feature_design']['fifa_rank_and_points']=json.loads((features/'fifa_rank_points_ablation.json').read_text(encoding='utf-8'))
+    audit['feature_design']['feature_selection']=json.loads((features/'feature_selection.json').read_text(encoding='utf-8'))
     audit['market_value']=context['market_decision']
     audit['transfermarkt']['dated_membership_context']=context
     verified=json.loads((features/'verification.json').read_text(encoding='utf-8'))

@@ -124,13 +124,14 @@ def backward_rank_join(matches,rankings):
         out[f'fifa_missing_{side}'] = out[f'fifa_rank_{side}'].isna().astype(int)
     return out
 
-def symmetric_predictions(train,test,features,signs):
+def symmetric_predictions(train,test,features,signs,sample_weight=None):
     x = train[features].fillna(0).to_numpy(dtype=float)
     xt = test[features].fillna(0).to_numpy(dtype=float)
     y = train.target.to_numpy(dtype=int)
     signs = np.asarray(signs)
     classifier = LogisticRegression(C=1,max_iter=500)
-    classifier.fit(np.concatenate([x,x*signs]),np.concatenate([y,2-y]))
+    weights=None if sample_weight is None else np.concatenate([sample_weight,sample_weight])
+    classifier.fit(np.concatenate([x,x*signs]),np.concatenate([y,2-y]),sample_weight=weights)
     return (classifier.predict_proba(xt)+classifier.predict_proba(xt*signs)[:,::-1])/2
 
 def per_match_metrics(y,p):

@@ -12,3 +12,5 @@ if __name__=='__main__':
     build_context(ROOT,ROOT/'reports/feature_design')
     from football_forecast.elo_calibration import ablate_rank_points
     ablate_rank_points(ROOT/'reports/feature_design')
+    from football_forecast.feature_ablation import ablate_feature_groups
+    ablate_feature_groups(ROOT,ROOT/'reports/feature_design')

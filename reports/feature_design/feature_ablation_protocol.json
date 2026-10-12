@@ -1,0 +1,78 @@
+{
+  "written_at_utc": "2026-10-12T05:54:54.695960+00:00",
+  "cutoff_exclusive": "2023-01-01",
+  "blocks": [
+    [
+      "2016-01-01",
+      "2018-01-01"
+    ],
+    [
+      "2018-01-01",
+      "2020-01-01"
+    ],
+    [
+      "2020-01-01",
+      "2022-01-01"
+    ],
+    [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  ],
+  "groups": {
+    "recent_form": [
+      [
+        "gf_diff",
+        "ga_diff",
+        "form_diff",
+        "opponent_diff",
+        "goal_coverage_sum"
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "rest": [
+      [
+        "rest_diff",
+        "rest_missing"
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "competition_and_venue": [
+      [
+        "home_advantage_sign",
+        "competitive",
+        "worldcup",
+        "neutral"
+      ],
+      [
+        -1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "altitude": [
+      [
+        "altitude_scaled",
+        "venue_altitude_missing"
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "weighting": "Training-only confederation ratios clipped 0.5 to 2; mean one.",
+  "criterion": "Paired log-loss upper 95% CI <0, Brier not worse, >=3/4 blocks improve.",
+  "model": "Symmetric logistic, fixed C=1; selected Elo parameters remain fixed.",
+  "multiple_comparisons": "Exploratory feature selection on validation blocks; reserved evaluation required."
+}

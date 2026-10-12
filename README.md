@@ -20,6 +20,10 @@ La preparación y la calibración temporal de Elo están implementadas. Los resu
 
 La extensión del estado Elo con los resultados de 2023–corte queda pendiente hasta abrir la evaluación reservada. En el fixture de esta fase identifico metadatos y altitud; no publico puntuaciones o forma de 2022 como si estuvieran vigentes en 2026.
 
+En validación, la logística con Elo, forma reciente y contexto de competición/sede cumple el criterio de selección. Descarto ranking, puntos FIFA, descanso, altitud y ponderación por cobertura como variables del conjunto principal de esta logística. No atribuyo esta selección a XGBoost: su comparación corresponde a la fase de modelos.
+
+La cobertura de amistosos verificables solo incluye marcadores 0–0 invariantes. Por eso informo resultados globales y de partidos no amistosos por separado; no interpreto el excelente resultado observado en esos amistosos como rendimiento generalizable.
+
 ## Fuentes locales
 
 | Fuente | Uso |
@@ -96,5 +100,5 @@ Las decisiones están descritas en [el registro de diseño](docs/DECISIONES_DE_D
 
 ## Atribución
 
-Uso los archivos locales de international football results de martj42, The Fjelstul World Cup Database, StatsBomb open-data, GeoNames, Openfootball y los fixtures de DataCamp. Cada fuente conserva sus condiciones originales. El código nuevo tiene licencia MIT.
+Uso los archivos locales de international football results de martj42, The Fjelstul World Cup Database, StatsBomb open-data, transfermarkt-datasets de dcaribou, el ranking semestral suministrado, GeoNames, Openfootball y los fixtures de DataCamp. Cada fuente conserva sus condiciones originales. El código nuevo tiene licencia MIT.
 

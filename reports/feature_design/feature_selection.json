@@ -1,0 +1,20 @@
+{
+  "individual_groups_passing": [
+    "recent_form",
+    "competition_and_venue"
+  ],
+  "joint_groups_passing": true,
+  "coverage_weighting_passing": false,
+  "protocol_sha256": "8e618e6faa21568c2e75fc34673b827f3ac581ae14d2776c1b008188f18aca95",
+  "reserved_period_used": false,
+  "all_metrics_validation_only": true,
+  "competitive_subset_paired_ci": [
+    -0.053810303611971734,
+    -0.019681305199110134
+  ],
+  "friendly_evaluation_limitation": "Not a representative sample. Competition features partly learn observation selection.",
+  "friendly_evaluation_count": 197,
+  "friendly_zero_invariant_count": 197,
+  "coverage_weighting_membership_asof_verified": false,
+  "coverage_weighting_role": "Sensitivity diagnostic using explicitly current administrative strata; historical affiliation dates unavailable, not an approved as-of production policy."
+}

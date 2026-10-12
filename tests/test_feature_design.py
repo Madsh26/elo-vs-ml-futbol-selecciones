@@ -45,6 +45,8 @@ class FeatureDesignTests(unittest.TestCase):
         probabilities=symmetric_predictions(train,test,['x'],[-1])
         np.testing.assert_allclose(probabilities[0],probabilities[1,::-1],atol=1e-9,rtol=0)
         np.testing.assert_allclose(probabilities.sum(axis=1),1,atol=1e-12)
+        weighted=symmetric_predictions(train,test,['x'],[-1],np.array([.5,1,2,1,.75,1]))
+        np.testing.assert_allclose(weighted[0],weighted[1,::-1],atol=1e-9,rtol=0)
 
     def test_block_interval_is_reproducible(self):
         dates=pd.Series(pd.date_range('2018-01-01',periods=20,freq='MS'))

@@ -61,10 +61,36 @@ La altitud se identifica en 34.9% del historial y 80.6% de las sedes del fixture
 
 Las alineaciones internacionales fechadas empiezan en 2024-01-12; no hay ninguna antes de 2023. Identifico un conjunto de jugadores observados en los últimos 730 días para 17 de las 48 selecciones. Consulto las valoraciones anteriores al corte y publico cobertura del conjunto observado, no de una convocatoria oficial, en dated_market_coverage.csv. No incorporo mercado al modelo principal: no puedo validar su aporte en los bloques de selección sin abrir el periodo reservado. El adaptador as-of queda implementado para una fuente con más historia.
 
-La ventaja de sede se representa con signo respecto a ambos equipos; elimino host_away del conjunto de características de este diseño. La referencia independiente conserva su contrato original. La adopción de descanso, forma y altitud depende de ablaciones temporales en Fase 3.
+La ventaja de sede se representa con signo respecto a ambos equipos; elimino host_away del conjunto de características de este diseño. La referencia independiente conserva su contrato original. Contrasto estos grupos con una logística mediante ablaciones temporales. Su evaluación con XGBoost y modelos de goles corresponde a la Fase 3.
 
 ## Ranking y puntos conjuntamente
 
 Además del puesto, contrasté los puntos FIFA, normalizando la diferencia por la suma de puntos para evitar mezclar escalas históricas. Este contraste tiene su propio protocolo fechado antes de ejecutarlo y utiliza los parámetros Elo ya seleccionados. Los faltantes tienen indicadores explícitos.
 
 Log loss: 0.902555; Brier: 0.537798. Cambio de log loss respecto a Elo: 0.000761, intervalo [-0.000490938143671981, 0.0021381899157004304]. Mejoró en 1 de cuatro bloques. Descarto también el grupo conjunto de puesto y puntos del modelo principal. No uso resultados desde 2023 para esta decisión.
+
+## Ablación de variables y cobertura
+
+Comparé cada grupo con la misma logística sobre Elo, en los mismos partidos y bloques anteriores a 2023. Mantengo fijos los parámetros seleccionados y C=1. Cada contraste usa el criterio escrito antes de ejecutarlo.
+
+| Grupo | Log loss | Brier | Cambio de log loss | IC inferior | IC superior | Bloques con mejora | Admitido |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Goles y forma reciente | 0.888251 | 0.527859 | -0.013543 | -0.022724 | -0.006394 | 3 | Sí |
+| Días desde el último partido | 0.901819 | 0.537345 | 0.000024 | -0.000142 | 0.000163 | 2 | No |
+| Competición y sede | 0.809187 | 0.478374 | -0.092608 | -0.116368 | -0.073262 | 4 | Sí |
+| Altitud de sede | 0.902256 | 0.537212 | 0.000462 | -0.002158 | 0.002974 | 2 | No |
+| Ponderación por cobertura | 0.902351 | 0.537437 | 0.000557 | -0.000881 | 0.001795 | 2 | No |
+| Grupos admitidos conjuntamente | 0.803438 | 0.474785 | -0.098356 | -0.126915 | -0.076227 | 4 | Sí |
+
+La ponderación es una sensibilidad descriptiva con estratos administrativos actuales; no puedo certificar afiliación histórica por fecha y no la habilito como política de producción. La ponderación utiliza solo cobertura del bloque de entrenamiento y conserva el estrato sin cruce. No abre resultados del bloque siguiente para calcular pesos. La selección de variables comparte los bloques de validación: los intervalos son descriptivos y la comparación independiente sigue pendiente. No atribuyo este resultado a XGBoost.
+
+## Sesgo observable de amistosos
+
+| Modelo | Conjunto observado | Partidos | Log loss | Brier |
+| --- | --- | --- | --- | --- |
+| Solo Elo | Amistosos | 197 | 1.033826 | 0.671668 |
+| Solo Elo | No amistosos | 2937 | 0.892938 | 0.528322 |
+| Elo, forma y contexto | Amistosos | 197 | 0.003750 | 0.000033 |
+| Elo, forma y contexto | No amistosos | 2937 | 0.857078 | 0.506629 |
+
+Los 197 amistosos verificables de validación son todos marcadores finales 0–0 invariantes. El indicador de competición aprende en parte esta selección: su excelente resultado en esos amistosos no permite afirmar capacidad de pronóstico sobre amistosos generales. En los partidos no amistosos, el intervalo pareado del cambio de log loss de la combinación es [-0.053810303611971734, -0.019681305199110134]. «No amistosos» incluye las categorías de la fuente, no certifica reconocimiento oficial de cada torneo. La mejora queda limitada a esta validación y requiere la evaluación reservada.
