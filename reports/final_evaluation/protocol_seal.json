@@ -1,0 +1,10 @@
+{
+  "sealed_at_utc": "2026-10-12T19:35:13.000277+00:00",
+  "protocol_sha256": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf",
+  "base_models_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+  "commit_reference": "resolve phase4-protocol tag; a commit cannot contain its own hash",
+  "explicit_approval_received": false,
+  "post2022_metrics_computed": false,
+  "human_protocol_sha256": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a",
+  "human_protocol_sealed_at_utc": "2026-10-12T19:42:10.237227+00:00"
+}

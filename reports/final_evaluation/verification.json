@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-10-12T19:39:30.657823+00:00",
+  "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+  "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+  "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+  "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+  "frozen_artifacts_checked": 43,
+  "protected_code_files_checked": 5,
+  "reserved_metrics_computed": false,
+  "protocol_sha256": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf",
+  "sealed_at_utc": "2026-10-12T19:35:13.000277+00:00",
+  "executed_at_utc": "2026-10-12T19:40:51.050951+00:00",
+  "tests_run": 44,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "skip_reasons": [
+    "Reproducción del pipeline histórico DataCamp excluida de los comparadores del estudio"
+  ],
+  "successful": true,
+  "command": "python tools/verify_final_evaluation.py",
+  "stage": "protocol, awaiting explicit approval",
+  "skipped_missing_local_data": 0,
+  "skipped_historical_exclusion": 1,
+  "skip_counts_classified_at_utc": "2026-10-12T19:42:10.271160+00:00"
+}

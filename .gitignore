@@ -24,3 +24,18 @@ reports/selection_review/features_*.csv
 reports/selection_review/goals_*.csv
 reports/data_preparation/historical_features.csv
 reports/data_preparation/goal_training_features.csv
+
+# Entregables históricos locales: conservados, fuera del estudio activo.
+/CUADRO_TORNEO_SIMULADO.md
+/GLOSARIO_FOOTYSTATS.md
+/MAPA_ARCHIVOS.md
+/PLAN_ML_PARTIDOS_XGBOOST_DIXON_COLES.md
+/PLAN_PORTAFOLIO_PROBABILISTICO.md
+/RESUMEN_MODELO.md
+/cuadro_torneo_simulado.csv
+/diagnostic_low_probability_advancers.csv
+/diagnostico_strength_teams.csv
+/group_predictions_filled.csv
+/group_tables.csv
+/knockout_predictions_filled.csv
+/tools/complete_audit.py

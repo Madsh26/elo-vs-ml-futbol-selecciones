@@ -1,0 +1,14 @@
+{
+  "population": "frozen pre-2023 walk-forward selection, not final evaluation",
+  "matches": 6376,
+  "mean_absolute_probability_difference": 0.02524031722925456,
+  "mean_difference_percentage_points": 2.5240317229254563,
+  "mean_class_difference_percentage_points": {
+    "victoria": 2.729599643173095,
+    "empate": 1.9607796157071016,
+    "derrota": 2.881715909896172
+  },
+  "mean_total_variation": 0.037860475843881844,
+  "computed_at_utc": "2026-10-12T19:35:13.223574+00:00",
+  "post2022_metrics_computed": false
+}

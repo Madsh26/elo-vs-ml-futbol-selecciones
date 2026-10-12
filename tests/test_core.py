@@ -83,8 +83,7 @@ class ExportTests(unittest.TestCase):
         np.testing.assert_allclose(scores.groupby(['model','match_id']).probability.sum(),1,atol=1e-10)
         self.assertTrue((scores.probability>=0).all())
 
-    @unittest.skipUnless(os.environ.get('ALLOW_RESERVED_EVALUATION')=='1',
-                         'Baseline reproduction using reserved results is deferred to Phase 4')
+    @unittest.skip('Reproducción del pipeline histórico DataCamp excluida de los comparadores del estudio')
     def test_saved_model_reproduces_fixture(self):
         import joblib
         from football_forecast.models import goal_rates, score_probabilities

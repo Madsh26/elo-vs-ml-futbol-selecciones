@@ -1,0 +1,84 @@
+{
+  "checked_at_utc": "2026-10-12T19:35:12.988668+00:00",
+  "tracked_initially_clean": true,
+  "preserved_untracked": [
+    {
+      "path": "CUADRO_TORNEO_SIMULADO.md",
+      "sha256": "f350eb00d4b71e58458af5540803a4b48c3a1ea1d758d11957fd06060da0fab3",
+      "bytes": 2815,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "GLOSARIO_FOOTYSTATS.md",
+      "sha256": "d7c36bce15f508c03f9e47af6a80e3d7e50d0acb402cf3b422022e59d14f0b1d",
+      "bytes": 14029,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "MAPA_ARCHIVOS.md",
+      "sha256": "453661ceb023b62a88794767e7a6a28c91c984a0025c9660238a9f6a33d4edfa",
+      "bytes": 12156,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "PLAN_ML_PARTIDOS_XGBOOST_DIXON_COLES.md",
+      "sha256": "3bd131752930593f9e809ca31595f445295d8c98483509b2b3038de05f0a9849",
+      "bytes": 12305,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "PLAN_PORTAFOLIO_PROBABILISTICO.md",
+      "sha256": "fc474623b533703ae88ffae0104ed2617d0a8f815dc3ec7100e95d8d816bc772",
+      "bytes": 16606,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "RESUMEN_MODELO.md",
+      "sha256": "4881b058dd17e4e96ceac85a6139b570d7b3256e34184d32f23b91d0b51cf5df",
+      "bytes": 6150,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "cuadro_torneo_simulado.csv",
+      "sha256": "fd34cb14e190e3db94fa779e93294b08bab838c1519f0213c4662dd50eeb1a55",
+      "bytes": 2254,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "diagnostic_low_probability_advancers.csv",
+      "sha256": "6846dd04997327db28fec73b6948a48b7306faca54efb4386f836ed2ae4689d8",
+      "bytes": 1316,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "diagnostico_strength_teams.csv",
+      "sha256": "2c66184451eca1059c3a7b28ceceb124d4d7cfdbc1ae294f497d64c074e3f892",
+      "bytes": 8761,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "group_predictions_filled.csv",
+      "sha256": "dcaa580e5d43d5fccf69101272e849aed08418195e33427c3c1a5067a190657d",
+      "bytes": 7030,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "group_tables.csv",
+      "sha256": "710f863dbfe381ee7970651e984b1a7d693085caa89263b27d148bea74932dfa",
+      "bytes": 2127,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "knockout_predictions_filled.csv",
+      "sha256": "bc152a44e9279195253b6ec8a4a555f2a07334993fc45ba3f96677e5f317f127",
+      "bytes": 4581,
+      "policy": "preserved locally, excluded from active Git scope"
+    },
+    {
+      "path": "tools/complete_audit.py",
+      "sha256": "4527e62e0d4336d09a4aa7ec4715364e347736fba89469715a0af1a61a576fd3",
+      "bytes": 888,
+      "policy": "preserved locally, excluded from active Git scope"
+    }
+  ]
+}

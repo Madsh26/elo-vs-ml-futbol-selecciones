@@ -7,3 +7,4 @@ reports/models_selected/** -text whitespace=blank-at-eol,blank-at-eof,space-befo
 README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 RESULTADOS.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/DECISIONES_DE_DISEÑO.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/final_evaluation/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

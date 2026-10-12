@@ -1,36 +1,39 @@
-# International Football Probabilities
+# Probabilidades de fútbol internacional
 
-Construyo un estudio retrospectivo de probabilidades de fútbol para mi portafolio: victoria, empate, derrota y distribución de marcadores a 90 minutos. El torneo ya estaba jugado al construir el estudio; no lo presento como un pronóstico publicado previamente.
+Evaluación retrospectiva de Elo, aprendizaje automático y modelos de goles.
 
-El corte deportivo final es exclusivo, **2026-06-10**. Selecciono y congelo modelos usando únicamente resultados anteriores a **2023-01-01**. Mantengo 2023–corte y los resultados oficiales del Mundial reservados para la evaluación posterior.
+Construyo un estudio de victoria, empate, derrota y marcadores a 90 minutos. El Mundial 2026 ya estaba jugado al construirlo; no lo presento como un pronóstico publicado previamente. El corte deportivo es exclusivo, **2026-06-10**.
+
+## Estado de la evidencia
+
+Seleccioné los modelos con resultados anteriores a 2023: **logística con Elo y forma** para 1X2 y **Poisson** para marcadores. Son modelos distintos: el 1X2 de Poisson procede de su propia matriz de marcadores y no coincide con el 1X2 de la logística. No mezclo sus probabilidades ni las reconcilio artificialmente.
+
+El periodo 2023–corte es **semiconfirmatorio, no virgen**: la entrega histórica para DataCamp ya puntuó 846 partidos de 2023-01-08 a 2026-06-04. Sus modelos y métricas están excluidos de todas las líneas base y comparaciones del estudio actual. Que esos resultados no hayan intervenido en esta selección no elimina la exposición previa.
+
+La Fase 4 está en la puerta de aprobación. Ya escribí y sellé su protocolo; todavía no calculo métricas desde 2023 ni genero las predicciones finales de los 72 encuentros. Los resultados oficiales del Mundial se cargarán después de congelar las predicciones y su commit.
 
 ## Diseño
 
-Los conjuntos de evaluación se definen sin depender del resultado. Admito todos los registros válidos para 1X2 y goles, reconstruyendo 90 minutos donde hay evidencia y usando el final registrado como aproximación declarada donde falta. No convierto una tanda automáticamente en empate. El catálogo estricto de Mundiales sirve como validación de esta aproximación, con sensibilidades sin partidos marcados y solo no amistosos.
+Los conjuntos se definen sin depender del marcador. Admito todos los registros válidos, reconstruyendo 90 minutos cuando hay evidencia y usando el marcador final como aproximación declarada cuando falta. Una tanda no demuestra empate a 90 minutos. Las marcas de tanda y prórroga permiten análisis de sensibilidad; el catálogo independiente de Mundiales permite comprobar la duración.
 
-Elo utiliza todas las competiciones, actualización por fecha, pesos por competición, margen de goles y ventaja real de sede. Comparo 32 configuraciones conjuntas y elijo por log loss de no amistosos con una regla pareada de un error estándar. La forma reciente procede solo de partidos anteriores. La logística con forma debe cumplir el criterio frente a Elo en esta búsqueda; no doy por válida una combinación de contexto por una evaluación sesgada.
+Elo utiliza todas las competiciones, pesos por competición, margen de goles y sede real. Los parámetros congelados son sede 100, gamma 1, K de referencia y tasa de regresión 0; con tasa cero, el plazo de inactividad de 730 días no tiene efecto. Las variables de una fecha se calculan antes de actualizar sus resultados. La forma reciente usa únicamente el pasado.
 
-Comparo frecuencias, Solo Elo con sede fija, logística con forma, regresión ordinal, XGBoost 1X2, Poisson, Dixon-Coles con covariables y XGBoost Poisson. Los modelos de goles producen el marcador y el 1X2 desde la misma distribución. Pruebo simetría al intercambiar equipos con tolerancia 1e-9.
+Entrené y comparé frecuencias, Solo Elo, logística con forma, ordinal, XGBoost 1X2, Poisson, Dixon-Coles y XGBoost Poisson. XGBoost permanece como comparador: no demostró una mejora robusta en los bloques de selección. Descanso, competición, altitud y ranking FIFA no cumplieron el criterio de admisión; mercado no tiene pertenencia histórica fechada suficiente. No extrapolo ranking a 2026 ni uso valores actuales de jugadores.
 
-Elijo **Logística con Elo y forma** para 1X2 y **Poisson independiente** para marcadores. Esta es una selección anterior a 2023 que necesita confirmación independiente. [RESULTADOS.md](RESULTADOS.md) explica métricas, intervalos, sensibilidades y límites.
+## Documentación y reproducción
 
-## Validación y reproducción
-
-Uso bloques 2016–2017, 2018–2019, 2020–2021 y 2022, con entrenamiento anterior a cada bloque desde 2000. Reporto total, amistosos, no amistosos y Mundiales, log loss, Brier multiclase sin dividir, acierto, ECE por clase, empates previstos/reales y NLL de marcador. Remuestreo trimestres completos para los intervalos pareados. Un modelo complejo debe superar la referencia bajo el criterio escrito previamente; el periodo reservado sigue sin abrir.
+- [Resultados y estado actual](RESULTADOS.md): entrada al informe, sin duplicar el congelado.
+- [Protocolo de evaluación](reports/final_evaluation/PROTOCOLO.md): población, métricas, incertidumbre y puerta de aprobación.
+- [Decisiones de diseño](docs/DECISIONES_DE_DISEÑO.md).
+- [Cómo entiendo los modelos](docs/COMO_ENTENDER_EL_MODELO.md): explicación sin conocimientos previos.
+- [Índice de auditorías](data_audit.json): enlaces y hashes de los documentos de autoridad.
 
 ```powershell
-python select_models.py
-python tools/verify_models_selected.py
+python tools/verify_final_evaluation.py
 ```
 
-No descargo datos ni simulo torneos. Uso dos hilos por defecto. Si el congelado ya existe, select_models.py verifica sus hashes sin sustituirlo. Para reproducir la selección desde cero necesito una copia de trabajo sin el directorio de congelado, las fuentes locales con los SHA256 registrados y la preparación previa. Los CSV grandes están excluidos de Git; si falta el historial preparado, lo reconstruyo con el corte anterior a 2023 y compruebo su hash. El protocolo queda guardado antes de ejecutar métricas. Los comandos históricos fix_selection_bias.py corresponden a la etiqueta selection-bias-fixed y no generan el informe vigente.
+Este comando verifica el congelado y ejecuta pruebas que no evalúan resultados desde 2023. Solo escribe la verificación en reports/final_evaluation/. El CI informa pruebas ejecutadas y omitidas por falta de datos o por exclusión del histórico. Para verificar los commits y etiquetas necesito el historial de Git y la etiqueta models-selected, no solo una copia de los archivos.
 
-## Fuentes y límites
+Mantengo intactos reports/models_selected/ y sus cinco archivos de código protegidos. No ejecuto los antiguos scripts que regeneran esos informes. La reproducción de selección desde cero corresponde a una copia de trabajo independiente, con las fuentes locales y sus hashes.
 
-Uso archivos locales de martj42, Fjelstul, ranking FIFA semestral, GeoNames, Transfermarkt, StatsBomb, Openfootball y fixtures suministrados. Mantengo las fuentes separadas y en data/raw/. El ranking repetido es una fotografía excluida; el ranking semestral solo es una ablación con rezago conservador y caducidad de 90 días. No extrapolo ranking a 2026. Valor de mercado queda fuera por falta de pertenencia a selecciones fechada antes de 2023; no uso valor/club/nacionalidad actuales como históricos. StatsBomb queda para validación opcional. Openfootball y resultados de 2026 permanecen reservados.
-
-## Trazabilidad
-
-[data_audit.json](data_audit.json), [protocolo previo](reports/models_selected/protocol.json), [congelado](reports/models_selected/freeze_manifest.json) y [decisiones de diseño](docs/DECISIONES_DE_DISEÑO.md) registran fechas, hashes y reglas. Las etiquetas data-prepared, selection-bias-fixed y models-selected identifican preparación, definición de conjuntos y modelos congelados. Conservo los informes históricos como diagnóstico; la narrativa vigente está en RESULTADOS.md y reports/models_selected/.
-
-Cada fuente conserva sus condiciones originales. El código nuevo tiene licencia MIT.
+Uso archivos locales, sin descargas ni scraping. Los datos grandes permanecen fuera de Git. Conservo metadatos de fixture del archivo histórico como fuente suministrada; no utilizo sus modelos ni sus resultados de evaluación. Cada fuente conserva sus condiciones y el código nuevo tiene licencia MIT.

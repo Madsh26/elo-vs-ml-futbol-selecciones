@@ -10,7 +10,7 @@ Admito todo el historial válido para goles y 1X2 bajo duración supuesta donde 
 
 ## Selección temporal y simplicidad
 
-Resultados desde 2023 están reservados. Calculo variables antes de actualizar todos los resultados de una fecha. Elo tiene inicialización 1500, plazo de inactividad 730 días y una búsqueda conjunta de 32 combinaciones de sede, regresión, pesos K y margen de goles. La regresión 0.1 de la referencia era un parámetro fijado, no una elección de datos de la búsqueda aislada.
+El periodo desde 2023 es semiconfirmatorio: el pipeline histórico DataCamp ya puntuó 846 partidos de 2023-01-08 a 2026-06-04. No uso sus modelos ni métricas como comparadores. La selección vigente solo utilizó resultados anteriores a 2023; esta separación no convierte el periodo posterior en virgen. Calculo variables antes de actualizar todos los resultados de una fecha. Elo tiene inicialización 1500, tasa de regresión por inactividad 0 —el plazo de 730 días es inerte con esa tasa— y una búsqueda conjunta de 32 combinaciones de sede, regresión, pesos K y margen de goles. La regresión 0.1 de la referencia era un parámetro fijado, no una elección de datos de la búsqueda aislada.
 
 El protocolo escrito previamente está en reports/models_selected/protocol.json. Selecciono por log loss de no amistosos en los cuatro bloques. Dentro de un error estándar pareado del mínimo prefiero, por orden, ausencia de regresión, pesos de referencia, gamma menor y ventaja de sede menor. Para modelos y variables exijo IC superior de diferencia de log loss <0, Brier sin empeorar y mejora en tres bloques; entre candidatos admitidos cercanos uso el orden de complejidad escrito. Los intervalos usan trimestres completos, 400 réplicas, semilla fija. Estos bloques de selección necesitan confirmación independiente.
 
@@ -22,4 +22,11 @@ Todos los clasificadores reconcilian ambos órdenes. Los modelos de goles compar
 
 ## Congelado
 
-Congelo los modelos con entrenamiento anterior a 2023 en 2026-10-12T17:07:05.615286+00:00, con hashes en freeze_manifest.json. La etiqueta models-selected precede a abrir 2023–corte. El congelado de predicciones de los 72 partidos y la carga de resultados oficiales corresponden a fases posteriores; sus fechas no se inventan. El modelo guardado original permanece intacto. Mantengo archivos fuente en data/raw/ y reportes históricos como diagnósticos separados.
+Congelo los modelos con entrenamiento anterior a 2023 en 2026-10-12T17:07:05.615286+00:00, con hashes en freeze_manifest.json. La etiqueta models-selected precede a abrir 2023–corte. El congelado de predicciones de los 72 partidos y la carga de resultados oficiales corresponden a fases posteriores; sus fechas no se inventan. El modelo guardado de DataCamp permanece histórico y superado, excluido de todas las comparaciones. Mantengo archivos fuente en data/raw/ y reportes históricos como diagnósticos separados.
+
+
+## Evaluación semiconfirmatoria y puerta de aprobación
+
+El protocolo nuevo vive en reports/final_evaluation/protocol.json, con sello y commit phase4-protocol. No abro métricas desde 2023 antes de aprobación explícita. Después actualizaré solo el estado causal para congelar 72 predicciones; los modelos no se reajustan. Los commits de protocolo, predicciones y evaluación son separados. Logística y Poisson son productos distintos, sin reconciliación; reporto su discrepancia media.
+
+Los documentos de models_selected se conservan literalmente como registros congelados. Su lenguaje de periodo reservado se interpreta con la salvedad semiconfirmatoria de este registro vigente. README y RESULTADOS son entradas, y data_audit es un índice; no duplico el informe o auditoría congelados.

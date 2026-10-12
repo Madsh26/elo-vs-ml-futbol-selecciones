@@ -5,8 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
-      - run: python -m unittest discover -s tests -v
+      - run: python tools/verify_final_evaluation.py
+      - name: Mostrar recuento de pruebas y omisiones
+        if: always()
+        run: python -c "import json,pathlib; p=pathlib.Path('reports/final_evaluation/verification.json'); print(json.dumps(json.loads(p.read_text()),ensure_ascii=False,indent=2) if p.exists() else 'La verificación no terminó; consultar el error del paso anterior.')"

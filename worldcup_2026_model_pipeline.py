@@ -1,3 +1,9 @@
+"""Histórico superado: entrega DataCamp orientada a puntaje.
+
+No es una línea base ni un comparador del estudio probabilístico vigente.
+Ya puntuó 846 partidos de 2023-01-08 a 2026-06-04; ese periodo es
+semiconfirmatorio, no una evaluación virgen. Se conserva por trazabilidad.
+"""
 import io
 import sys
 import math
