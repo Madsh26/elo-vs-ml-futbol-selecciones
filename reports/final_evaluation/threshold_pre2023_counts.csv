@@ -1,0 +1,13 @@
+start,end_exclusive,scope,all_matches,both_elo_above_1700,home_wins,draws,away_wins,estimable_under_requested_minimum
+2016-01-01,2018-01-01,total,1844,377,165,114,98,True
+2016-01-01,2018-01-01,non_friendlies,1272,256,113,80,63,True
+2016-01-01,2018-01-01,friendlies,572,121,52,34,35,False
+2018-01-01,2020-01-01,total,2091,416,175,119,122,True
+2018-01-01,2020-01-01,non_friendlies,1422,223,87,65,71,True
+2018-01-01,2020-01-01,friendlies,669,193,88,54,51,False
+2020-01-01,2022-01-01,total,1471,347,157,103,87,True
+2020-01-01,2022-01-01,non_friendlies,1152,287,127,85,75,True
+2020-01-01,2022-01-01,friendlies,319,60,30,18,12,False
+2022-01-01,2023-01-01,total,970,260,120,62,78,True
+2022-01-01,2023-01-01,non_friendlies,627,184,84,41,59,False
+2022-01-01,2023-01-01,friendlies,343,76,36,21,19,False

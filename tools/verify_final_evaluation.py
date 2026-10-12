@@ -58,6 +58,17 @@ def frozen_checks():
 
 
 def protocol_checks(require_tag=False):
+    if (OUTPUT/'active_protocol.json').exists():
+        seal=json.loads((OUTPUT/'active_protocol.json').read_text(encoding='utf-8'))
+        path=ROOT/seal['protocol_file']
+        if digest(path)!=seal['protocol_sha256']:raise ValueError('Approved protocol changed')
+        if digest(ROOT/seal['human_protocol_file'])!=seal['human_protocol_sha256']:raise ValueError('Approved human protocol changed')
+        result={'protocol_file':seal['protocol_file'],'protocol_sha256':seal['protocol_sha256'],'sealed_at_utc':seal['sealed_at_utc']}
+        if require_tag:
+            commit=git('rev-parse',seal['git_tag']+'^{commit}').decode().strip()
+            if path.read_bytes()!=git('show',f"{commit}:{seal['protocol_file']}"):raise ValueError('Approved protocol differs from tag')
+            result.update(protocol_commit=commit,protocol_commit_time=git('show','-s','--format=%cI',commit).decode().strip())
+        return result
     seal=json.loads((OUTPUT/'protocol_seal.json').read_text(encoding='utf-8'))
     if digest(OUTPUT/'protocol.json')!=seal['protocol_sha256']:raise ValueError('Evaluation protocol changed after sealing')
     if 'human_protocol_sha256' in seal and digest(OUTPUT/'PROTOCOLO.md')!=seal['human_protocol_sha256']:

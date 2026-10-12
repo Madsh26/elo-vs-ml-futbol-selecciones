@@ -1,0 +1,26 @@
+{
+  "executed_at_utc": "2026-10-12T20:02:33.874436+00:00",
+  "data_cutoff_exclusive": "2023-01-01",
+  "latest_result": "2022-12-30",
+  "threshold": 1700,
+  "rule": "both raw pre-match Elo strictly >1700",
+  "viable_pooled_nonfriendlies": true,
+  "all_four_blocks_estimable": false,
+  "nonfriendly_matches": 950,
+  "worldcup_48_above_1700_at_2022_12_31": 39,
+  "hashes": {
+    "threshold_pre2023_counts.csv": "feee57f8e3a45ae15f31a0f76007f3eb209d9f5a751b43b7c637e26ba9a54f5a",
+    "worldcup_48_elo_2022_12_31.csv": "cd5454d85f8d492b6841200a9a70097ac2009bee8b70ef60ceed1bf643ed69b6"
+  },
+  "frozen_checks": {
+    "verified_at_utc": "2026-10-12T20:01:43.076133+00:00",
+    "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+    "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "frozen_artifacts_checked": 43,
+    "protected_code_files_checked": 5,
+    "reserved_metrics_computed": false
+  },
+  "post2022_metrics_computed": false
+}

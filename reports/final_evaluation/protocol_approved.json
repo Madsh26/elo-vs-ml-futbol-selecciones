@@ -1,0 +1,253 @@
+{
+  "project_title": "Probabilidades de fútbol internacional",
+  "written_at_utc": "2026-10-12T20:04:26.027163+00:00",
+  "status": "approved_by_human_after_pre2023_threshold_verification",
+  "retrospective": true,
+  "approval_required_before_any_post2022_metric": true,
+  "frozen_reference": {
+    "verified_at_utc": "2026-10-12T19:35:11.960653+00:00",
+    "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+    "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "frozen_artifacts_checked": 43,
+    "protected_code_files_checked": 5,
+    "reserved_metrics_computed": false
+  },
+  "evaluation_population": {
+    "start_inclusive": "2023-01-01",
+    "end_exclusive": "2026-06-10",
+    "evidence_status": "semiconfirmatory, not untouched",
+    "previous_exposure": {
+      "pipeline": "DataCamp score-oriented historical project, excluded from every baseline and comparison",
+      "matches_previously_scored": 846,
+      "start": "2023-01-08",
+      "end": "2026-06-04",
+      "provenance": "previous documented audit; not recomputed for this protocol"
+    },
+    "admission": "all valid registered matches, independent of score; verified 90 minutes where possible, final score otherwise",
+    "shootouts": "flag, never force a 90-minute draw",
+    "proven_extra_time": "flag and reconstruct where verified",
+    "same_date": "calculate all features before updating any outcomes that day"
+  },
+  "subperiods": [
+    [
+      "2023-01-01",
+      "2024-01-01"
+    ],
+    [
+      "2024-01-01",
+      "2025-01-01"
+    ],
+    [
+      "2025-01-01",
+      "2026-01-01"
+    ],
+    [
+      "2026-01-01",
+      "2026-06-10"
+    ]
+  ],
+  "primary_comparison": {
+    "candidate": "frozen logistic with Elo and form",
+    "reference": "frozen Solo Elo with fixed venue",
+    "population": "non-friendlies",
+    "endpoint": "pooled per-match log loss difference, logistic minus Elo",
+    "confirmation_rule": "upper paired 95% CI < 0, mean Brier difference <= 0, log loss improves in >=3/4 subperiods",
+    "decision": "confirm or fail to confirm selection; do not reselect, refit or change deployment weights from these outcomes"
+  },
+  "comparators": [
+    "frequency",
+    "elo",
+    "logistic",
+    "ordinal",
+    "xgboost",
+    "poisson",
+    "dixon_coles",
+    "xgboost_poisson"
+  ],
+  "excluded_comparators": [
+    "worldcup_2026_model_pipeline.py",
+    "reports/probabilistic models and metrics"
+  ],
+  "strata": {
+    "total": "all admitted matches",
+    "friendlies": "tournament Friendly",
+    "non_friendlies": "not Friendly; operational category, not certification of official status",
+    "worldcup": "FIFA World Cup, report N=0 if absent",
+    "strong_teams": {
+      "home_elo_strictly_greater_than": 1700,
+      "away_elo_strictly_greater_than": 1700,
+      "rating": "raw pre-match frozen-policy Elo, without venue bonus",
+      "threshold_not_tuned": true
+    },
+    "worldcup_48_mutual": "both opponents in the fixed 48-team fixture list",
+    "worldcup_48_any_opponent": "at least one opponent in the fixed 48-team fixture list"
+  },
+  "worldcup_48": [
+    "Algeria",
+    "Argentina",
+    "Australia",
+    "Austria",
+    "Belgium",
+    "Bosnia-Herzegovina",
+    "Brazil",
+    "Cabo Verde",
+    "Canada",
+    "Colombia",
+    "Croatia",
+    "Curacao",
+    "Czech Republic",
+    "DR Congo",
+    "Ecuador",
+    "Egypt",
+    "England",
+    "France",
+    "Germany",
+    "Ghana",
+    "Haiti",
+    "IR Iran",
+    "Iraq",
+    "Ivory Coast",
+    "Japan",
+    "Jordan",
+    "Korea Republic",
+    "Mexico",
+    "Morocco",
+    "Netherlands",
+    "New Zealand",
+    "Norway",
+    "Panama",
+    "Paraguay",
+    "Portugal",
+    "Qatar",
+    "Saudi Arabia",
+    "Scotland",
+    "Senegal",
+    "South Africa",
+    "Spain",
+    "Sweden",
+    "Switzerland",
+    "Tunisia",
+    "Turkey",
+    "United States",
+    "Uruguay",
+    "Uzbekistan"
+  ],
+  "fixture_metadata_sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+  "sensitivities": {
+    "exclude_marked": "evaluate only rows without shootout or proven extra-time goals; no refitting; main frozen form state retains all history",
+    "non_friendlies": "evaluate frozen models on non-friendlies; no training restricted to the evaluation period",
+    "strict_duration": "verified independent catalogue only, descriptive when sample is absent or small",
+    "no_input_policy_switch": "do not rebuild different form variables for the already frozen model"
+  },
+  "metrics": {
+    "log_loss": "natural log, clip observed outcome probability to [1e-15,1]",
+    "brier": "sum of squared error across 3 classes, no division",
+    "rps": "sum squared cumulative probability errors / 2; ordered away-win, draw, home-win",
+    "accuracy": "argmax in home-win, draw, away-win order, deterministic tie rule",
+    "draw_rates": [
+      "observed",
+      "predicted"
+    ],
+    "score_nll": "joint infinite-support likelihood, count models only; unavailable for direct 1X2 classifiers",
+    "reliability": "10 fixed equal-width bins [0,1], counts, mean probability and observed fraction; empty bins explicit",
+    "ece": "10 fixed-bin ECE per class, supplementary only",
+    "calibration_intercept_slope": "one-vs-rest binary unpenalized logistic diagnostic on logit(p), p clipped [1e-6,1-1e-6]; ideal intercept 0, slope 1; no correction applied to forecasts; failure or single-class strata reported unavailable"
+  },
+  "uncertainty": {
+    "bootstrap_replicates": 2000,
+    "unit": "whole calendar quarters",
+    "paired": true,
+    "seed": 20261012,
+    "confidence_level": 0.95,
+    "means": "pool match sums/counts, not an unweighted average of quarters",
+    "endpoints": [
+      "log_loss",
+      "brier",
+      "rps",
+      "accuracy",
+      "draw_rates",
+      "score_nll"
+    ],
+    "multiple_comparisons_correction": false,
+    "secondary_comparisons": "descriptive, no claim from an isolated significant comparator or stratum",
+    "monthly_sensitivity": {
+      "unit": "whole calendar months",
+      "bootstrap_replicates": 2000,
+      "seed": 20261012,
+      "paired": true,
+      "primary_criterion_unchanged": "quarterly bootstrap only"
+    },
+    "cluster_reporting": {
+      "planned_calendar_quarters": 14,
+      "planned_calendar_months": 42,
+      "actual": "report observed distinct quarter/month counts for every stratum and subperiod, including zero",
+      "windows": "2023Q1 through 2026Q2; January 2023 through June 2026, final quarter/month partial"
+    }
+  },
+  "product_separation": {
+    "result_product": "logistic 1X2",
+    "score_product": "Poisson score matrix and its own derived 1X2",
+    "reconciliation": "none",
+    "discrepancy": "mean over matches and 3 classes of absolute probability difference; report percentage points, per-class means and mean total variation",
+    "report_for": [
+      "pre2023 selection evidence",
+      "semiconfirmatory period after approval",
+      "72 frozen group forecasts"
+    ]
+  },
+  "model_drift": "model coefficients fixed since training before 2023; update only Elo/form state; report each subperiod, no recalibration or refitting",
+  "chronology": [
+    "explicit human approval",
+    "update causal state using only pre-2026-06-10 results",
+    "generate 72 fixed-cutoff group forecasts, score matrices and all comparator forecasts",
+    "validate probability mass and neutral symmetry to 1e-9, seal SHA256 and real UTC time",
+    "commit and tag phase4-predictions-frozen",
+    "compute semiconfirmatory metrics",
+    "load official World Cup results only after prediction commit and seal",
+    "compute descriptive World Cup evaluation",
+    "separate results/evaluation commit"
+  ],
+  "input_timing_clarification": "pre-cutoff outcomes are necessary input BEFORE sealing the 72 forecasts; after approval, before evaluation; none of the World Cup outcomes are used in this state",
+  "worldcup_evaluation": {
+    "purpose": "descriptive only, never model selection",
+    "group_matches_expected": 72,
+    "small_sample": "report actual uncertainty; do not hard-code a standard error or assert models are indistinguishable without calculating it",
+    "bootstrap": "paired calendar-date blocks, 2000 replicates, seed 20261012; sensitivity by match, report clustering limits and actual N",
+    "knockouts": "separate, 90 minutes only, if available and verifiable; no automatic shootout-to-draw"
+  },
+  "git_tags": {
+    "protocol": "phase4-protocol-approved",
+    "predictions": "phase4-predictions-frozen",
+    "models": "models-selected"
+  },
+  "time_authority": "Git commit timestamps and timestamped hash seals; never filesystem modification times",
+  "forbidden_mutations": "all reports/models_selected artifacts and the 5 protected source files",
+  "previous_protocol": {
+    "file": "reports/final_evaluation/protocol.json",
+    "sha256": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf",
+    "tag": "phase4-protocol"
+  },
+  "approval": {
+    "registered_at_utc": "2026-10-12T20:04:26.027187+00:00",
+    "source": "explicit user approval in this chat with three prior conditions",
+    "conditions": [
+      "pre2023 threshold viability",
+      ">=200 matches and >=30 events in each class",
+      "quarter-cluster counts and monthly sensitivity"
+    ],
+    "threshold_retained": 1700,
+    "preflight_sha256": "e044cd17852a19746c12a2424eea0712f9d9c66640e63eaf108ce26db6d5a84a",
+    "approval_is_not_a_backdated_forecast": true
+  },
+  "estimability": {
+    "minimum_matches": 200,
+    "minimum_events_each_class": 30,
+    "rule": "N>=200 and all three observed class counts>=30",
+    "scope": "each reported population and subperiod separately; no pooling to relabel an insufficient block",
+    "if_insufficient": "report N, class counts and descriptive point metrics; no inferential superiority or calibration regression; bootstrap intervals labelled descriptive if shown",
+    "worldcup_72": "descriptive by design; below inference minimum, never a superiority claim",
+    "threshold_preflight": "all four complete strong-team blocks meet minimum; 2022 non-friendly intersection N=184 is descriptive"
+  }
+}

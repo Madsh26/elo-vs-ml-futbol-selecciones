@@ -1,3 +1,4 @@
 {"at_utc": "2026-10-12T19:35:13.000277+00:00", "event": "protocol_sealed_awaiting_approval", "sha256": "900b96918ab690af5cd3aa004c35372bec68b39fa3efc1cc30ba05469863dedf", "models_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef"}
 {"at_utc": "2026-10-12T19:41:30.942238+00:00", "event": "human_protocol_sealed", "sha256": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a"}
 {"at_utc": "2026-10-12T19:42:10.237227+00:00", "event": "human_protocol_sealed", "sha256": "f3bab697984ba245e7935f15373750d8cf05804c03b651b2c396b359c633ec3a"}
+{"at_utc": "2026-10-12T20:04:26.050774+00:00", "event": "approved_conditions_and_protocol_sealed", "file": "reports/final_evaluation/protocol_approved.json", "sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583"}

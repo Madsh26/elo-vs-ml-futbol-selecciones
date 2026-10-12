@@ -1,0 +1,10 @@
+{
+  "protocol_file": "reports/final_evaluation/protocol_approved.json",
+  "protocol_sha256": "d017a20212e513b9e2f6f16aa6e7edf061a028b05a632ea90a381a7539372583",
+  "sealed_at_utc": "2026-10-12T20:04:26.050774+00:00",
+  "human_protocol_file": "reports/final_evaluation/PROTOCOLO_APROBADO.md",
+  "human_protocol_sha256": "b610144ffb5cf353d6e09648cbf2874f1a24d10d29301b37f3a8f40f6c9556e6",
+  "git_tag": "phase4-protocol-approved",
+  "explicit_approval_received": true,
+  "conditions_verified_before_post2022_metrics": true
+}
