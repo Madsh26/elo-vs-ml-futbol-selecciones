@@ -54,7 +54,13 @@ def main():
         api(repository+'/topics','PUT',{'names':['sports-analytics','elo-rating','xgboost','probabilistic-forecasting','reproducible-research']})
         print(json.dumps({'repository':result['html_url'],'visibility':'public','actions_during_initial_upload':'disabled','models_executed':False}))
     elif args.stage=='deploy':
-        api(repository+'/actions/permissions','PUT',{'enabled':True,'allowed_actions':'all'})
+        # Only the named first-party actions used by static Pages and integrity CI.
+        api(repository+'/actions/permissions','PUT',{'enabled':True,'allowed_actions':'selected'})
+        api(repository+'/actions/permissions/selected-actions','PUT',{
+            'github_owned_allowed':False,'verified_allowed':False,
+            'patterns_allowed':['actions/checkout@v4','actions/setup-python@v5',
+                                'actions/jekyll-build-pages@v1','actions/upload-pages-artifact@v3',
+                                'actions/deploy-pages@v4','actions/configure-pages@v5']})
         pages=api(repository+'/pages')
         if pages is None:pages=api(repository+'/pages','POST',{'build_type':'legacy','source':{'branch':'main','path':'/'}})
         api(repository+'/actions/workflows/tests.yml/dispatches','POST',{'ref':'main'})
