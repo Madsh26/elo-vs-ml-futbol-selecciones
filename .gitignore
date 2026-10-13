@@ -12,7 +12,11 @@ data/processed/
 .ipynb_checkpoints/
 portfolio_github.zip
 datos nuevos/
-data/raw/
+!data/raw/
+data/raw/*
+!data/raw/international_results_current.zip
+!data/raw/fjelstul_worldcup.zip
+!data/raw/openfootball_worldcup.zip
 reports/feature_design/historical_features.csv
 reports/data_preparation/historical_results.csv
 reports/data_preparation/goal_training_90.csv

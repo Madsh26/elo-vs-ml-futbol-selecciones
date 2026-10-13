@@ -1,0 +1,816 @@
+{
+  "id": "davidcariboo/player-scores",
+  "description": "> [!WARNING]\n> **Updates are paused. This dataset is current to 6 July 2026.**\n> The automated collection pipeline stopped completing successfully in mid-July 2026, and there is no estimated date for updates to resume. `games` contains nothing after 2026-07-06, `appearances` nothing after 2026-06-28, `player_valuations` nothing after 2026-06-12, and 2026/27 squads are not covered. Everything published before then is unaffected. Full details: https://github.com/dcaribou/transfermarkt-datasets/discussions/383\n\n\u26a0\ufe0f **The __Discussions__ tab in this website is not monitored. For getting in touch, please [use Github](https://github.com/dcaribou/transfermarkt-datasets/discussions)**\n\n### TL;DR\n> Clean, structured football data from [Transfermarkt](https://www.transfermarkt.co.uk/), including\n> * `88,000+` games from many seasons on all major competitions\n> * `790+` clubs from those competitions\n> * `50,000+` players from those clubs\n> * `650,000+` player market valuations historical records\n> * `1,890,000+` player appearance records from all games\n> * `175,000+` transfer records\n> * `1,270,000+` game events (goals, cards, substitutions)\n> * `100+` countries and national teams with FIFA rankings\n>\n> and more!\n\n### What does it contain?\nThe dataset is composed of multiple CSV files. Note the freshness warning above: these files are not currently being refreshed. Each file contains the attributes of the entity and the IDs that can be used to join them together.\n\n| File | Description |\n|------|-------------|\n| `competitions` | Leagues and tournaments tracked in the dataset |\n| `games` | One row per game, with scores, attendance and referee |\n| `clubs` | Club details including squad size and stadium |\n| `players` | Player profiles, positions and market values |\n| `player_valuations` | Historical market value records per player |\n| `appearances` | One row per player per game, with goals, assists and cards |\n| `game_events` | In-game events: goals, cards, substitutions |\n| `game_lineups` | Starting and bench lineups per game |\n| `club_games` | Game-level stats from each club's perspective |\n| `transfers` | Player transfers between clubs with fees |\n| `countries` | Countries with confederation and aggregate stats |\n| `national_teams` | National teams with FIFA rankings and squad details |\n\n![diagram](https://github.com/dcaribou/transfermarkt-datasets/blob/master/resources/diagram.svg?raw=true)\n\n### How did we build it?\nThe source code that maintains this dataset, as well as the data pipeline, [is available in Github](https://github.com/dcaribou/transfermarkt-datasets). On a high level, the project uses [transfermarkt-scraper](https://github.com/dcaribou/transfermarkt-scraper) to pull the data from [Transfermarkt website](https://www.transfermarkt.co.uk/) and a set of Python scripts and SQL to curate it and publish it here.\n\n### What is the status?\nAutomated updates are currently paused (see the warning at the top). The existing data remains available and corrections to it are still made. The best way to find out about the different initiatives within this project and their status is to check the `Issues` section on [transfermarkt-datasets](https://github.com/dcaribou/transfermarkt-datasets/issues).\n\n### Contact\nThe source of truth for the code and data for this project is Github and that is the best place to start a conversation, please checkout the community guidelines [here](https://github.com/dcaribou/transfermarkt-datasets/discussions/179).\n\n> I kindly ask that you post your questions there and not in the __Discussion__ tab in this website, as that is not monitored.\n",
+  "keywords": [
+    "football",
+    "players",
+    "stats",
+    "statistics",
+    "data",
+    "soccer",
+    "games",
+    "matches"
+  ],
+  "licenses": [
+    {
+      "CC0": "Public Domain"
+    }
+  ],
+  "resources": [
+    {
+      "name": "competitions",
+      "type": "table",
+      "title": "competitions",
+      "description": "\n  The `competitions` asset contains one row per competition in the dataset, including national leagues, cups and international tournaments. \n  ",
+      "path": "competitions.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "competition_id",
+            "type": "string"
+          },
+          {
+            "name": "competition_code",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "sub_type",
+            "type": "string"
+          },
+          {
+            "name": "country_id",
+            "type": "integer"
+          },
+          {
+            "name": "country_name",
+            "type": "string"
+          },
+          {
+            "name": "domestic_league_code",
+            "type": "string"
+          },
+          {
+            "name": "confederation",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    {
+      "name": "players",
+      "type": "table",
+      "title": "players",
+      "description": "\n  The `players` asset contains one row per player in the dataset.\n  All `players` are either currently part of a club in `clubs` or they have been at some point in the past.\n  ",
+      "path": "players.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "current_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "current_club_name",
+            "type": "string"
+          },
+          {
+            "name": "country_of_citizenship",
+            "type": "string"
+          },
+          {
+            "name": "country_of_birth",
+            "type": "string"
+          },
+          {
+            "name": "city_of_birth",
+            "type": "string"
+          },
+          {
+            "name": "date_of_birth",
+            "type": "date"
+          },
+          {
+            "name": "position",
+            "type": "string"
+          },
+          {
+            "name": "sub_position",
+            "type": "string"
+          },
+          {
+            "name": "foot",
+            "type": "string"
+          },
+          {
+            "name": "height_in_cm",
+            "type": "integer"
+          },
+          {
+            "name": "market_value_in_eur",
+            "type": "number",
+            "description": "The player's current market value in EUR."
+          },
+          {
+            "name": "highest_market_value_in_eur",
+            "type": "number",
+            "description": "The player's historically highest market value in EUR."
+          },
+          {
+            "name": "agent_name",
+            "type": "string"
+          },
+          {
+            "name": "contract_expiration_date",
+            "type": "date"
+          },
+          {
+            "name": "current_club_domestic_competition_id",
+            "type": "string"
+          },
+          {
+            "name": "first_name",
+            "type": "string"
+          },
+          {
+            "name": "last_name",
+            "type": "string"
+          },
+          {
+            "name": "player_code",
+            "type": "string"
+          },
+          {
+            "name": "image_url",
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "name": "last_season",
+            "type": "integer"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    {
+      "name": "transfers",
+      "type": "table",
+      "title": "transfers",
+      "description": "\n    The `transfers` asset contains one row per transfer in the dataset.\n    Each transfer is associated with a player, a 'from' club, and a 'to' club.\n    ",
+      "path": "transfers.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "player_name",
+            "type": "string"
+          },
+          {
+            "name": "transfer_date",
+            "type": "date"
+          },
+          {
+            "name": "transfer_season",
+            "type": "string"
+          },
+          {
+            "name": "from_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "to_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "from_club_name",
+            "type": "string"
+          },
+          {
+            "name": "to_club_name",
+            "type": "string"
+          },
+          {
+            "name": "transfer_fee",
+            "type": "number",
+            "description": "The transfer fee in EUR. Null if unknown, 0 if free transfer."
+          },
+          {
+            "name": "market_value_in_eur",
+            "type": "number",
+            "description": "The player's market value at the time of transfer in EUR."
+          }
+        ]
+      }
+    },
+    {
+      "name": "games",
+      "type": "table",
+      "title": "games",
+      "description": "\n  The `games` asset contains one row per game in the dataset.\n  All games are tied to one particular `competition`.\n  ",
+      "path": "games.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "game_id",
+            "type": "integer"
+          },
+          {
+            "name": "competition_id",
+            "type": "string"
+          },
+          {
+            "name": "competition_type",
+            "type": "string"
+          },
+          {
+            "name": "season",
+            "type": "integer"
+          },
+          {
+            "name": "round",
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "name": "home_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "away_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "home_club_goals",
+            "type": "integer"
+          },
+          {
+            "name": "away_club_goals",
+            "type": "integer"
+          },
+          {
+            "name": "aggregate",
+            "type": "string"
+          },
+          {
+            "name": "home_club_position",
+            "type": "integer"
+          },
+          {
+            "name": "away_club_position",
+            "type": "integer"
+          },
+          {
+            "name": "home_club_name",
+            "type": "string"
+          },
+          {
+            "name": "away_club_name",
+            "type": "string"
+          },
+          {
+            "name": "home_club_manager_name",
+            "type": "string"
+          },
+          {
+            "name": "away_club_manager_name",
+            "type": "string"
+          },
+          {
+            "name": "home_club_formation",
+            "type": "string"
+          },
+          {
+            "name": "away_club_formation",
+            "type": "string"
+          },
+          {
+            "name": "stadium",
+            "type": "string"
+          },
+          {
+            "name": "attendance",
+            "type": "integer"
+          },
+          {
+            "name": "referee",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    {
+      "name": "game_events",
+      "type": "table",
+      "title": "game_events",
+      "description": "\n  The `games_events` asset contains one row per game event in the dataset.\n  Events are extracted from the game [\"match sheet\"](https://www.transfermarkt.co.uk/spielbericht/index/spielbericht/3098550) in transfermarkt and they are tied to one particular `game`, identified by the `game_id` column.\n\n  The asset currently contains `Goals`, `Subsitutions` and `Cards` event types.\n  ",
+      "path": "game_events.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "game_event_id",
+            "type": "string",
+            "description": "Surrogate key"
+          },
+          {
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "name": "game_id",
+            "type": "integer"
+          },
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "club_id",
+            "type": "integer"
+          },
+          {
+            "name": "club_name",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "minute",
+            "type": "integer"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "player_in_id",
+            "type": "string",
+            "description": "For subsitution events, ID of the player who joins the game. Null otherwise"
+          },
+          {
+            "name": "player_assist_id",
+            "type": "string",
+            "description": "For goal events, ID of the player who did the assist. Null otherwise"
+          }
+        ]
+      }
+    },
+    {
+      "name": "national_teams",
+      "type": "table",
+      "title": "national_teams",
+      "description": "\n    The `national_teams` asset contains one row per national team in the dataset.\n    Each national team includes squad details, market value, coaching staff, and FIFA ranking.\n    ",
+      "path": "national_teams.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "national_team_id",
+            "type": "integer"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "country_id",
+            "type": "integer"
+          },
+          {
+            "name": "country_name",
+            "type": "string"
+          },
+          {
+            "name": "confederation",
+            "type": "string"
+          },
+          {
+            "name": "squad_size",
+            "type": "integer"
+          },
+          {
+            "name": "total_market_value",
+            "type": "number",
+            "description": "Aggregated players' Transfermarkt market value in EUR."
+          },
+          {
+            "name": "coach_name",
+            "type": "string"
+          },
+          {
+            "name": "fifa_ranking",
+            "type": "integer"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    {
+      "name": "countries",
+      "type": "table",
+      "title": "countries",
+      "description": "\n    The `countries` asset contains one row per country in the dataset.\n    Each country includes aggregate statistics such as total clubs, total players, and confederation membership.\n    ",
+      "path": "countries.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "country_id",
+            "type": "integer"
+          },
+          {
+            "name": "country_name",
+            "type": "string"
+          },
+          {
+            "name": "country_code",
+            "type": "string"
+          },
+          {
+            "name": "confederation",
+            "type": "string"
+          },
+          {
+            "name": "total_clubs",
+            "type": "integer"
+          },
+          {
+            "name": "total_players",
+            "type": "integer"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    {
+      "name": "appearances",
+      "type": "table",
+      "title": "appearances",
+      "description": "\n  The `appearances` asset contains one records per player appearance. That is, one record per player per game played.\n  All `appearances` are bound to one particular `player`. \n  ",
+      "path": "appearances.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "appearance_id",
+            "type": "integer"
+          },
+          {
+            "name": "game_id",
+            "type": "integer"
+          },
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "player_club_id",
+            "type": "integer",
+            "description": "ID of the club that the player belonged to at the time of the game."
+          },
+          {
+            "name": "player_current_club_id",
+            "type": "integer",
+            "description": "ID of the club that the player currently belongs to."
+          },
+          {
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "name": "player_name",
+            "type": "string"
+          },
+          {
+            "name": "competition_id",
+            "type": "string"
+          },
+          {
+            "name": "yellow_cards",
+            "type": "integer"
+          },
+          {
+            "name": "red_cards",
+            "type": "integer"
+          },
+          {
+            "name": "goals",
+            "type": "integer"
+          },
+          {
+            "name": "assists",
+            "type": "integer"
+          },
+          {
+            "name": "minutes_played",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clubs",
+      "type": "table",
+      "title": "clubs",
+      "description": "\n  The `clubs` asset contains one row per club in the dataset.\n  All clubs are tied to one particular `competition`.\n  ",
+      "path": "clubs.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "club_id",
+            "type": "integer"
+          },
+          {
+            "name": "club_code",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "domestic_competition_id",
+            "type": "string"
+          },
+          {
+            "name": "total_market_value",
+            "type": "number",
+            "description": "Aggregated players' Transfermarkt market value in millions of pounds"
+          },
+          {
+            "name": "squad_size",
+            "type": "integer"
+          },
+          {
+            "name": "average_age",
+            "type": "number"
+          },
+          {
+            "name": "foreigners_number",
+            "type": "integer"
+          },
+          {
+            "name": "foreigners_percentage",
+            "type": "number"
+          },
+          {
+            "name": "national_team_players",
+            "type": "integer"
+          },
+          {
+            "name": "stadium_name",
+            "type": "string"
+          },
+          {
+            "name": "stadium_seats",
+            "type": "integer"
+          },
+          {
+            "name": "net_transfer_record",
+            "type": "string"
+          },
+          {
+            "name": "coach_name",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "name": "filename",
+            "type": "string",
+            "description": "Name of the raw file where the data came from."
+          },
+          {
+            "name": "last_season",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "name": "game_lineups",
+      "type": "table",
+      "title": "game_lineups",
+      "description": "\n  The `games_lineups` asset contains one row per game player in the dataset.\n  Players are extracted from the game [\"line-ups\"](https://www.transfermarkt.co.uk/spielbericht/aufstellung/spielbericht/3098550) in transfermarkt and they are tied to one particular `game`, identified by the `game_id` column.\n  ",
+      "path": "game_lineups.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "game_lineups_id",
+            "type": "string",
+            "description": "Surrogate key"
+          },
+          {
+            "name": "game_id",
+            "type": "integer"
+          },
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "club_id",
+            "type": "integer"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "player_name",
+            "type": "string"
+          },
+          {
+            "name": "team_captain",
+            "type": "string"
+          },
+          {
+            "name": "number",
+            "type": "string"
+          },
+          {
+            "name": "position",
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "name": "player_valuations",
+      "type": "table",
+      "title": "player_valuations",
+      "description": "\n  The `player_valuations` asset contains one row per player value record.\n  Player value records appear as a result of a change in the player market value.\n  ",
+      "path": "player_valuations.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "name": "player_id",
+            "type": "integer"
+          },
+          {
+            "name": "current_club_name",
+            "type": "string"
+          },
+          {
+            "name": "current_club_id",
+            "type": "integer"
+          },
+          {
+            "name": "market_value_in_eur",
+            "type": "number"
+          },
+          {
+            "name": "player_club_domestic_competition_id",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "club_games",
+      "type": "table",
+      "title": "club_games",
+      "description": "\n  The `club_games` asset is an alternative representation of a season games from the clubs point of view.\n  For each game in the `games` asset the `club_games` contains two rows, one for the home club and another for the away club.\n\n  game_id | home_club_id   | home_club_name | away_club_id | away_club_name | aggregate\n  --------|----------------|----------------|--------------|----------------|---------\n  1       | 1              | Real Madrid    | 100          | Barcelona      | 1:2\n  \n  _A game as represented in the `games` asset_\n  \n  game_id | club_id | own_goals | opponent_id\n  --------|---------|-----------|------------\n  1       | 1       | 1         | 100\n  2       | 100     | 2         | 1\n  \n  _The same game represented in the `club_games` asset_\n\n  ",
+      "path": "club_games.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "club_id",
+            "type": "integer"
+          },
+          {
+            "name": "game_id",
+            "type": "integer"
+          },
+          {
+            "name": "own_goals",
+            "type": "integer"
+          },
+          {
+            "name": "own_position",
+            "type": "integer"
+          },
+          {
+            "name": "own_manager_name",
+            "type": "string"
+          },
+          {
+            "name": "opponent_id",
+            "type": "integer"
+          },
+          {
+            "name": "opponent_goals",
+            "type": "integer"
+          },
+          {
+            "name": "opponent_position",
+            "type": "integer"
+          },
+          {
+            "name": "opponent_manager_name",
+            "type": "string"
+          },
+          {
+            "name": "hosting",
+            "type": "string",
+            "description": "'Home' if the game took place at the club home stadium and 'Away' if at its opponent stadium"
+          },
+          {
+            "name": "is_win",
+            "type": "integer",
+            "description": "'1' if the club won the game and '0' otherwise."
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Football Data from Transfermarkt"
+}

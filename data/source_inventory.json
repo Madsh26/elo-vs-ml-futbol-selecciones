@@ -1,0 +1,1506 @@
+{
+  "inspected_at_utc": "2026-10-13T00:08:49.739582+00:00",
+  "approval_status": "approved",
+  "network_access": false,
+  "model_fitting": false,
+  "frozen_integrity": {
+    "verified_at_utc": "2026-10-13T00:08:42.772033+00:00",
+    "models_selected_commit": "329769628f1d8a43d912cd969e5f6b3f870acaef",
+    "models_selected_commit_time": "2026-10-12T12:14:16-05:00",
+    "freeze_manifest_sha256": "f55c2fb990e5099dab96997b7c03b14ff267b8f8f0e034e7c421af0110822bed",
+    "model_selection_protocol_sha256": "dc979031a88adc07a7f3ccf4ae5ad04d7b93801491e177787d3b9802cf183125",
+    "frozen_artifacts_checked": 43,
+    "protected_code_files_checked": 5,
+    "reserved_metrics_computed": false
+  },
+  "authoritative_counts_file": "reports/final_evaluation/data_inventory.json",
+  "sources": [
+    {
+      "source": "martj42 snapshot",
+      "file": "data/raw/international_results_current.zip",
+      "archive_member": "",
+      "bytes": "1300320",
+      "sha256": "c4ce2d659ed254a5cd1327d52b09e55e21c50fcc860e16e6b0ab8af94dc980d5",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:12.939057-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/martj42_CC0.txt",
+      "role": "estado Elo; ajuste; validación 2026 tras sellado",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Snapshot sin modificar; licencia local; conserva los cuatro CSV y su documentación."
+    },
+    {
+      "source": "martj42 results",
+      "file": "data/raw/international_results_current.zip",
+      "archive_member": "international_results-master/results.csv",
+      "bytes": "3764617",
+      "sha256": "5dcefd1aa0483979ea8378cef5be448d2005609d39945ea162378561a30a6767",
+      "rows": "49945",
+      "date_first": "1872-11-30",
+      "date_last": "2026-10-06",
+      "date_semantics": "fecha del partido; snapshot completo, no conjunto de ajuste",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:12.939057-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/martj42_CC0.txt",
+      "role": "estado Elo; ajuste; verificación de duración",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Miembro sin modificar del ZIP propuesto; hash de bytes descomprimidos."
+    },
+    {
+      "source": "martj42 shootouts",
+      "file": "data/raw/international_results_current.zip",
+      "archive_member": "international_results-master/shootouts.csv",
+      "bytes": "29789",
+      "sha256": "072b445adf5183fbe981087857e5b64c8f17abfdbf257b1822ceacb4a37919fa",
+      "rows": "700",
+      "date_first": "1967-08-22",
+      "date_last": "2026-10-05",
+      "date_semantics": "fecha del partido; snapshot completo, no conjunto de ajuste",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:12.939057-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/martj42_CC0.txt",
+      "role": "estado Elo; ajuste; verificación de duración",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Miembro sin modificar del ZIP propuesto; hash de bytes descomprimidos."
+    },
+    {
+      "source": "martj42 goalscorers",
+      "file": "data/raw/international_results_current.zip",
+      "archive_member": "international_results-master/goalscorers.csv",
+      "bytes": "3442482",
+      "sha256": "e02b25cfcad3fca9af79a5cf075c33a6875416d6d80e5ab42514535cb0d639fe",
+      "rows": "47914",
+      "date_first": "1916-07-02",
+      "date_last": "2026-07-19",
+      "date_semantics": "fecha del partido; snapshot completo, no conjunto de ajuste",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:12.939057-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/martj42_CC0.txt",
+      "role": "estado Elo; ajuste; verificación de duración",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Miembro sin modificar del ZIP propuesto; hash de bytes descomprimidos."
+    },
+    {
+      "source": "martj42 former_names",
+      "file": "data/raw/international_results_current.zip",
+      "archive_member": "international_results-master/former_names.csv",
+      "bytes": "1691",
+      "sha256": "2d57f59a3ac13b24c2fcf208ced5a38710529d122da38929838d0980b002677e",
+      "rows": "36",
+      "date_first": "1882-02-18",
+      "date_last": "2018-11-19",
+      "date_semantics": "intervalos de nombres históricos",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:12.939057-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/martj42_CC0.txt",
+      "role": "normalización",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Miembro sin modificar del ZIP propuesto; hash de bytes descomprimidos."
+    },
+    {
+      "source": "Fjelstul",
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "archive_member": "",
+      "bytes": "22537679",
+      "sha256": "dff7f988cb0e283b55e75132e7d835f3e871782d2be95901488412c2dcb12c15",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "https://github.com/jfjelstul/worldcup",
+      "origin_evidence": "data/license_evidence/fjelstul_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-06-05T12:45:44.681970-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC-BY-SA-4.0",
+      "license_evidence": "data/license_evidence/fjelstul_README.md",
+      "role": "validación de duración; reconstrucción histórica a 90 minutos",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Archivo sin modificar; atribución y share-alike para adaptaciones de la base."
+    },
+    {
+      "source": "Fjelstul matches",
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "archive_member": "worldcup-master/data-csv/matches.csv",
+      "bytes": "298930",
+      "sha256": "037f718764758e7dda3a2918276f85fa8389af1d50999d2a480c8a6a49408875",
+      "rows": "1248",
+      "date_first": "1930-07-13",
+      "date_last": "2022-12-18",
+      "date_semantics": "",
+      "origin_url": "https://github.com/jfjelstul/worldcup",
+      "origin_evidence": "data/license_evidence/fjelstul_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-06-05T12:45:44.681970-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC-BY-SA-4.0",
+      "license_evidence": "data/license_evidence/fjelstul_README.md",
+      "role": "validación; catálogo histórico",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Tabla del archivo intacto; incluye torneos masculinos y femeninos."
+    },
+    {
+      "source": "Fjelstul goals",
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "archive_member": "worldcup-master/data-csv/goals.csv",
+      "bytes": "734494",
+      "sha256": "4fbe990b7f42bb8af00d1587af09359ecfdb4ee4101bb44fda0eb336fc1e5be3",
+      "rows": "3637",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "https://github.com/jfjelstul/worldcup",
+      "origin_evidence": "data/license_evidence/fjelstul_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-06-05T12:45:44.681970-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC-BY-SA-4.0",
+      "license_evidence": "data/license_evidence/fjelstul_README.md",
+      "role": "validación; catálogo histórico",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Tabla del archivo intacto; incluye torneos masculinos y femeninos."
+    },
+    {
+      "source": "Fjelstul teams",
+      "file": "data/raw/fjelstul_worldcup.zip",
+      "archive_member": "worldcup-master/data-csv/teams.csv",
+      "bytes": "24772",
+      "sha256": "a2d5ef96fade3bee9ffd22a28cda6378c6b9fb67f8e99514aa58ec0854d26a66",
+      "rows": "88",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "https://github.com/jfjelstul/worldcup",
+      "origin_evidence": "data/license_evidence/fjelstul_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-06-05T12:45:44.681970-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC-BY-SA-4.0",
+      "license_evidence": "data/license_evidence/fjelstul_README.md",
+      "role": "validación; catálogo histórico",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Tabla del archivo intacto; incluye torneos masculinos y femeninos."
+    },
+    {
+      "source": "Ranking FIFA semestral",
+      "file": "data/raw/fifa_rank_semesters.zip",
+      "archive_member": "fifa_mens_rank.csv",
+      "bytes": "470494",
+      "sha256": "39672f771f715ea5d38e83033cf7778657594ecdf10781c2ad6afe7bb12215b5",
+      "rows": "13130",
+      "date_first": "1992",
+      "date_last": "2024",
+      "date_semantics": "año; semestre en columna semester; disponibilidad posterior al fin del semestre",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:47.028805-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "ablación; excluido del modelo elegido",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Sin licencia ni URL de origen en el archivo local."
+    },
+    {
+      "source": "Ranking FIFA semestral contenedor",
+      "file": "data/raw/fifa_rank_semesters.zip",
+      "archive_member": "",
+      "bytes": "116546",
+      "sha256": "5324582bf969b977b013e248664bf053004b765211f3e779ef81e05b6f3d7fd5",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:47.028805-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "ablación; excluida",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Licencia y origen no verificados."
+    },
+    {
+      "source": "Ranking FIFA foto repetida",
+      "file": "data/raw/fifa_rank_repeated_snapshot_excluded.csv",
+      "archive_member": "",
+      "bytes": "4519569",
+      "sha256": "6b22784ee665a060f6acce3fad6b8faf5c404edb4521807294f1c4784927953d",
+      "rows": "72584",
+      "date_first": "1992-12-31",
+      "date_last": "2025-12-23",
+      "date_semantics": "fechas impresas; foto repetida, no observaciones históricas válidas",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T23:18:23.484763-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "excluida",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "No es un histórico; licencia y origen no verificados."
+    },
+    {
+      "source": "GeoNames cities15000",
+      "file": "data/raw/geonames_cities15000.zip",
+      "archive_member": "",
+      "bytes": "3361211",
+      "sha256": "8c2390a973087b9f42671a01c401ccbbc4d1346fe1d0371c15d1090b21d2d725",
+      "rows": "34160",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "dato estático; modificación de ficha no es fecha de obtención",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:55:52.536647-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "ablación de altitud estática; excluida del modelo elegido",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "ZIP sin licencia ni metadatos de origen; no inferir condiciones de memoria."
+    },
+    {
+      "source": "GeoNames cities15000 tabla",
+      "file": "data/raw/geonames_cities15000.zip",
+      "archive_member": "cities15000.txt",
+      "bytes": "8537519",
+      "sha256": "15fbaa64521212adb3dbc4166b9fca4ad931ed5ec93cdb93fdeb386b50f98e85",
+      "rows": "34160",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:55:52.536647-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "ablación",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Mismo archivo sin encabezado; 19 columnas tabuladas."
+    },
+    {
+      "source": "Transfermarkt DuckDB",
+      "file": "data/raw/transfermarkt.duckdb",
+      "archive_member": "",
+      "bytes": "210776064",
+      "sha256": "ba1eff7337b8ca78cb533df0b6eba0d6fc58218e0767460f6770e0b37f5a2113",
+      "rows": "7497434",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "suma de filas de tablas distintas; rangos y esquemas por tabla en source_inventory.json",
+      "origin_url": "https://github.com/dcaribou/transfermarkt-datasets",
+      "origin_evidence": "data/license_evidence/transfermarkt_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T00:10:32.039514-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0 declarada para el dataset; vínculo del DuckDB exacto no verificado",
+      "license_evidence": "data/license_evidence/transfermarkt_dataset_metadata.json",
+      "role": "games: validación 2026; mercado y national_teams: excluidos como variables",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Tamaño superior a 100 MiB; no se incluye. Metadatos declaran CC0; falta procedencia verificable del snapshot exacto."
+    },
+    {
+      "source": "Transfermarkt repositorio de origen",
+      "file": "data/raw/transfermarkt_repository.zip",
+      "archive_member": "",
+      "bytes": "572558",
+      "sha256": "d684fe944e12d80e99740b69653aede13a4f309911c9d2d4dd955e5c23376ba5",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "https://github.com/dcaribou/transfermarkt-datasets",
+      "origin_evidence": "data/license_evidence/transfermarkt_README.md",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:57:06.398474-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0 (repositorio)",
+      "license_evidence": "data/license_evidence/transfermarkt_repository_CC0.txt",
+      "role": "evidencia de origen/licencia; no entrada del modelo",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Se conserva evidencia de documentación, no se publica todo el repositorio ajeno."
+    },
+    {
+      "source": "StatsBomb",
+      "file": "data/raw/statsbomb_open_data.zip",
+      "archive_member": "",
+      "bytes": "1677878384",
+      "sha256": "26bf5d5549d0df260e747b48ce086be6f2a4c6b7f8f02cd186ae727bd93eeb23",
+      "rows": "3961",
+      "date_first": "1958-06-24",
+      "date_last": "2025-07-27",
+      "date_semantics": "filas de metadatos de partidos; eventos no sumados como filas",
+      "origin_url": "https://github.com/statsbomb/open-data",
+      "origin_evidence": "LICENSE.pdf, apartado 2.1",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T23:03:43.075259-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "StatsBomb Public Data User Agreement; no redistribución",
+      "license_evidence": "data/raw/statsbomb_open_data.zip::open-data-master/LICENSE.pdf (1.2.1 y 7)",
+      "role": "validación opcional; no usada para ajustar ni elegir modelos",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Acuerdo local prohíbe redistribuir datos; archivo de más de 1 GiB."
+    },
+    {
+      "source": "Openfootball cup.txt",
+      "file": "data/raw/openfootball_worldcup.zip",
+      "archive_member": "worldcup-master/2026--canada-usa-mexico/cup.txt",
+      "bytes": "14268",
+      "sha256": "508fffdd09d0f0d8daed38a8e2323120a8205cf4cfe8af5660b675cf49c413d3",
+      "rows": "72",
+      "date_first": "2026-06-11",
+      "date_last": "2026-06-27",
+      "date_semantics": "fecha local de partidos 2026",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:58:07.487889-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/openfootball_CC0.txt",
+      "role": "validación 2026 tras sellado",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Fuente separada de Fjelstul. URL exacta del origen no confirmada en los metadatos locales."
+    },
+    {
+      "source": "Openfootball cup_finals.txt",
+      "file": "data/raw/openfootball_worldcup.zip",
+      "archive_member": "worldcup-master/2026--canada-usa-mexico/cup_finals.txt",
+      "bytes": "6206",
+      "sha256": "03631f10fff8a3a9c485d866c98fb099f8d2612e97a034c64c28c7d189dd5949",
+      "rows": "32",
+      "date_first": "2026-06-28",
+      "date_last": "2026-07-19",
+      "date_semantics": "fecha local de partidos 2026",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:58:07.487889-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/openfootball_CC0.txt",
+      "role": "validación 2026 tras sellado",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Fuente separada de Fjelstul. URL exacta del origen no confirmada en los metadatos locales."
+    },
+    {
+      "source": "Openfootball",
+      "file": "data/raw/openfootball_worldcup.zip",
+      "archive_member": "",
+      "bytes": "1007635",
+      "sha256": "399d3f202c6b00dfb958cd74aac7e8f220febd822277db443ffd8629a57a2130",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:58:07.487889-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "CC0-1.0",
+      "license_evidence": "data/license_evidence/openfootball_CC0.txt",
+      "role": "validación 2026 tras sellado",
+      "included_in_git": "yes",
+      "proposed_action": "include",
+      "decision_reason": "Archivo intacto, licencia local; se conserva fuente separada."
+    },
+    {
+      "source": "Partidos resueltos",
+      "file": "reports/probabilistic/resolved_fixtures.csv",
+      "archive_member": "",
+      "bytes": "4448",
+      "sha256": "556103e18a99610742ea604e51fdbf76101a1135344bb3fc44b4aa660e759247",
+      "rows": "72",
+      "date_first": "2026-06-11T19:00:00Z",
+      "date_last": "2026-06-28T02:00:00Z",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-11T22:12:30.847102-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "metadatos de pronóstico; no entrenamiento",
+      "included_in_git": "yes",
+      "proposed_action": "existing_pending_license",
+      "decision_reason": "Ya incluido en Git; procedencia declarada del proyecto histórico, sin licencia de entrada verificada. No modificar el archivo."
+    },
+    {
+      "source": "Calendario suministrado",
+      "file": "data/raw/worldcup_fixtures.zip",
+      "archive_member": "",
+      "bytes": "2805",
+      "sha256": "fdeddf8cf8d6832dc77feda364132755a8b9b06f4df99befac7b2eb3dcdbfeda",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-06-05T13:00:11.770010-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "metadatos; archivo original",
+      "included_in_git": "no",
+      "proposed_action": "exclude",
+      "decision_reason": "Archivo sin licencia ni URL; los slots no son resultados de entrenamiento."
+    },
+    {
+      "source": "Entrega de competencia",
+      "file": "worldcup_2026_model_pipeline.py",
+      "archive_member": "",
+      "bytes": "105766",
+      "sha256": "59334e474f39f6704f4677c4f67c68519d3ed4b2aee0cf5e075d4418bb527bb1",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T14:36:47.253219-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "términos de la competencia pendientes de verificar",
+      "license_evidence": "",
+      "role": "histórico excluido de comparaciones",
+      "included_in_git": "yes",
+      "proposed_action": "exclude",
+      "decision_reason": "No se utiliza como modelo ni baseline."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/fjelstul_README.md",
+      "archive_member": "",
+      "bytes": "26052",
+      "sha256": "5506a6697d288d2c20d2c49062d85bf633506d3247a6ddb0f75bd4c8ee043f41",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.060651-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/martj42_CC0.txt",
+      "archive_member": "",
+      "bytes": "7048",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.047895-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/martj42_README.md",
+      "archive_member": "",
+      "bytes": "3834",
+      "sha256": "0d50b5f6fe2b658eba52a4477e4e48af6ca61e89e2c5265b153e3c12d7305b76",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.050417-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/openfootball_CC0.txt",
+      "archive_member": "",
+      "bytes": "6555",
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.069166-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/openfootball_README.md",
+      "archive_member": "",
+      "bytes": "8213",
+      "sha256": "74870043fe52be272d9814b7352d8a5a4cc735746d89e97e9872046bfd75547e",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.076675-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/statsbomb_README.md",
+      "archive_member": "",
+      "bytes": "1753",
+      "sha256": "98a757466c4d931dba4b6c4290c55c2fe74e4550d7455bbe05fd884dc831aff3",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.181052-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/transfermarkt_dataset_metadata.json",
+      "archive_member": "",
+      "bytes": "25423",
+      "sha256": "f04a31e0b6b8563fcca0bac01a8a23577db2b95e655214f63784abd28cfdec03",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.088215-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/transfermarkt_README.md",
+      "archive_member": "",
+      "bytes": "8735",
+      "sha256": "4cfb56871c508498bba1fc2d12a7127df4d2f771e8f4eb985908ae26d0e54eaf",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.094351-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    },
+    {
+      "source": "Evidencia documental",
+      "file": "data/license_evidence/transfermarkt_repository_CC0.txt",
+      "archive_member": "",
+      "bytes": "7048",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rows": "",
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "",
+      "origin_url": "no verificada",
+      "origin_evidence": "",
+      "obtained_date": "no verificada",
+      "local_file_date": "2026-10-12T19:08:43.082685-05:00",
+      "date_label": "fecha local del archivo",
+      "license": "no verificada",
+      "license_evidence": "",
+      "role": "documentación de procedencia y condiciones",
+      "included_in_git": "yes",
+      "proposed_action": "documentation",
+      "decision_reason": "Copia exacta del documento local de origen; no sustituye la licencia de los datos."
+    }
+  ],
+  "transfermarkt_tables": [
+    {
+      "table": "appearances",
+      "rows": 1894350,
+      "date_first": "2012-07-03",
+      "date_last": "2026-06-28",
+      "date_semantics": "date",
+      "columns": [
+        {
+          "name": "appearance_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "game_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_current_club_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        },
+        {
+          "name": "player_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "competition_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "yellow_cards",
+          "type": "INTEGER"
+        },
+        {
+          "name": "red_cards",
+          "type": "INTEGER"
+        },
+        {
+          "name": "goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "assists",
+          "type": "INTEGER"
+        },
+        {
+          "name": "minutes_played",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "table": "club_games",
+      "rows": 177916,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "game_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "own_goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "own_position",
+          "type": "INTEGER"
+        },
+        {
+          "name": "own_manager_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "opponent_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "opponent_goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "opponent_position",
+          "type": "INTEGER"
+        },
+        {
+          "name": "opponent_manager_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "hosting",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "is_win",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "table": "clubs",
+      "rows": 796,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "club_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "club_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "domestic_competition_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "total_market_value",
+          "type": "FLOAT"
+        },
+        {
+          "name": "squad_size",
+          "type": "INTEGER"
+        },
+        {
+          "name": "average_age",
+          "type": "FLOAT"
+        },
+        {
+          "name": "foreigners_number",
+          "type": "INTEGER"
+        },
+        {
+          "name": "foreigners_percentage",
+          "type": "FLOAT"
+        },
+        {
+          "name": "national_team_players",
+          "type": "INTEGER"
+        },
+        {
+          "name": "stadium_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "stadium_seats",
+          "type": "INTEGER"
+        },
+        {
+          "name": "net_transfer_record",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "coach_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "last_season",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "filename",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "competitions",
+      "rows": 65,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "competition_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "competition_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "sub_type",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "type",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "country_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "domestic_league_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "confederation",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "total_clubs",
+          "type": "INTEGER"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "countries",
+      "rows": 124,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "country_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "confederation",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "total_clubs",
+          "type": "INTEGER"
+        },
+        {
+          "name": "total_players",
+          "type": "INTEGER"
+        },
+        {
+          "name": "average_age",
+          "type": "FLOAT"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "game_events",
+      "rows": 1274469,
+      "date_first": "2006-06-09",
+      "date_last": "2026-07-06",
+      "date_semantics": "date",
+      "columns": [
+        {
+          "name": "game_event_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        },
+        {
+          "name": "game_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "minute",
+          "type": "INTEGER"
+        },
+        {
+          "name": "type",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "description",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "player_in_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_assist_id",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "table": "game_lineups",
+      "rows": 3179016,
+      "date_first": "2013-07-02",
+      "date_last": "2026-07-06",
+      "date_semantics": "date",
+      "columns": [
+        {
+          "name": "game_lineups_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        },
+        {
+          "name": "game_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "type",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "position",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "number",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "team_captain",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "table": "games",
+      "rows": 88958,
+      "date_first": "2006-06-09",
+      "date_last": "2026-07-06",
+      "date_semantics": "date",
+      "columns": [
+        {
+          "name": "game_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "competition_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "season",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "round",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        },
+        {
+          "name": "home_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "away_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "home_club_goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "away_club_goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "home_club_position",
+          "type": "INTEGER"
+        },
+        {
+          "name": "away_club_position",
+          "type": "INTEGER"
+        },
+        {
+          "name": "home_club_manager_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "away_club_manager_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "stadium",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "attendance",
+          "type": "INTEGER"
+        },
+        {
+          "name": "referee",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "home_club_formation",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "away_club_formation",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "home_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "away_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "aggregate",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "competition_type",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "national_teams",
+      "rows": 124,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "national_team_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "team_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "confederation",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "team_image_url",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "squad_size",
+          "type": "INTEGER"
+        },
+        {
+          "name": "average_age",
+          "type": "FLOAT"
+        },
+        {
+          "name": "foreigners_number",
+          "type": "INTEGER"
+        },
+        {
+          "name": "foreigners_percentage",
+          "type": "FLOAT"
+        },
+        {
+          "name": "total_market_value",
+          "type": "INTEGER"
+        },
+        {
+          "name": "coach_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "fifa_ranking",
+          "type": "INTEGER"
+        },
+        {
+          "name": "last_season",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "player_valuations",
+      "rows": 656301,
+      "date_first": "2000-01-20",
+      "date_last": "2026-06-12",
+      "date_semantics": "date",
+      "columns": [
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        },
+        {
+          "name": "market_value_in_eur",
+          "type": "INTEGER"
+        },
+        {
+          "name": "current_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "current_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "player_club_domestic_competition_id",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "players",
+      "rows": 50149,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "first_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "last_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "last_season",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "current_club_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "player_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_of_birth",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "city_of_birth",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "country_of_citizenship",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date_of_birth",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "sub_position",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "position",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "foot",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "height_in_cm",
+          "type": "INTEGER"
+        },
+        {
+          "name": "contract_expiration_date",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "agent_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "image_url",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "international_caps",
+          "type": "INTEGER"
+        },
+        {
+          "name": "international_goals",
+          "type": "INTEGER"
+        },
+        {
+          "name": "current_national_team_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "url",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "current_club_domestic_competition_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "current_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "market_value_in_eur",
+          "type": "INTEGER"
+        },
+        {
+          "name": "highest_market_value_in_eur",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "table": "transfers",
+      "rows": 175165,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "player_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "transfer_date",
+          "type": "DATE"
+        },
+        {
+          "name": "transfer_season",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "from_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "to_club_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "from_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "to_club_name",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "transfer_fee",
+          "type": "DECIMAL(18,3)"
+        },
+        {
+          "name": "market_value_in_eur",
+          "type": "DECIMAL(18,3)"
+        },
+        {
+          "name": "player_name",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "table": "version",
+      "rows": 1,
+      "date_first": "",
+      "date_last": "",
+      "date_semantics": "sin fecha histórica de observación",
+      "columns": [
+        {
+          "name": "commit_hash",
+          "type": "VARCHAR"
+        }
+      ]
+    }
+  ],
+  "statsbomb": {
+    "metadata_files": 80,
+    "event_files": 4235,
+    "license_pdf_sha256": "a5462e69aeb71a39268b760b110c5c2190a2e0cee3015ba976f66bd71f6c2bb4",
+    "agreement_revision_printed_in_pdf": "8 September 2023",
+    "obtained_date": "no verificada"
+  },
+  "origin_notes": "URL no verificada significa que el paquete local no confirma la URL exacta. Fecha de publicación, modificación o inspección no equivale a obtención."
+}

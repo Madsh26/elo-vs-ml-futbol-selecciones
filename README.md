@@ -8,16 +8,33 @@
 
 Estudio retrospectivo. La evidencia 2023–corte es semiconfirmatoria por exposición previa al periodo. [Explorar los 72 partidos](reports/final_evaluation/football_report.html) · [Resultados](reports/final_evaluation/RESULTADOS.md) · [Explicación sencilla](docs/COMO_ENTENDER_EL_MODELO.md).
 
-## Datos en una mirada
+## Datos
 
-- **49,469 partidos** de 1872-11-30 a 2026-06-09 para actualizar Elo y forma; 337 entidades de selecciones, incluidas históricas.
-- **21,781 partidos de 2000–2022** para ajustar los coeficientes congelados; **6.376** para selección con validación temporal.
-- **3.624 partidos de 2023–corte** para evaluación, con **2.711 no amistosos** en la comparación principal.
-- **72 pronósticos de grupos**, con probabilidades y resultados registrados al lado; **48 selecciones**.
+Uso **49,469 partidos** (1872-11-30–2026-06-09) para el estado Elo y la forma; **21,781** para el ajuste, **6,376** para selección temporal y **3,624** para evaluación semiconfirmatoria. El informe presenta **72 partidos de grupos** y **48 selecciones**. Estas cantidades se generan leyendo `reports/final_evaluation/data_inventory.json`.
 
-Uso results, goalscorers, shootouts y former_names de martj42; Fjelstul para duración histórica; Openfootball y juegos de Transfermarkt para corroborar 2026 después del sellado. Ranking semestral y GeoNames quedan en ablaciones. No uso mercado actual ni extrapolo ranking FIFA a 2026. StatsBomb queda como validación opcional. Todas las fuentes son archivos locales suministrados, sin scraping.
+| Fuente | Contenido | Uso en el estudio | Licencia documentada | Enlace de origen | Incluida en Git |
+|---|---|---|---|---|---|
+| martj42 snapshot | Resultados, goles, tandas y nombres históricos | estado Elo; ajuste; validación 2026 tras sellado | CC0-1.0 | no verificada | Sí |
+| Fjelstul | Catálogo y periodos de Mundiales | validación de duración; reconstrucción histórica a 90 minutos | CC-BY-SA-4.0 | [Origen](https://github.com/jfjelstul/worldcup) | Sí |
+| Ranking FIFA semestral contenedor | Posición y puntos por año/semestre | ablación; excluida | no verificada | no verificada | No |
+| Transfermarkt DuckDB | Jugadores, valoraciones y partidos | games: validación 2026; mercado y national_teams: excluidos como variables | CC0 declarada para el dataset; vínculo del DuckDB exacto no verificado | [Origen](https://github.com/dcaribou/transfermarkt-datasets) | No |
+| GeoNames cities15000 | Ciudades y altitud | ablación de altitud estática; excluida del modelo elegido | no verificada | no verificada | No |
+| StatsBomb | Eventos y metadatos de partidos | validación opcional; no usada para ajustar ni elegir modelos | StatsBomb Public Data User Agreement; no redistribución | [Origen](https://github.com/statsbomb/open-data) | No |
+| Openfootball | Resultados de Mundial, separado de Fjelstul | validación 2026 tras sellado | CC0-1.0 | no verificada | Sí |
+| Partidos resueltos | Calendario, equipos, grupos y sedes | metadatos de pronóstico; no entrenamiento | no verificada | no verificada | Sí (términos de competencia pendientes) |
 
-El [diccionario de datos](docs/DATOS_Y_DICCIONARIO.md) explica el contenido, las cantidades, los marcadores a 90 minutos y cada variable. La logística recibe seis variables: diferencia efectiva de Elo, diferencias de goles a favor y recibidos, forma reciente, fuerza de rivales recientes y cobertura de las ventanas. Las variables se calculan únicamente con el pasado.
+Conservo el snapshot exacto por SHA256: el contenido actual de una fuente que se actualiza, como martj42, puede ser distinto. Las fechas de obtención no están verificadas. El [manifiesto](data/MANIFEST.csv), la [guía de fuentes](data/README.md) y el [diccionario de variables](docs/DATOS_Y_DICCIONARIO.md) detallan archivos, cantidades, cobertura, hashes y condiciones originales.
+
+### Datos que no uso y por qué
+
+- Valor de mercado: la cobertura histórica de las plantillas no permite evaluarlo en los bloques de selección. El valor y club actuales no son variables históricas válidas.
+- Ranking FIFA 2026: no hay histórico vigente disponible; no lo extrapolo. La foto repetida está excluida. El ranking semestral con rezago fue una ablación y no forma parte del modelo elegido.
+- Altitud GeoNames: evaluada como variable secundaria, no admitida en el diseño final.
+- StatsBomb: validación opcional, no entrenamiento ni evidencia adicional ejecutada.
+- `national_teams` de Transfermarkt: foto sin fecha histórica; no es ranking por partido.
+- Entrega DataCamp: histórico de la competencia, excluido como modelo y línea base.
+
+La logística utiliza las seis variables documentadas en el diccionario, calculadas únicamente con el pasado. Los datos completos posteriores al corte se conservan como fuente; sus resultados no entran en el ajuste. Las licencias de datos son independientes de MIT para el código propio.
 
 ## Método y lectura de resultados
 
@@ -35,7 +52,7 @@ Para inferencia exijo ≥200 partidos y ≥30 eventos por clase. Los 72 grupos y
 python tools/verify_final_evaluation.py
 ```
 
-La verificación comprueba modelos, protocolo y predicciones frente a sus hashes y commits; el CI informa pruebas y omisiones por datos locales. Los archivos grandes están fuera de Git y necesito las mismas fuentes para repetir el procesamiento. Uso dos hilos por defecto y no simulo cuadros de torneo.
+La verificación comprueba modelos, protocolo y predicciones frente a sus hashes y commits; el CI informa pruebas y omisiones por datos locales. El historial y la presentación de los resultados finales se reconstruyen con los ZIP incluidos y `resolved_fixtures.csv`, utilizando las predicciones y métricas congeladas. Las ablaciones y la corroboración con Transfermarkt requieren las fuentes excluidas indicadas en `data/README.md`. Uso dos hilos por defecto y no simulo cuadros de torneo.
 
 - [Protocolo aprobado y umbral](reports/final_evaluation/PROTOCOLO_APROBADO.md).
 - [Decisiones y límites](docs/DECISIONES_DE_DISEÑO.md), incluido el periodo semiconfirmatorio y la incidencia de secuencia registrada.

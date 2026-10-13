@@ -1,0 +1,24 @@
+{
+  "evaluation_commit": "b70a672854644c335b8d5c151eaa6c419ff7a6e7",
+  "current": {
+    "README.md": {
+      "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+      "current_sha256": "1c4de18d5a1e0db07c16a50b5e4bb161048e96fcd726c455f665f198592d84b9"
+    }
+  },
+  "events": [
+    {
+      "recorded_at_utc": "2026-10-13T00:09:27.835963+00:00",
+      "stage": "docs-data-sources",
+      "presentation_after_evaluation": true,
+      "models_rerun": false,
+      "metrics_protocols_conclusions_changed": false,
+      "files": {
+        "README.md": {
+          "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+          "current_sha256": "1c4de18d5a1e0db07c16a50b5e4bb161048e96fcd726c455f665f198592d84b9"
+        }
+      }
+    }
+  ]
+}
