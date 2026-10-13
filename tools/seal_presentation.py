@@ -6,7 +6,8 @@ from verify_final_evaluation import digest, frozen_checks, git, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {'README.md', 'reports/final_evaluation/football_report.html',
-           'reports/final_evaluation/html_review.json', 'reports/final_evaluation/report_manifest.json'}
+           'reports/final_evaluation/html_review.json', 'reports/final_evaluation/report_manifest.json',
+           'assets/report_preview.png'}
 
 
 def verify_revision(relative, original):
@@ -30,7 +31,7 @@ def main():
     frozen_checks()
     commit = git('rev-parse', 'phase4-evaluated^{commit}').decode().strip()
     audit = json.loads(git('show', commit + ':reports/final_evaluation/data_audit.json'))
-    original = {**audit['output_sha256'], **audit['documentation_sha256']}
+    original = {**audit['output_sha256'], **audit['documentation_sha256'], **audit['asset_sha256']}
     path = ROOT / 'docs/presentation_revisions.json'
     ledger = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {
         'evaluation_commit': commit, 'current': {}, 'events': []}

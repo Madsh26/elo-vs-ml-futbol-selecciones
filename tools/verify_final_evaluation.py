@@ -99,6 +99,8 @@ def main():
             if digest(ROOT/relative)!=expected and not verify_revision(relative,expected):raise ValueError(f'Final evidence changed: {relative}')
         for relative,expected in final_audit['documentation_sha256'].items():
             if digest(ROOT/relative)!=expected and not verify_revision(relative,expected):raise ValueError(f'Documentation changed: {relative}')
+        for relative,expected in final_audit.get('asset_sha256',{}).items():
+            if digest(ROOT/relative)!=expected and not verify_revision(relative,expected):raise ValueError(f'Presentation asset changed: {relative}')
         checks['final_evidence_hashes_checked']=len(final_audit['output_sha256'])
     if args.check_only:
         print(json.dumps(checks,ensure_ascii=False,indent=2));return

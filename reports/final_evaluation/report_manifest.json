@@ -142,5 +142,18 @@
       "tools/review_report_headless.cjs": "24c72becb4ca38e5d293ceaa645d87a5ceada9bb9bd4cc85c38715e023a2e9ea",
       "docs/market_plausibility_sources.json": "0874abd44b9cb6c667edb2f93b7961cb7e63c6c0e2b9e67f4beb3f2a6ecf3cf6"
     }
+  },
+  "story_revision": {
+    "recorded_at_utc": "2026-10-13T00:57:27.836373+00:00",
+    "stage": "docs-readme-story",
+    "presentation_after_evaluation": true,
+    "models_rerun": false,
+    "metrics_protocols_conclusions_changed": false,
+    "files_sha256": {
+      "README.md": "7ca260a35659473545988084949fce475125a1f8fe793369bdd7b1fe54721fba",
+      "assets/report_preview.png": "bfe32fa37e08859a06049e30aa13afb7e3fc4bd061b2493528f64db9f3bfc367",
+      "tools/add_readme_story.py": "c6bebe5a5596d59539123c61f0ad08c98f01d7b6904a884aca86fc578d0f99fc",
+      "docs/publication_text_review.json": "c6bdb64920f583d782fb0d9800ab43a9574c5ce10667eed2cbd4b58561c40af6"
+    }
   }
 }

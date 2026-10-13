@@ -3,7 +3,7 @@
   "current": {
     "README.md": {
       "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
-      "current_sha256": "fee6d2ab0ab7ee91c1506f5272e56c2e0bb97073cb19b862956c4cef0f6d2093"
+      "current_sha256": "7ca260a35659473545988084949fce475125a1f8fe793369bdd7b1fe54721fba"
     },
     "reports/final_evaluation/football_report.html": {
       "evaluation_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
@@ -15,7 +15,11 @@
     },
     "reports/final_evaluation/report_manifest.json": {
       "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
-      "current_sha256": "bf44a267d35f74c63c2114018b1e135637ca5f70022f90dc861312c0bfa0a87e"
+      "current_sha256": "6d74f103a0ca0073a017ae0bee9d6dfd4681e8e8b3d028af546de0f07cd9c560"
+    },
+    "assets/report_preview.png": {
+      "evaluation_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
+      "current_sha256": "bfe32fa37e08859a06049e30aa13afb7e3fc4bd061b2493528f64db9f3bfc367"
     }
   },
   "events": [
@@ -54,6 +58,48 @@
         "reports/final_evaluation/report_manifest.json": {
           "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
           "current_sha256": "bf44a267d35f74c63c2114018b1e135637ca5f70022f90dc861312c0bfa0a87e"
+        }
+      }
+    },
+    {
+      "recorded_at_utc": "2026-10-13T00:57:29.145723+00:00",
+      "stage": "docs-readme-story",
+      "presentation_after_evaluation": true,
+      "models_rerun": false,
+      "metrics_protocols_conclusions_changed": false,
+      "files": {
+        "README.md": {
+          "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+          "current_sha256": "b2518ef968a57b5227943b54539156130eb37bbcc8689de9eaccb83f7531dc79"
+        },
+        "assets/report_preview.png": {
+          "evaluation_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
+          "current_sha256": "bfe32fa37e08859a06049e30aa13afb7e3fc4bd061b2493528f64db9f3bfc367"
+        },
+        "reports/final_evaluation/report_manifest.json": {
+          "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
+          "current_sha256": "881ed35534495495883fedc9fd1578e9b59f8f4c5a27a48c45b53a40d4345863"
+        }
+      }
+    },
+    {
+      "recorded_at_utc": "2026-10-13T01:01:37.856643+00:00",
+      "stage": "docs-readme-story",
+      "presentation_after_evaluation": true,
+      "models_rerun": false,
+      "metrics_protocols_conclusions_changed": false,
+      "files": {
+        "README.md": {
+          "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+          "current_sha256": "7ca260a35659473545988084949fce475125a1f8fe793369bdd7b1fe54721fba"
+        },
+        "assets/report_preview.png": {
+          "evaluation_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
+          "current_sha256": "bfe32fa37e08859a06049e30aa13afb7e3fc4bd061b2493528f64db9f3bfc367"
+        },
+        "reports/final_evaluation/report_manifest.json": {
+          "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
+          "current_sha256": "6d74f103a0ca0073a017ae0bee9d6dfd4681e8e8b3d028af546de0f07cd9c560"
         }
       }
     }

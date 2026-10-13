@@ -1,5 +1,9 @@
-name: probability-model-tests
-on: [push, pull_request]
+name: frozen-study-integrity
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
@@ -11,7 +15,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
-      - run: python tools/verify_final_evaluation.py
+      - run: python tools/verify_final_evaluation.py --check-only --require-tag
+      - run: python tools/verify_data.py --history-only
       - name: Mostrar recuento de pruebas y omisiones
         if: always()
-        run: python -c "import json,pathlib; p=pathlib.Path('reports/final_evaluation/verification.json'); print(json.dumps(json.loads(p.read_text()),ensure_ascii=False,indent=2) if p.exists() else 'La verificación no terminó; consultar el error del paso anterior.')"
+        run: echo "La publicación solo verifica integridad. No entrena modelos, calcula predicciones ni cambia métricas."

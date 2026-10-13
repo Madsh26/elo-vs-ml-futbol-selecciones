@@ -1,0 +1,17 @@
+{
+  "reviewed_at_utc": "2026-10-13T01:01:36.283395+00:00",
+  "scope": "tracked text in this ML repository; excludes binary archives and unrelated repositories",
+  "tracked_text_files_scanned": 284,
+  "personal_emails_found": 0,
+  "local_paths_found": 0,
+  "false_positives": [
+    {
+      "file": "src/football_forecast/selected_models.py",
+      "line": 132,
+      "kind": "email_like",
+      "classification": "matrix multiplication, not an email",
+      "protected_file": true
+    }
+  ],
+  "protected_files_changed": false
+}
