@@ -1,12 +1,14 @@
-# Probabilidades de fútbol internacional
+# ¿Le gana el machine learning a Elo? Evaluación retrospectiva de 8 modelos en fútbol de selecciones y el Mundial 2026
+
+**3.624 partidos · protocolo sellado con hashes · 72 partidos del Mundial**
 
 **Pregunta:** ¿mejoran el aprendizaje automático y los modelos de goles a un Elo simple al predecir partidos de selecciones?
 
-**Resultado:** la logística con Elo y forma mejora frente a Solo Elo en la muestra amplia y los cuatro subperiodos; XGBoost no demuestra una mejora robusta. La ventaja no queda demostrada entre selecciones fuertes ni en los 72 partidos del Mundial.
+**Resultado:** en no amistosos, la logística con Elo y forma reduce el log loss en **0.0089** (≈1% relativo; IC [-0.0147; -0.0034]) y el acierto es prácticamente igual (61.53% frente a 61.56%). XGBoost y los modelos de goles no demuestran una mejora robusta en esta evaluación semiconfirmatoria. La ventaja tampoco queda demostrada entre selecciones fuertes ni en los grupos del Mundial. [Fuente: métricas ejecutadas](reports/final_evaluation/semiconfirmatory_metrics.csv).
 
 ![Comparación probabilística](assets/model_comparison.png)
 
-Estudio retrospectivo. La evidencia 2023–corte es semiconfirmatoria por exposición previa al periodo. [Explorar los 72 partidos](reports/final_evaluation/football_report.html) · [Resultados](reports/final_evaluation/RESULTADOS.md) · [Explicación sencilla](docs/COMO_ENTENDER_EL_MODELO.md).
+Estudio retrospectivo, construido con el Mundial ya jugado. La evidencia 2023–corte es semiconfirmatoria por exposición previa al periodo. [Explorar los partidos](reports/final_evaluation/football_report.html) · [Resultados](reports/final_evaluation/RESULTADOS.md) · [Explicación sencilla](docs/COMO_ENTENDER_EL_MODELO.md).
 
 ## Datos
 
@@ -46,6 +48,14 @@ Entre equipos con ambos Elo >1700 (674 partidos) y entre las 48 selecciones del 
 
 Para inferencia exijo ≥200 partidos y ≥30 eventos por clase. Los 72 grupos y las eliminatorias son descriptivos. Las eliminatorias usan participantes conocidos retrospectivamente y no representan simulación ni pronósticos sellados antes del torneo.
 
+## Limitaciones y lectura crítica
+
+- **Efecto pequeño y posible deriva.** La diferencia de log loss frente a Elo pasa por 2023: -0.0151, 2024: -0.0074, 2025: -0.0021. Mantengo coeficientes sin reajuste; la ventaja disminuye en esos tres años. Es una señal exploratoria de posible deriva, no una causa demostrada. [CSV por periodo](reports/final_evaluation/semiconfirmatory_subperiods.csv).
+- **Calibración del empate.** La pendiente diagnóstica es 1.40 en no amistosos; el ideal es 1. Entre los diez mayores errores de los grupos, 3 son 0–0. El mayor es España–Cabo Verde, donde el favorito tenía 87.8%. No ajusto el modelo con este diagnóstico. [Calibración](reports/final_evaluation/semiconfirmatory_calibration.csv) · [Errores](reports/final_evaluation/worldcup_largest_errors.csv).
+- **Elo solo conoce resultados**, no plantillas, lesiones ni valor de mercado. En Colombia–Portugal, el estado con corte exclusivo 2026-06-10 es Elo 2060 frente a 2023; la logística sellada el 2026-10-12 asigna 40.7/29.0/30.3% (Colombia/empate/Portugal). [Estado previo sellado](reports/final_evaluation/features_72_frozen.csv) · [Predicción congelada](reports/final_evaluation/group_forecasts_logistic.csv). Como contraste de plausibilidad exploratorio, [Australia Football](https://www.australiafootball.com/news/2026-06-26-colombia-vs-portugal-wc2026-pre/) publicó el 2026-06-26 una cuota 1.9 para Portugal, equivalente a 52.6% implícito bruto, sin descontar el margen. Esa información es posterior al corte y no es un benchmark evaluado: no la mezclo con los resultados del protocolo ni la presento como consenso verificado de todo el mercado. [Registro de fuentes y fechas](docs/market_plausibility_sources.json).
+- **Hipótesis no probada:** el escaso anclaje entre confederaciones podría hacer que Elo sobrevalore algunas selecciones de CONMEBOL. No atribuyo causalidad ni generalizo desde un partido.
+- **Sin referencia externa de mercado en la evaluación.** Queda como trabajo futuro comparar cuotas, plantillas y valoraciones con fecha, respetando el mismo corte de información.
+
 ## Reproducibilidad y documentación técnica
 
 ```powershell
@@ -62,3 +72,7 @@ La verificación comprueba modelos, protocolo y predicciones frente a sus hashes
 models-selected conserva la selección anterior a 2023; phase4-protocol y phase4-protocol-approved son protocolos distintos; phase4-predictions-frozen identifica las predicciones anteriores a cargar resultados oficiales. Los modelos y métricas históricos de DataCamp están excluidos de comparaciones. El trabajo se construyó con el Mundial ya jugado y no se presenta como pronóstico publicado antes del torneo.
 
 Cada fuente conserva sus condiciones originales. El código nuevo tiene licencia MIT.
+
+## Publicación en GitHub
+
+Nombre sugerido: `elo-vs-ml-futbol-selecciones`. Topics: `sports-analytics`, `elo-rating`, `xgboost`, `probabilistic-forecasting`, `reproducible-research`.

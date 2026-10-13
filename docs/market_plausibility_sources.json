@@ -1,0 +1,29 @@
+{
+  "role": "exploratory plausibility check after evaluation; not model input, benchmark or selection evidence",
+  "consulted_local_date": "2026-10-12",
+  "forecast_cutoff_exclusive": "2026-06-10",
+  "verified_match_market": {
+    "url": "https://www.australiafootball.com/news/2026-06-26-colombia-vs-portugal-wc2026-pre/",
+    "publication_date": "2026-06-26",
+    "publication_time_as_printed": "11:01 pm; timezone not verified",
+    "decimal_odds_portugal": 1.9,
+    "published_implied_percentage": 52.6,
+    "scope": "article reports consensus of 12 Australian bookmakers; attribution is to the article, not independent verification of each bookmaker",
+    "margin": "raw implied probability, not normalized to remove overround",
+    "timing": "after model cutoff; not comparable as equal-information historical performance"
+  },
+  "other_supplied_sources": [
+    {"url": "https://www.sportinglife.com/football/news/world-cup-outright-tips/232330", "status": "not accessible through the reading tool; no numerical claim used"},
+    {"url": "https://thescore.com/worldcup/news/3548754", "status": "accessible; tournament winner market, not Colombia-Portugal 1X2; no numerical claim used", "publication_date": "no verificada"},
+    {"url": "https://www.squawka.com/us/?p=14792", "status": "not accessible through the reading tool; no numerical claim used"}
+  ],
+  "local_numeric_sources": [
+    "reports/final_evaluation/features_72_frozen.csv",
+    "reports/final_evaluation/group_forecasts_logistic.csv",
+    "reports/final_evaluation/worldcup_group_scored_logistic.csv",
+    "reports/final_evaluation/semiconfirmatory_metrics.csv",
+    "reports/final_evaluation/semiconfirmatory_subperiods.csv",
+    "reports/final_evaluation/semiconfirmatory_calibration.csv",
+    "reports/final_evaluation/worldcup_largest_errors.csv"
+  ]
+}

@@ -1,19 +1,66 @@
 {
-  "recorded_at_utc": "2026-10-12T20:49:00.396398+00:00",
-  "method": "Codex browser, local 127.0.0.1 page; screenshot and live controls",
-  "html_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
-  "javascript_syntax_check": "node tools/check_report_js.js, passed",
+  "recorded_at_utc": "2026-10-13T00:17:09.143Z",
+  "method": "Playwright Chromium headless; offline file URL",
+  "presentation_after_evaluation": true,
+  "models_rerun": false,
+  "metrics_protocols_conclusions_changed": false,
+  "html_sha256": "adb3720fe8f68042e7a9caab08a78014a40a70073a77a663fed19a6f89714127",
+  "browser_version": "155.0.4283.45",
+  "viewport_checks": [
+    {
+      "viewport": 390,
+      "scrollWidth": 390
+    },
+    {
+      "viewport": 768,
+      "scrollWidth": 768
+    },
+    {
+      "viewport": 1366,
+      "scrollWidth": 1366
+    }
+  ],
   "observed_matches": 72,
   "observed_model_options": 8,
-  "search_Colombia_matches": 3,
+  "console_errors": [],
+  "external_requests": [],
   "verified_controls": [
-    "selection search",
-    "model selector: logistic and Poisson",
-    "match detail selection"
+    "search",
+    "group and combined filters",
+    "empty search result",
+    "all eight methods",
+    "date/error/draw sorting",
+    "CSV download content",
+    "all three evaluation windows",
+    "neutral Elo explanation",
+    "three probability colors",
+    "desktop result column visible"
   ],
-  "verified_match": "Colombia vs Portugal, 2026-06-27; recorded score 0-0",
-  "distinct_products_visible": true,
-  "screenshot_file": "assets/report_preview.png",
-  "screenshot_sha256": "be34f14546e46a48b95cebb69ec420ae5a012939af5adca80148ad587de005a1",
-  "browser_initial_javascript_escape_error_fixed_before_delivery": true
+  "evaluation_windows": [
+    {
+      "window": "semi",
+      "intervals": 6,
+      "content_sha256": "b9d150f62c2c2a73be44fe76b98e97e2bffafd57c8b9935c900ae022833b4d14"
+    },
+    {
+      "window": "selection",
+      "intervals": 6,
+      "content_sha256": "79e0d6abc49440abf08714a5bc35df019e714b5a84872d71c64539b4243aa18b"
+    },
+    {
+      "window": "world",
+      "intervals": 6,
+      "content_sha256": "4da48629d08d8f3f391fc31154afb21fa4b343ee679cf09f12f4a019138fe530"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "assets/report_390.png",
+      "sha256": "5e1d921930bb5909123f6666ac52342b23ad6a7c4276d17d85ddc374aecc6c81"
+    },
+    {
+      "file": "assets/report_1366.png",
+      "sha256": "bfe32fa37e08859a06049e30aa13afb7e3fc4bd061b2493528f64db9f3bfc367"
+    }
+  ]
 }

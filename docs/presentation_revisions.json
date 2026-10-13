@@ -3,7 +3,19 @@
   "current": {
     "README.md": {
       "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
-      "current_sha256": "1c4de18d5a1e0db07c16a50b5e4bb161048e96fcd726c455f665f198592d84b9"
+      "current_sha256": "fee6d2ab0ab7ee91c1506f5272e56c2e0bb97073cb19b862956c4cef0f6d2093"
+    },
+    "reports/final_evaluation/football_report.html": {
+      "evaluation_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
+      "current_sha256": "adb3720fe8f68042e7a9caab08a78014a40a70073a77a663fed19a6f89714127"
+    },
+    "reports/final_evaluation/html_review.json": {
+      "evaluation_sha256": "9b601496ced363c6000ae26ac56f6e5f75966fecf5fb4095ffa523d241587dcd",
+      "current_sha256": "bb668ee0946f37698f6ece868b0f160f0aec1ce3984c3ecd463e787f540bbb48"
+    },
+    "reports/final_evaluation/report_manifest.json": {
+      "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
+      "current_sha256": "bf44a267d35f74c63c2114018b1e135637ca5f70022f90dc861312c0bfa0a87e"
     }
   },
   "events": [
@@ -17,6 +29,31 @@
         "README.md": {
           "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
           "current_sha256": "1c4de18d5a1e0db07c16a50b5e4bb161048e96fcd726c455f665f198592d84b9"
+        }
+      }
+    },
+    {
+      "recorded_at_utc": "2026-10-13T00:18:50.969856+00:00",
+      "stage": "docs-html-readme-polish",
+      "presentation_after_evaluation": true,
+      "models_rerun": false,
+      "metrics_protocols_conclusions_changed": false,
+      "files": {
+        "README.md": {
+          "evaluation_sha256": "8d4db07a0f597b27f3a7859b228b1eae39c8703de12e42f3798e8ced5c839cba",
+          "current_sha256": "fee6d2ab0ab7ee91c1506f5272e56c2e0bb97073cb19b862956c4cef0f6d2093"
+        },
+        "reports/final_evaluation/football_report.html": {
+          "evaluation_sha256": "bd09432663f8a881bbc339550d491217c92d0168fe068fabd18b97e295fc83f0",
+          "current_sha256": "adb3720fe8f68042e7a9caab08a78014a40a70073a77a663fed19a6f89714127"
+        },
+        "reports/final_evaluation/html_review.json": {
+          "evaluation_sha256": "9b601496ced363c6000ae26ac56f6e5f75966fecf5fb4095ffa523d241587dcd",
+          "current_sha256": "bb668ee0946f37698f6ece868b0f160f0aec1ce3984c3ecd463e787f540bbb48"
+        },
+        "reports/final_evaluation/report_manifest.json": {
+          "evaluation_sha256": "d306f11f4a8175b07de2088bfda03145bae97b8c63f485c7152893b076635994",
+          "current_sha256": "bf44a267d35f74c63c2114018b1e135637ca5f70022f90dc861312c0bfa0a87e"
         }
       }
     }

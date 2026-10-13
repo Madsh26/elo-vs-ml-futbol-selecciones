@@ -124,5 +124,23 @@
   "figure_sources": [
     "semiconfirmatory_metrics.csv",
     "semiconfirmatory_reliability.csv"
-  ]
+  ],
+  "presentation_revision": {
+    "recorded_at_utc": "2026-10-13T00:18:48.673068+00:00",
+    "stage": "docs-html-readme-polish",
+    "presentation_after_evaluation": true,
+    "models_rerun": false,
+    "metrics_protocols_conclusions_changed": false,
+    "approved_data_tag": "docs-data-sources",
+    "approved_data_section_sha256": "0103c1421b971c5636350d94011f37197bf7f406fe64258a6fb8c01b373247c4",
+    "files_sha256": {
+      "reports/final_evaluation/football_report.html": "adb3720fe8f68042e7a9caab08a78014a40a70073a77a663fed19a6f89714127",
+      "reports/final_evaluation/html_review.json": "bb668ee0946f37698f6ece868b0f160f0aec1ce3984c3ecd463e787f540bbb48",
+      "README.md": "fee6d2ab0ab7ee91c1506f5272e56c2e0bb97073cb19b862956c4cef0f6d2093",
+      "tools/build_interactive_report.py": "b607579b1cecb4c07569f5ca7ad1be5f043df1f590699e1bf57d501fece901fa",
+      "tools/polish_readme.py": "db6360a2a12c06f3006813e6f75f784fd393862d83eef4769b625c756bb2e69c",
+      "tools/review_report_headless.cjs": "24c72becb4ca38e5d293ceaa645d87a5ceada9bb9bd4cc85c38715e023a2e9ea",
+      "docs/market_plausibility_sources.json": "0874abd44b9cb6c667edb2f93b7961cb7e63c6c0e2b9e67f4beb3f2a6ecf3cf6"
+    }
+  }
 }
